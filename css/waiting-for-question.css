@@ -13,7 +13,9 @@ body{
 #text{
     display: table;
     margin: 3vh auto 0px auto;
-    padding: 20px; background-color: rgb(30, 30, 69);
+    padding: 10px; background-color: rgb(30, 30, 69);
+    /* border-left: 50px solid red;
+    border-right: 50px solid red; */
 }
 #Q{
     background-color: rgb(30, 30, 69);
