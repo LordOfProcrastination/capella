@@ -1,4 +1,22 @@
 body{
-    background-color: blue;
+    background-color: rgb(30, 30, 69);
     overflow: hidden;
+}
+div{
+    background-color: rgb(38, 92, 99);
+    width: 200px;
+    height: 75px;
+    border-radius: 30px;
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    
+}
+p{
+    text-align: center;
+    margin: 0;
+    padding: 14%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    color: aliceblue;
 }
