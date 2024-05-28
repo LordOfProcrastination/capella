@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+html {
+  overflow: hidden;
+}
+#container {
+  height: 100vh;
+}
+#event-message-container {
+  height: 20%;
+  width: 100%;
+}
+#timer-bar-container {
+  height: 5%;
+  width: 100%;
+}
+#event-option-container {
+  height: 40%;
+  width: 100%;
+}
+#character-sheet-container {
+  height: 35%;
+  width: 100%;
+}
