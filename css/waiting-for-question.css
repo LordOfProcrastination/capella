@@ -2,21 +2,30 @@ body{
     background-color: rgb(38, 92, 99) ;
     overflow: hidden;
 }
-div{
+#Loading{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    border: 20px solid rgb(30, 30, 69);
+    display: table;
+    margin: 10vh auto 0px auto;
+}
+#text{
+    display: table;
+    margin: 3vh auto 0px auto;
+    padding: 20px; background-color: rgb(30, 30, 69);
+}
+#Q{
     background-color: rgb(30, 30, 69);
     width: 200px;
     height: 75px;
-    border-radius: 30px;
-    position: absolute;
-    top: 50%;
-    left: 45%;
-    
+    border-radius: 25px;
+    display: table;
+    margin: 30vh auto 0px auto;
 }
 p{
     text-align: center;
-    margin: 0;
-    padding: 14%;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: medium;
+    font-size: large;
     color: aliceblue;
 }
