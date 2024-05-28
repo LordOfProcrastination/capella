@@ -1,9 +1,0 @@
-const choices = [
-  {
-    text: "Option 1 test long text as it is going to be able",
-    svg: "/images/buttons/geometry/circle-default.svg",
-  },
-  { text: "Option 2", svg: "/images/buttons/geometry/square-default.svg" },
-  { text: "Option 3", svg: "/images/buttons/geometry/triangle-default.svg" },
-  { text: "Option 4", svg: "/images/buttons/geometry/pentagon-default.svg" },
-];

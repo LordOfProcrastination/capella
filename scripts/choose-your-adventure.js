@@ -6,15 +6,22 @@ const getTitle = () => {
 getTitle();
 
 const timerBar = document.querySelector("#timer-bar");
+let timeLimit = "30s";
 
+if (timerBar) {
+  timerBar.style.animationDuration = timeLimit; // Set the animation duration
+} else {
+  console.error("Timer bar element not found");
+}
 const getTimerBar = () => {
-  timerBar.innerHTML = `<p> Timer Bar</p>`;
+  timerBar.innerHTML = `<span>some</span>`;
 };
+
 getTimerBar();
 
 const choices = [
   {
-    text: "Option 1",
+    text: "Option 1 hanlde a long long text",
     svg: "/images/buttons/geometry/circle-default.svg",
     selectedSvg: "/images/buttons/geometry/circle-selected.svg",
   },
@@ -49,7 +56,7 @@ function createEventButtons(choices) {
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
         <image href="${choice.svg}" width="100%" height="100%"/>
       </svg>
-      <span class="event-btn-text">${choice.text}</span>
+      <p class="event-btn-text">${choice.text}</p>
     `;
     //Click a button, another buttons will pop up if an another button is pressed
     button.addEventListener("click", () => {
@@ -71,10 +78,10 @@ function createEventButtons(choices) {
   });
 }
 
-const characterEquipment = document.querySelector("#character-equipment");
-const characterStats = document.querySelector("#character-stats");
+const characterEquipment = document.querySelector(".character-equipment");
+const characterStats = document.querySelector(".character-stats");
 const characterRelationships = document.querySelector(
-  "#character-relationships"
+  ".character-relationships"
 );
 
 const getCharacterEquipment = () => {

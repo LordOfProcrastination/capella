@@ -5,58 +5,83 @@
   text-align: center;
 }
 
+body {
+  font-family: "Poppins", sans-serif;
+  background: #e0f7fa; /* Background color for the sides */
+}
+
 html {
   overflow: hidden;
 }
 
 #container {
   height: 100vh;
-  margin: 1em;
+  margin: 1em auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  max-width: 360px; /* Limit the content width */
+  background: #fff; /* Background color for the main content */
+  border-radius: 10px;
 }
 
 #event-message-container {
   padding: 2em 0;
   width: 92vw;
+  max-width: 340px;
   height: 146px;
   background: rgba(186, 205, 186, 0.3);
   border-radius: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
-#timer-bar-container {
-  height: 2vh;
+.timer-bar-container {
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 20px;
+  width: 92vw;
+  max-width: 340px;
+  border: 3px solid rgba(186, 205, 186, 0.3);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.timer-bar {
   width: 100%;
-  border: solid;
-  margin-top: 1em;
+  height: 100%;
+  background-color: #9dff47;
+  animation: countdown linear infinite;
+}
+
+@keyframes countdown {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
 }
 
 .event-option-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: solid;
-  border-color: black;
-  margin-top: 1em;
+  display: grid;
+  gap: 10px;
+  width: 100%;
+  max-width: 360px;
 }
 
 .event-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 10px;
   padding: 10px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
   height: 10vh;
-  width: 50vw;
-  max-width: 80vw;
-  max-height: 15vh;
   text-align: center;
   position: relative;
   border: black;
@@ -66,16 +91,17 @@ html {
 .event-btn svg {
   width: 100%;
   height: auto;
+  max-width: 200px;
 }
 
 .event-btn-text {
   position: absolute;
   color: white;
-  font-size: 2vw;
+  font-size: 1em;
   padding: 0 0 10px;
   word-wrap: break-word;
-  overflow-wrap: break-word;
-  text-overflow: ellipsis;
+  white-space: initial;
+  inline-size: 200px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -83,15 +109,76 @@ html {
   max-height: 2.4em;
 }
 
-#character-sheet-container {
-  height: 35%;
-  width: 100%;
-  border: solid;
-  border-color: black;
-  margin-top: 1em;
-}
-
 /* test */
 .event-btn:active {
   background-color: rgba(69, 160, 73, 0.5);
+}
+
+/* Media query for larger screens */
+@media (min-width: 1024px) {
+  body {
+    background: linear-gradient(
+      to right,
+      #e0f7fa 25%,
+      #ffffff 25%,
+      #ffffff 75%,
+      #e0f7fa 75%
+    );
+  }
+
+  #container {
+    max-width: none;
+    width: 360px;
+  }
+
+  #event-message-container,
+  .timer-bar-container,
+  .event-btn {
+    max-width: 100%;
+  }
+}
+
+/* Grid layout adjustments */
+@media (min-width: 0px) {
+  .event-option-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+@media (min-width: 0px) and (max-width: 600px) {
+  .event-option-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-auto-rows: 10vh;
+  }
+}
+
+.character-equipment {
+  grid-area: A;
+  background-color: #9dff47;
+}
+.character-relationships {
+  grid-area: B;
+  background-color: #9dff47;
+}
+
+.character-stats {
+  grid-area: C;
+  background-color: #9dff47;
+}
+
+.charactersheet-container {
+  display: grid;
+  height: 40vh;
+  width: 100%;
+  max-width: 360px;
+  padding: 5px;
+  border: solid;
+  border-color: black;
+  margin-top: 1em;
+  gap: 5px 5px;
+  grid-template-areas:
+    "A A A A A A A B B B B B"
+    "A A A A A A A B B B B B"
+    "A A A A A A A B B B B B"
+    "C C C C C C C C C C C C";
 }

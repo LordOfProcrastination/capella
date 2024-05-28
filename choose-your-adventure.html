@@ -6,8 +6,10 @@
     <title>Make Your Choice!</title>
     <link rel="icon" href="/images/icons/octoknife.jpg" />
     <link rel="stylesheet" href="/css/choose-your-adventure.css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -16,16 +18,16 @@
       <section id="event-message-container">
         <div id="event-message"></div>
       </section>
-      <section id="timer-bar-container">
-        <div id="timer-bar"></div>
+      <section class="timer-bar-container">
+        <div id="timer-bar" class="timer-bar"></div>
       </section>
       <section class="event-option-container" id="event-option-container">
         <!-- Event buttons will be dynamically created here -->
       </section>
-      <section id="character-sheet-container">
-        <div id="character-equipment"></div>
-        <div id="character-stats"></div>
-        <div id="character-relationships"></div>
+      <section class="charactersheet-container">
+        <div class="character-equipment"></div>
+        <div class="character-relationships"></div>
+        <div class="character-stats"></div>
       </section>
     </main>
     <script src="/scripts/choose-your-adventure.js"></script>
