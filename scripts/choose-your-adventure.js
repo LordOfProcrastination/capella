@@ -1,13 +1,9 @@
-// Eventcontainer
-
 const eventMessage = document.querySelector("#event-message");
 
 const getTitle = () => {
   eventMessage.innerHTML = `<h2>Hvordan skal Askeladden reagere?</h2>`;
 };
 getTitle();
-
-// Timerbar
 
 const timerBar = document.querySelector("#timer-bar");
 
@@ -16,18 +12,64 @@ const getTimerBar = () => {
 };
 getTimerBar();
 
-// Choose Your Option
+const choices = [
+  {
+    text: "Option 1",
+    svg: "/images/buttons/geometry/circle-default.svg",
+    selectedSvg: "/images/buttons/geometry/circle-selected.svg",
+  },
+  {
+    text: "Option 2",
+    svg: "/images/buttons/geometry/square-default.svg",
+    selectedSvg: "/images/buttons/geometry/square-selected.svg",
+  },
+  {
+    text: "Option 3",
+    svg: "/images/buttons/geometry/triangle-default.svg",
+    selectedSvg: "/images/buttons/geometry/triangle-selected.svg",
+  },
 
-const eventBtns = document.querySelectorAll(".event-btn");
+  {
+    text: "Option 4",
+    svg: "/images/buttons/geometry/pentagon-default.svg",
+    selectedSvg: "/images/buttons/geometry/pentagon-selected.svg",
+  },
+];
 
-const getEventBtns = (event) => {
-  eventBtns.forEach((btn, index) => {
-    btn.textContent = `button ${index + 1}`;
+let selectedButton = null;
+
+function createEventButtons(choices) {
+  const container = document.getElementById("event-option-container");
+  container.innerHTML = "";
+
+  choices.forEach((choice) => {
+    const button = document.createElement("div");
+    button.className = "event-btn";
+    button.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+        <image href="${choice.svg}" width="100%" height="100%"/>
+      </svg>
+      <span class="event-btn-text">${choice.text}</span>
+    `;
+    //Click a button, another buttons will pop up if an another button is pressed
+    button.addEventListener("click", () => {
+      if (selectedButton) {
+        // Revert the previous button to its default state
+        selectedButton
+          .querySelector("image")
+          .setAttribute("href", selectedButton.dataset.defaultSvg);
+      }
+      // Set the new selected button
+      button.querySelector("image").setAttribute("href", choice.selectedSvg);
+      selectedButton = button;
+    });
+
+    // Store default SVG in a data attribute
+    button.dataset.defaultSvg = choice.svg;
+
+    container.appendChild(button);
   });
-};
-getEventBtns();
-
-// Character Sheet
+}
 
 const characterEquipment = document.querySelector("#character-equipment");
 const characterStats = document.querySelector("#character-stats");
@@ -44,6 +86,8 @@ const getCharacterStats = () => {
 const getCharacterRelationships = () => {
   characterRelationships.innerHTML = `<p>Relationships</p>`;
 };
+
 getCharacterEquipment();
 getCharacterRelationships();
 getCharacterStats();
+createEventButtons(choices);
