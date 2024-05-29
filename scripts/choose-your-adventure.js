@@ -18,13 +18,14 @@ const getChapter = (index) => {
   if (chapter) {
     // Assuming chapter has a property 'content' that contains the text or HTML
     htmlTxt = `
-    <h1>Q: ${chapter.id}</h1>
-    <h2>${chapter.question}</h2>
+    <img class ="erik" src="images/characters/erik.png" />
+    <h4>Chapter ${chapter.id}:</h4>
+    <p>${chapter.question}</p>
     `;
   } else {
     htmlTxt = "Chapter not found.";
   }
-  console.log(chapterIndex);
+  console.log("Chapter: " + chapterIndex);
   // Set the HTML content of the eventMessage element
   eventMessage.innerHTML = htmlTxt;
 };
@@ -96,10 +97,13 @@ const choices = [
 
 let selectedButton = null;
 
-function createEventButtons(choices) {
+function createEventButtons(choices, index) {
   const container = document.getElementById("event-option-container");
   container.innerHTML = "";
 
+  const chapter = EriksAdventureTxtModule.getById(index);
+
+  console.log(chapter.choices);
   choices.forEach((choice) => {
     const button = document.createElement("div");
     button.className = "event-btn";
@@ -107,7 +111,7 @@ function createEventButtons(choices) {
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
         <image href="${choice.svg}" width="100%" height="100%"/>
       </svg>
-      <p class="event-btn-text">${choice.text}</p>
+      <p class="event-btn-text">${chapter.choices.a.text}</p>
     `;
     //Click a button, another buttons will pop up if an another button is pressed
     button.addEventListener("click", () => {
@@ -128,7 +132,7 @@ function createEventButtons(choices) {
     container.appendChild(button);
   });
 }
-createEventButtons(choices);
+createEventButtons(choices, chapterIndex);
 /* 
     Character Sheet
 */
