@@ -1,5 +1,5 @@
-const eriksAdventure = {
-  chapters: [
+const EriksAdventureModule = (() => {
+  const chapters = [
     {
       chapterNumber: 1,
       chapter: "Chapter 1",
@@ -198,8 +198,16 @@ const eriksAdventure = {
         },
       },
     },
-  ],
-};
+  ];
+
+  const getById = (id) => {
+    return structuredClone(chapters);
+  };
+
+  return {
+    getById,
+  };
+})();
 
 // Export the object
-export default eriksAdventure;
+export default EriksAdventureModule;
