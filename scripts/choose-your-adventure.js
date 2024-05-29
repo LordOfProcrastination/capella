@@ -5,7 +5,7 @@
 import EriksAdventureTxtModule from "./modules/StoryModule.js";
 
 const eventMessage = document.querySelector("#event-message");
-let chapterIndex = 1;
+let chapterIndex = parseInt(localStorage.getItem("chapterIndex"), 10) || 1;
 const timerDuration = 30000;
 
 const getChapter = (index) => {
@@ -24,7 +24,7 @@ const getChapter = (index) => {
   } else {
     htmlTxt = "Chapter not found.";
   }
-  console.log(chapter);
+  console.log(chapterIndex);
   // Set the HTML content of the eventMessage element
   eventMessage.innerHTML = htmlTxt;
 };
@@ -33,14 +33,22 @@ const nextChapter = () => {
   getChapter(chapterIndex);
   startTimer();
 };
-
 const startTimer = () => {
   setTimeout(() => {
-    chapterIndex++;
-    nextChapter();
+    if (chapterIndex < 5) {
+      chapterIndex++;
+      localStorage.setItem("chapterIndex", chapterIndex); // Save the index to localStorage
+      nextChapter();
+    } else {
+      localStorage.removeItem("chapterIndex");
+      // Optionally, you can reset chapterIndex to 1 if you want to restart the cycle
+      chapterIndex = 1;
+      console.log("Reached the last chapter. LocalStorage cleared.");
+      // Display a final message or take any other action here if needed
+      eventMessage.innerHTML = "You've reached the end of the adventure.";
+    }
   }, timerDuration);
 };
-
 nextChapter(chapterIndex);
 /*
     Timer Bar
