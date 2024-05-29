@@ -1,0 +1,90 @@
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #e0f7fa; /* Background color for the sides */
+  }
+  
+  html {
+    overflow: hidden;
+  }
+  
+  #container {
+    height: 100vh;
+    margin: 1em auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 360px; /* Limit the content width */
+    background: #fff; /* Background color for the main content */
+    border-radius: 10px;
+}
+
+/*stars*/
+.star-rating {
+    direction: rtl; /* Left-to-right for easier handling */
+    display: inline-block;
+    font-size: 2rem;
+}
+
+.star {
+    cursor: pointer;
+    color: gray;
+    transition: color 0.2s;
+}
+
+.star.selected {
+    color: gold;
+}
+
+.star-rating2 {
+    direction: rtl; /* Left-to-right for easier handling */
+    display: inline-block;
+    font-size: 2rem;
+}
+
+.star2 {
+    cursor: pointer;
+    color: gray;
+    transition: color 0.2s;
+}
+
+.star2.selected {
+    color: gold;
+}
+
+/*Comment section*/
+.comment-section {
+    width: 70%;
+    margin: 0 auto;
+}
+
+#comment-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+#comment-input {
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.comment {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.comment p {
+    margin: 0;
+}
