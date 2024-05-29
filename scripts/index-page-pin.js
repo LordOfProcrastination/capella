@@ -1,3 +1,6 @@
+/* temporary kode for pin oppsett:
+
+
 document.getElementById('startButton').addEventListener('click', goToNextPage);
 
 function goToNextPage() {
@@ -22,4 +25,6 @@ function submitName() {
     } else {
         alert('Vennligst skriv inn navn.');
     }
-}
+} 
+
+*/
