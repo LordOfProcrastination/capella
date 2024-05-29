@@ -160,7 +160,10 @@ html {
   grid-area: B;
   background-color: #9dff47;
 }
-
+.erik {
+  width: 4em;
+  border-radius: 2em;
+}
 .character-stats {
   grid-area: A;
   background-color: #9dff47;
