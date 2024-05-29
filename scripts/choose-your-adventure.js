@@ -14,7 +14,7 @@ if (timerBar) {
   console.error("Timer bar element not found");
 }
 const getTimerBar = () => {
-  timerBar.innerHTML = `<span>some</span>`;
+  timerBar.innerHTML = `<span>⌛</span>`;
 };
 
 getTimerBar();
