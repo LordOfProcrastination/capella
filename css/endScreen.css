@@ -1,7 +1,7 @@
 
 body {
     font-family: "Poppins", sans-serif;
-    background: #e0f7fa; /* Background color for the sides */
+    background: #e0f7fa; 
   }
   
   html {
@@ -15,14 +15,14 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    max-width: 360px; /* Limit the content width */
-    background: #fff; /* Background color for the main content */
+    max-width: 360px; 
+    background: #fff; 
     border-radius: 10px;
 }
 
 /*stars*/
 .star-rating {
-    direction: rtl; /* Left-to-right for easier handling */
+    direction: rtl; 
     display: inline-block;
     font-size: 2rem;
 }
@@ -38,7 +38,7 @@ body {
 }
 
 .star-rating2 {
-    direction: rtl; /* Left-to-right for easier handling */
+    direction: rtl; 
     display: inline-block;
     font-size: 2rem;
 }
