@@ -1,6 +1,17 @@
-body{
+/* body{
     background-color: rgb(30, 30, 69);
     overflow: hidden;
+} */
+main{
+    height: 100vh;
+    margin: 1em auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 360px; /* Limit the content width */
+    background: rgb(30, 30, 69); /* Background color for the main content */
+    border-radius: 10px;
 }
 div{
     background-color: rgb(38, 92, 99);
