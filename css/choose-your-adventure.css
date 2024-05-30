@@ -73,21 +73,21 @@ html {
 }
 
 .event-btn {
-  display: block;
-  font-size: 1.2em;
+  font-size: 0.8em;
   font-family: "Press Start 2P", cursive;
   width: 100%;
   height: 100%;
   background: #06c1de;
   border: 0px;
   position: relative;
-  box-shadow: inset -4px 2px 1px 1px grey, inset -4px -2px 1px 1px lightgray,
+  box-shadow:
+    inset -4px 2px 1px 1px grey,
+    inset -4px -2px 1px 1px lightgray,
     inset 4px 0px 1px 1px lightgray;
   color: #fff; /* Default text color */
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 10px; /* Add margin between buttons */
 }
 .event-btn:hover {
   cursor: pointer;
@@ -111,7 +111,9 @@ html {
 
 .event-btn:active {
   top: 5px;
-  box-shadow: -4px 2px 1px 1px grey, -4px -2px 1px 1px lightgray,
+  box-shadow:
+    -4px 2px 1px 1px grey,
+    -4px -2px 1px 1px lightgray,
     4px 0px 1px 1px lightgray;
 }
 
@@ -136,7 +138,9 @@ html {
 }
 .btn-0 {
   background-color: #4d9be6;
-  box-shadow: inset -4px 2px 1px 1px #3b82c4, inset -4px -2px 1px 1px #63a8f2,
+  box-shadow:
+    inset -4px 2px 1px 1px #3b82c4,
+    inset -4px -2px 1px 1px #63a8f2,
     inset 4px 0px 1px 1px #63a8f2;
 }
 
@@ -147,7 +151,9 @@ html {
 /* Button 2 */
 .btn-1 {
   background-color: #1ebc73;
-  box-shadow: inset -4px 2px 1px 1px #169a5d, inset -4px -2px 1px 1px #24d48a,
+  box-shadow:
+    inset -4px 2px 1px 1px #169a5d,
+    inset -4px -2px 1px 1px #24d48a,
     inset 4px 0px 1px 1px #24d48a;
 }
 .btn-1.active {
@@ -157,7 +163,9 @@ html {
 /* Button 3 */
 .btn-2 {
   background-color: #e6904e;
-  box-shadow: inset -4px 2px 1px 1px #c67540, inset -4px -2px 1px 1px #f0a367,
+  box-shadow:
+    inset -4px 2px 1px 1px #c67540,
+    inset -4px -2px 1px 1px #f0a367,
     inset 4px 0px 1px 1px #f0a367;
 }
 
@@ -168,7 +176,9 @@ html {
 /* Button 4 */
 .btn-3 {
   background-color: #f68181;
-  box-shadow: inset -4px 2px 1px 1px #d46a6a, inset -4px -2px 1px 1px #ff9797,
+  box-shadow:
+    inset -4px 2px 1px 1px #d46a6a,
+    inset -4px -2px 1px 1px #ff9797,
     inset 4px 0px 1px 1px #ff9797;
 }
 
