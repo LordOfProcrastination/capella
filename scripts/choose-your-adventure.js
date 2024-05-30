@@ -44,13 +44,8 @@ const startTimer = () => {
     }
 
     if (chapterIndex < 5) {
-      chapterIndex++;
-      localStorage.setItem("chapterIndex", chapterIndex);
       nextChapter();
     } else {
-      localStorage.clear();
-      chapterIndex = 1;
-      console.log("Reached the last chapter. LocalStorage cleared.");
       eventMessage.innerHTML = "You've reached the end of the adventure.";
     }
   }, timerDuration);
