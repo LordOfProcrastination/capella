@@ -1,6 +1,4 @@
-/* temporary kode for pin oppsett:
-
-
+/*
 document.getElementById('startButton').addEventListener('click', goToNextPage);
 
 function goToNextPage() {
@@ -26,5 +24,31 @@ function submitName() {
         alert('Vennligst skriv inn navn.');
     }
 } 
-
 */
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const snowContainer = document.getElementById('snow-container');
+    const snowflakeCount = 100; // Number of snowflakes
+
+    for (let i = 0; i < snowflakeCount; i++) {
+        let snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+
+        // Random size between 2px and 6px
+        let size = Math.random() * 5 + 3 + 'px';
+        snowflake.style.width = size;
+        snowflake.style.height = size;
+
+        // Random horizontal position
+        snowflake.style.left = Math.random() * 18 + 'vw';
+
+        // Random animation duration between 3s and 10s
+        snowflake.style.animationDuration = Math.random() * 7 + 3 + 's';
+
+        // Random delay before the animation starts
+        snowflake.style.animationDelay = Math.random() * 5 + 's';
+
+        snowContainer.appendChild(snowflake);
+    }
+});

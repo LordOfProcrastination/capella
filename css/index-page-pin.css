@@ -88,3 +88,25 @@ body, html {
 .start-button:hover {
     background-color: #5e4120;
 }
+
+
+#snow-container {
+    position: absolute;
+    top: 0%; 
+    left: 0%;
+}
+
+.snowflake {
+    position: absolute;
+    top: 0px;
+    background: white;
+    border-radius: -10%;
+    opacity: 5;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(85vh);
+    }
+}
