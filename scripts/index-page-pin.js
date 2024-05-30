@@ -1,32 +1,3 @@
-/*
-document.getElementById('startButton').addEventListener('click', goToNextPage);
-
-function goToNextPage() {
-    const pinInput = document.getElementById('pinInput').value;
-    const correctPin = "1234";  // Angi riktig PIN-kode her
-    console.log("Input PIN: " + pinInput);  // Debugging: Skriv ut den innskrevne PIN-koden
-    if (pinInput === correctPin) {
-        console.log("Correct PIN entered.");  // Debugging: PIN-koden er korrekt
-        document.getElementById('landingPage').style.display = 'none';
-        document.getElementById('nameRegisterPage').style.display = 'block';
-    } else {
-        console.log("Incorrect PIN entered.");  // Debugging: Feil PIN-kode
-        alert('Feil PIN. Vennligst prøv igjen.');
-    }
-}
-
-function submitName() {
-    const nameInput = document.getElementById('nameInput').value;
-    if (nameInput) {
-        alert('Navn registrert: ' + nameInput);
-        // Implement further actions here
-    } else {
-        alert('Vennligst skriv inn riktig pin.');
-    }
-} 
-*/
-
-
 document.addEventListener('DOMContentLoaded', () => {
     const snowContainer = document.getElementById('snow-container');
     const snowflakeCount = 200; // Number of snowflakes
@@ -51,4 +22,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
         snowContainer.appendChild(snowflake);
     }
+});
+
+
+document.getElementById('pin-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const enteredPin = document.getElementById('pin').value;
+    const correctPin = '1234'; // Set your correct PIN here
+    
+    const messageElement = document.getElementById('message');
+    
+    if (enteredPin === correctPin) {
+        messageElement.textContent = 'PIN correct. Access granted.';
+        messageElement.style.color = 'green';
+        
+        // Redirect to another page after a short delay
+        setTimeout(() => {
+            window.location.href = 'http://127.0.0.1:5500/Landing-page-name.html'; // Change 'welcome.html' to your target page
+        }, 1000); // 1 second delay for the user to see the success message
+    } else {
+        messageElement.textContent = 'Incorrect PIN. Please try again.';
+        messageElement.style.color = 'red';
+    }
+    
+    // Clear the input field
+    document.getElementById('pin').value = '';
 });
