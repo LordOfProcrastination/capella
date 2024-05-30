@@ -21,7 +21,7 @@ function submitName() {
         alert('Navn registrert: ' + nameInput);
         // Implement further actions here
     } else {
-        alert('Vennligst skriv inn navn.');
+        alert('Vennligst skriv inn riktig pin.');
     }
 } 
 */
@@ -29,14 +29,14 @@ function submitName() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const snowContainer = document.getElementById('snow-container');
-    const snowflakeCount = 100; // Number of snowflakes
+    const snowflakeCount = 200; // Number of snowflakes
 
     for (let i = 0; i < snowflakeCount; i++) {
         let snowflake = document.createElement('div');
         snowflake.classList.add('snowflake');
 
         // Random size between 2px and 6px
-        let size = Math.random() * 4 + 2 + 'px';
+        let size = Math.random() * 3 + 1 + 'px';
         snowflake.style.width = size;
         snowflake.style.height = size;
 
