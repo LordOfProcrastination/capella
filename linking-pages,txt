@@ -1,0 +1,5 @@
+Start =
+index-page-pin -> landing-page-name -> welcome-room -> watching-the scene -> 
+watching-the-scene-inaktiv -> waiting-for-question -> choose-your-adventure -> watching-decision
+LOOP TIL STORY ER FERDIG
+-> user-ending -> user-rate-your-experience

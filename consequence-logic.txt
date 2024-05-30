@@ -5,3 +5,4 @@ Rød ramme for lave stats
 Opprett en rekke med variabler som endres basert på spillerenes valg
 
 Forhold har variablene sus, nøytral og vennlig
+
