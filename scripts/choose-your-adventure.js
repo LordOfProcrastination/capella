@@ -140,6 +140,9 @@ function updateCharacterStats(consequence) {
     JSON.stringify(characterRelationships)
   );
 
+  if (consequence.text && typeof consequence.text === "string") {
+    localStorage.setItem("consequenceTxt", consequence.text);
+  }
   getCharacterEquipment();
   getCharacterRelationships();
   getCharacterStats();
@@ -204,3 +207,14 @@ nextChapter();
 getCharacterEquipment();
 getCharacterRelationships();
 getCharacterStats();
+
+function redirectToPage(url, delay) {
+  setTimeout(function () {
+    window.location.href = url;
+  }, delay);
+}
+
+// Example usage: Redirect to "target.html" after 5 seconds (5000 milliseconds)
+window.onload = function () {
+  redirectToPage("watching-decision.html", 30500);
+};

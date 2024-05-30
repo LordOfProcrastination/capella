@@ -67,3 +67,20 @@ p {
     -webkit-transform: rotate(360deg);
   }
 }
+
+#consequence-output {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  margin: 1em;
+  padding: 1em;
+  color: white;
+}
+#consequence-output span,
+h4 {
+  background: #202f45;
+  margin: 1em;
+  padding: 1em;
+}
