@@ -98,6 +98,7 @@ function createEventButtons(index) {
       if (selectedButton) {
         // Revert the previous button to its default state
         selectedButton.classList.remove("active");
+        alert("Waiting for other players");
       }
 
       // Set the new selected button
