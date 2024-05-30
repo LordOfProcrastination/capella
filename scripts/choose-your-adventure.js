@@ -34,7 +34,7 @@ const startTimer = () => {
   setTimeout(() => {
     if (chapterIndex < 5) {
       chapterIndex++;
-      localStorage.setItem("chapterIndex", chapterIndex);
+      localStorage.clear;
       nextChapter();
     } else {
       localStorage.removeItem("chapterIndex");
@@ -65,21 +65,6 @@ getTimerBar();
 /*
     Choices
 */
-const choices = [
-  {
-    text: "Option 1 hanlde a long long text",
-  },
-  {
-    text: "Option 2",
-  },
-  {
-    text: "Option 3",
-  },
-
-  {
-    text: "Option 4",
-  },
-];
 
 let selectedButton = null;
 
@@ -91,9 +76,9 @@ function createEventButtons(index) {
   const choicesFromModule = chapters.choices;
 
   console.log(chapters.choices);
-  choicesFromModule.forEach((choice, index) => {
+  choicesFromModule.forEach((choice, choiceIndex) => {
     const button = document.createElement("div");
-    button.className = `event-btn btn-${index}`;
+    button.className = `event-btn btn-${choiceIndex}`;
     button.innerText = choice.text;
 
     // Click event listener for button
