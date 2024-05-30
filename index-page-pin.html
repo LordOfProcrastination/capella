@@ -1,44 +1,25 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventyr</title>
-    <link rel="stylesheet" href="index-page-pin.css">
+    <title>CAPELLA</title>
+    <link rel="stylesheet" href="css/index-page-pin.css">
 </head>
 <body>
-    <div class="container">
-        <div class="page" id="landingPage">
-            <div class="header">
-                <div class="logo">
-                    <img src="path_to_your_image.png" alt="Capella">
-                </div>
-                <h1>CAPELLA</h1>
-            </div>
-            <div class="content">
-                <img src="path_to_your_image.png" alt="Character with Wolf">
-                <p>Velkommen eventyrer! Tast inn PIN som vises på storskjermen</p>
-                <input type="text" id="pinInput" placeholder="Placeholder">
-                <button id="startButton">START</button>
-            </div>
-        </div>
+    <div class="phone">
+        <img src="/images/Jon.webp" alt="jon" class="jon-img">
+        <img src="/images/circle.png" alt="circle" class="circle-img">
+        <img src="/images/line.png" alt="line" class="line-img">
+        <img src="/images/squid.png" alt="squid1" class="squid1-img">
+        <img src="/images/squid.png" alt="squid1" class="squid2-img">
+        <h1>CAPELLA</h1>
+        <p>Velkommen eventyrer! Tast inn PIN</p>
+        <input type="text" id="PinInput" placeholder="Tast Pin Her">
+        <button class="start-button">Start</button>
 
-        <div class="page" id="nameRegisterPage" style="display: none;">
-            <div class="header">
-                <div class="logo">
-                    <img src="path_to_your_image.png" alt="Logo">
-                </div>
-                <h1>NAME REGISTER</h1>
-            </div>
-            <div class="content">
-                <img src="path_to_your_image.png" alt="Mountain Scene">
-                <p>Velkommen eventyrer! Tast inn NAVN.</p>
-                <input type="text" id="nameInput" placeholder="Placeholder">
-                <button onclick="submitName()">START</button>
-            </div>
-        </div>
+        <div id="snow-container"></div>
+        <script src="scripts/index-page-pin.js"></script>
     </div>
-
-    <script src="index-page-pin.js"></script>
 </body>
 </html>

@@ -1,10 +1,59 @@
+/*
+    Event Message
+*/
+
+import EriksAdventureTxtModule from "./modules/StoryModule.js";
+
 const eventMessage = document.querySelector("#event-message");
+let chapterIndex = parseInt(localStorage.getItem("chapterIndex"), 10) || 1;
+const timerDuration = 30000;
 
-const getTitle = () => {
-  eventMessage.innerHTML = `<h2>Hvordan skal Askeladden reagere?</h2>`;
+const getChapter = (index) => {
+  let htmlTxt = "";
+
+  // Retrieve the chapter details by ID
+  const chapter = EriksAdventureTxtModule.getById(index);
+
+  // Check if the chapter exists
+  if (chapter) {
+    // Assuming chapter has a property 'content' that contains the text or HTML
+    htmlTxt = `
+    <img class ="erik" src="images/characters/erik.png" />
+    <h4>Chapter ${chapter.id}:</h4>
+    <p>${chapter.question}</p>
+    `;
+  } else {
+    htmlTxt = "Chapter not found.";
+  }
+  console.log("Chapter: " + chapterIndex);
+  // Set the HTML content of the eventMessage element
+  eventMessage.innerHTML = htmlTxt;
 };
-getTitle();
 
+const nextChapter = () => {
+  getChapter(chapterIndex);
+  startTimer();
+};
+const startTimer = () => {
+  setTimeout(() => {
+    if (chapterIndex < 5) {
+      chapterIndex++;
+      localStorage.setItem("chapterIndex", chapterIndex); // Save the index to localStorage
+      nextChapter();
+    } else {
+      localStorage.removeItem("chapterIndex");
+      // Optionally, you can reset chapterIndex to 1 if you want to restart the cycle
+      chapterIndex = 1;
+      console.log("Reached the last chapter. LocalStorage cleared.");
+      // Display a final message or take any other action here if needed
+      eventMessage.innerHTML = "You've reached the end of the adventure.";
+    }
+  }, timerDuration);
+};
+nextChapter(chapterIndex);
+/*
+    Timer Bar
+*/
 const timerBar = document.querySelector("#timer-bar");
 let timeLimit = "30s";
 
@@ -19,6 +68,9 @@ const getTimerBar = () => {
 
 getTimerBar();
 
+/*
+    Choices
+*/
 const choices = [
   {
     text: "Option 1 hanlde a long long text",
@@ -45,10 +97,13 @@ const choices = [
 
 let selectedButton = null;
 
-function createEventButtons(choices) {
+function createEventButtons(choices, index) {
   const container = document.getElementById("event-option-container");
   container.innerHTML = "";
 
+  const chapter = EriksAdventureTxtModule.getById(index);
+
+  console.log(chapter.choices);
   choices.forEach((choice) => {
     const button = document.createElement("div");
     button.className = "event-btn";
@@ -56,7 +111,7 @@ function createEventButtons(choices) {
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
         <image href="${choice.svg}" width="100%" height="100%"/>
       </svg>
-      <p class="event-btn-text">${choice.text}</p>
+      <p class="event-btn-text">${chapter.choices.a.text}</p>
     `;
     //Click a button, another buttons will pop up if an another button is pressed
     button.addEventListener("click", () => {
@@ -77,24 +132,54 @@ function createEventButtons(choices) {
     container.appendChild(button);
   });
 }
+createEventButtons(choices, chapterIndex);
+/* 
+    Character Sheet
+*/
 
-const characterEquipment = document.querySelector(".character-equipment");
-const characterStats = document.querySelector(".character-stats");
-const characterRelationships = document.querySelector(
+const characterEquipmentContainer = document.querySelector(
+  ".character-equipment"
+);
+const characterStatsContainer = document.querySelector(".character-stats");
+const characterRelationshipsContainer = document.querySelector(
   ".character-relationships"
 );
 
+const characterStats = {
+  understanding: 0,
+  time: 2,
+  supply: 5,
+  recklessness: 0,
+  injury: 0,
+};
+const characterEquipment = {
+  image: "octoknife.jpg",
+  hasItem: false,
+};
+const characterRelationships = [];
+
 const getCharacterEquipment = () => {
-  characterEquipment.innerHTML = `<p>Equipment</p>`;
+  characterEquipmentContainer.innerHTML = `
+  <h4>Equipment</h4>
+  `;
 };
 const getCharacterStats = () => {
-  characterStats.innerHTML = `<p>Stats</p>`;
+  characterStatsContainer.innerHTML = `
+  <h4>Stats</h4>
+  <p>Kunnskap: ${characterStats.understanding}</p>
+  <p>Tid: ${characterStats.time}</p>
+  <p>Mat: ${characterStats.supply}</p>
+  <p>Skader: ${characterStats.injury}</p>
+  `;
 };
 const getCharacterRelationships = () => {
-  characterRelationships.innerHTML = `<p>Relationships</p>`;
+  characterRelationshipsContainer.innerHTML = `
+  <h4>Relationships</h4>
+  <p>??</p>
+  <p>??</p>
+  `;
 };
 
 getCharacterEquipment();
 getCharacterRelationships();
 getCharacterStats();
-createEventButtons(choices);

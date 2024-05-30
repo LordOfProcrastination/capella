@@ -30,7 +30,7 @@ html {
   padding: 2em 0;
   width: 92vw;
   max-width: 340px;
-  height: 146px;
+  height: 23vh;
   background: rgba(186, 205, 186, 0.3);
   border-radius: 10px;
   margin-bottom: 20px;
@@ -67,7 +67,7 @@ html {
 
 .event-option-container {
   display: grid;
-  gap: 10px;
+  gap: 1em;
   width: 100%;
   max-width: 360px;
 }
@@ -153,16 +153,19 @@ html {
 }
 
 .character-equipment {
-  grid-area: A;
+  grid-area: C;
   background-color: #9dff47;
 }
 .character-relationships {
   grid-area: B;
   background-color: #9dff47;
 }
-
+.erik {
+  width: 4em;
+  border-radius: 2em;
+}
 .character-stats {
-  grid-area: C;
+  grid-area: A;
   background-color: #9dff47;
 }
 
@@ -180,5 +183,6 @@ html {
     "A A A A A A A B B B B B B"
     "A A A A A A A B B B B B B"
     "A A A A A A A B B B B B B"
+    "C C C C C C C C C C C C C"
     "C C C C C C C C C C C C C";
 }
