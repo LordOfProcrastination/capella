@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         snowflake.classList.add('snowflake');
 
         // Random size between 2px and 6px
-        let size = Math.random() * 5 + 3 + 'px';
+        let size = Math.random() * 4 + 2 + 'px';
         snowflake.style.width = size;
         snowflake.style.height = size;
 

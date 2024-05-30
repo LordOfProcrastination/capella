@@ -6,7 +6,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1861b4; /* Background color for the surrounding area */
+    background-color: #2D6470; /* Background color for the surrounding area */
     font-family: Arial, sans-serif;
 }
 
@@ -44,6 +44,24 @@ body, html {
     height: 50px;
     width: 100%; 
     transform: translateX(-50%);
+}
+
+.phone img.squid1-img {
+    position: absolute;
+    top: 9.3%;
+    left: 95%;
+    transform: translateX(-50%);
+    width: 6%;
+    height: auto;
+}
+
+.phone img.squid2-img {
+    position: absolute;
+    top: 9.3%;
+    left: 5%;
+    transform: translateX(-50%);
+    width: 6%;
+    height: auto;
 }
 
 .phone h1 {
