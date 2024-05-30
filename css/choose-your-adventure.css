@@ -73,25 +73,25 @@ html {
 }
 
 .event-btn {
+  display: block;
+  font-size: 1.2em;
+  font-family: "Press Start 2P", cursive;
+  width: 100%;
+  height: 100%;
+  background: #06c1de;
+  border: 0px;
+  position: relative;
+  box-shadow: inset -4px 2px 1px 1px grey, inset -4px -2px 1px 1px lightgray,
+    inset 4px 0px 1px 1px lightgray;
+  color: #fff; /* Default text color */
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  cursor: pointer;
-  height: 10vh;
-  text-align: center;
-  position: relative;
-  border: black;
-  overflow: hidden;
+  margin: 10px; /* Add margin between buttons */
 }
-
-.event-btn svg {
-  width: 100%;
-  height: auto;
-  max-width: 200px;
+.event-btn:hover {
+  cursor: pointer;
+  background-color: #06b6d1;
 }
 
 .event-btn-text {
@@ -109,9 +109,76 @@ html {
   max-height: 2.4em;
 }
 
-/* test */
 .event-btn:active {
-  background-color: rgba(69, 160, 73, 0.5);
+  top: 5px;
+  box-shadow: -4px 2px 1px 1px grey, -4px -2px 1px 1px lightgray,
+    4px 0px 1px 1px lightgray;
+}
+
+.event-btn::after {
+  content: "";
+  position: absolute;
+  left: -2.5%;
+  top: 0;
+  width: 105%;
+  height: 100%;
+  z-index: -1;
+}
+
+.event-btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -5%;
+  width: 100%;
+  height: 113%;
+  z-index: -1;
+}
+.btn-0 {
+  background-color: #4d9be6;
+  box-shadow: inset -4px 2px 1px 1px #3b82c4, inset -4px -2px 1px 1px #63a8f2,
+    inset 4px 0px 1px 1px #63a8f2;
+}
+
+.btn-0.active {
+  background-color: #9bcbf2; /* Paler version of the original color */
+}
+
+/* Button 2 */
+.btn-1 {
+  background-color: #1ebc73;
+  box-shadow: inset -4px 2px 1px 1px #169a5d, inset -4px -2px 1px 1px #24d48a,
+    inset 4px 0px 1px 1px #24d48a;
+}
+.btn-1.active {
+  background-color: #79e0ac; /* Paler version of the original color */
+}
+
+/* Button 3 */
+.btn-2 {
+  background-color: #e6904e;
+  box-shadow: inset -4px 2px 1px 1px #c67540, inset -4px -2px 1px 1px #f0a367,
+    inset 4px 0px 1px 1px #f0a367;
+}
+
+.btn-2.active {
+  background-color: #f0b685; /* Paler version of the original color */
+}
+
+/* Button 4 */
+.btn-3 {
+  background-color: #f68181;
+  box-shadow: inset -4px 2px 1px 1px #d46a6a, inset -4px -2px 1px 1px #ff9797,
+    inset 4px 0px 1px 1px #ff9797;
+}
+
+.btn-3.active {
+  background-color: #f9a9a9; /* Paler version of the original color */
+}
+
+/* New active state styles */
+.event-btn.active {
+  color: inherit; /* Retain text color specific to each button */
 }
 
 /* Media query for larger screens */

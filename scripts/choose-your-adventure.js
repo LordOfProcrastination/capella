@@ -74,24 +74,16 @@ getTimerBar();
 const choices = [
   {
     text: "Option 1 hanlde a long long text",
-    svg: "/images/buttons/geometry/circle-default.svg",
-    selectedSvg: "/images/buttons/geometry/circle-selected.svg",
   },
   {
     text: "Option 2",
-    svg: "/images/buttons/geometry/square-default.svg",
-    selectedSvg: "/images/buttons/geometry/square-selected.svg",
   },
   {
     text: "Option 3",
-    svg: "/images/buttons/geometry/triangle-default.svg",
-    selectedSvg: "/images/buttons/geometry/triangle-selected.svg",
   },
 
   {
     text: "Option 4",
-    svg: "/images/buttons/geometry/pentagon-default.svg",
-    selectedSvg: "/images/buttons/geometry/pentagon-selected.svg",
   },
 ];
 
@@ -104,30 +96,22 @@ function createEventButtons(choices, index) {
   const chapter = EriksAdventureTxtModule.getById(index);
 
   console.log(chapter.choices);
-  choices.forEach((choice) => {
+  choices.forEach((choice, index) => {
     const button = document.createElement("div");
-    button.className = "event-btn";
-    button.innerHTML = `
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-        <image href="${choice.svg}" width="100%" height="100%"/>
-      </svg>
-      <p class="event-btn-text">${chapter.choices.a.text}</p>
-    `;
-    //Click a button, another buttons will pop up if an another button is pressed
+    button.className = `event-btn btn-${index}`;
+    button.innerText = choice.text;
+
+    // Click event listener for button
     button.addEventListener("click", () => {
       if (selectedButton) {
         // Revert the previous button to its default state
-        selectedButton
-          .querySelector("image")
-          .setAttribute("href", selectedButton.dataset.defaultSvg);
+        selectedButton.classList.remove("active");
       }
+
       // Set the new selected button
-      button.querySelector("image").setAttribute("href", choice.selectedSvg);
+      button.classList.add("active");
       selectedButton = button;
     });
-
-    // Store default SVG in a data attribute
-    button.dataset.defaultSvg = choice.svg;
 
     container.appendChild(button);
   });
