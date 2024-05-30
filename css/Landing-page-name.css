@@ -1,0 +1,155 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2D6470; /* Background color for the surrounding area */
+    font-family: Arial, sans-serif;
+}
+
+#snow-container {
+    position: postion;
+    top: 0%;
+    left: -100%;
+    width: 10%;
+    transform: translateX(-1000%);
+}
+
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    background: white;
+    border-radius: 50%;
+    opacity: 5;
+    animation: fall linear infinite;
+}
+
+
+@keyframes fall {
+    to {
+        transform: translateY(85vh);
+    }
+}
+
+.phone {
+    width: 360px; /* Width of the phone screen */
+    height: 800px; /* Height of the phone screen */
+    background-image: url('images/buttons/geometry/mountain.png'); /* Placeholder background image */
+    background-size: cover; /* Cover the entire div */
+    background-position: center; /* Center the background image */
+    border: 5px solid #000; /* Border to mimic phone bezel */
+    border-radius: 20px; /* Rounded corners to mimic phone shape */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow for 3D effect */
+    position: relative; /* Positioning context for the button */
+}
+
+#uniqueHeading {
+    font-family: 'inknut Antiqua', inknut Antiqua;
+    font-size: 1.4em;
+    color: #ffffff;
+    position: absolute;
+    top: 22.8%; /* Adjust this value to position the image from the top */
+    left: 96.5%; /* Center the image horizontally */
+    transform: translateX(-50%); /* Center the image horizontally */
+    width: 100%; /* Adjust the width as needed */
+}
+
+
+.phone img.mountain-img {
+    position: absolute;
+    top: 17%; /* Adjust this value to position the image from the top */
+    left: 50%; /* Center the image horizontally */
+    transform: translateX(-50%); /* Center the image horizontally */
+    width: 100%; /* Adjust the width as needed */
+    height: auto; /* Maintain the aspect ratio */
+
+}
+
+.phone img.Eclipse-img {
+    position: absolute;
+    top: 1%; /* Adjust this value to position the image from the top */
+    left: 50%; /* Center the image horizontally */
+    transform: translateX(-50%); /* Center the image horizontally */
+    width: 34%; /* Adjust the width as needed */
+    height: auto; /* Maintain the aspect ratio */
+
+}
+
+.phone img.Rectangle-img {
+    position: absolute;
+    top: 7%; /* Adjust this value to position the image from the top */
+    left: 50%; /* Center the image horizontally */
+    transform: translateX(-50%); /* Center the image horizontally */
+    width: 100%; /* Adjust the width as needed */
+    height: auto; /* Maintain the aspect ratio */
+
+}
+
+.phone img.Blekksprut-img {
+    position: absolute;
+    top: 7.5%; /* Adjust this value to position the image from the top */
+    left: 5%; /* Center the image horizontally */
+    transform: translateX(-50%); /* Center the image horizontally */
+    width: 6%; /* Adjust the width as needed */
+    height: auto; /* Maintain the aspect ratio */
+
+}
+
+.phone img.Blekkspruten-img {
+    position: absolute;
+    top: 7.5%; /* Adjust this value to position the image from the top */
+    left: 95%; /* Center the image horizontally */
+    transform: translateX(-50%); /* Center the image horizontally */
+    width: 6%; /* Adjust the width as needed */
+    height: auto; /* Maintain the aspect ratio */
+
+}
+
+
+
+.phone p {
+    position: absolute;
+    top: 600px; /* Adjust this value to position the paragraph from the top */
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 10px;
+    background: #084166cc; /* Optional background for better readability */
+    border-radius: 10px; /* Optional rounded corners */
+    font-size: 16px; /* Font size */
+    color: white; /* Font color */
+}
+
+#PinInput {
+    position: absolute;
+    top: 680px; /* Adjust this value to position the input from the top */
+    left: 50%; /* Adjust this value to position the input from the left */
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 10px;
+    border-radius: 10px; /* Optional rounded corners */
+    border: 1px solid #050505; /* Optional border styling */
+}
+
+.start-button {
+    position: absolute;
+    bottom: 20px; /* Distance from the bottom of the phone */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #084166cc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.start-button:hover {
+    background-color: #5e4120;
+}

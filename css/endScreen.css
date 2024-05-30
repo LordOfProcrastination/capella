@@ -2,13 +2,13 @@
 body {
     font-family: "Poppins", sans-serif;
     background: #e0f7fa; 
-  }
+}
   
-  html {
+html {
     overflow: hidden;
-  }
+}
   
-  #container {
+#container {
     height: 100vh;
     margin: 1em auto;
     display: flex;

@@ -1,35 +1,57 @@
-/* body{
-    background-color: rgb(38, 92, 99) ;
-    overflow: hidden;
-} */
 main{
     height: 100vh;
     margin: 1em auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
     max-width: 360px; /* Limit the content width */
-    background: rgb(38, 92, 99); /* Background color for the main content */
+    background: #2D6470; /* Background color for the main content */
     border-radius: 10px;
 }
-#Loading{
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    border: 20px solid rgb(30, 30, 69);
-    display: table;
-    margin: 10vh auto 0px auto;
+#Eclipse{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 5%;
+    margin: auto;
+    width: 10%;
+}
+#Rectangle{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 14%;
+    margin: auto;
+    width: 17%;
 }
 #text{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 11.5%;
     display: table;
     margin: 3vh auto 0px auto;
-    padding: 10px; background-color: rgb(30, 30, 69);
-    /* border-left: 50px solid red;
-    border-right: 50px solid red; */
+    z-index: 2;
+}
+#Blekksprut1{
+    position: absolute;
+    left: 42%;
+    top: 14.5%;
+    z-index: 2;
+    margin: auto;
+    width: 1%;
+}
+#Blekksprut2{
+    position: absolute;
+    right: 42%;
+    top: 14.5%;
+    z-index: 2;
+    margin: auto;
+    width: 1%;
 }
 #Q{
-    background-color: rgb(30, 30, 69);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 30%;
+    background-color: #202F45;
     width: 200px;
     height: 75px;
     border-radius: 25px;
@@ -42,11 +64,37 @@ p{
     font-size: large;
     color: aliceblue;
 }
-loadingWheel{
+/* .load{
+    .load{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);
+        width:10px;
+        height:10px;
+    }
+         
+      .load hr{border:0;margin:0;width:40px;height:40px;position:absolute;border-radius:50%;animation:spin 2s ease infinite}
+      
+      .load :first-child{background:#19A68C;animation-delay:-1.5s}
+      .load :nth-child(2){background:#F63D3A;animation-delay:-1s}
+      .load :nth-child(3){background:#FDA543;animation-delay:-0.5s}
+      .load :last-child{background:#193B48}
+      
+      @keyframes spin{
+        0%,100%{transform:translate(0)}
+        25%{transform:translate(160%)}
+        50%{transform:translate(160%, 160%)}
+        75%{transform:translate(0, 160%)}
+      }
+} */
+ 
+.loadingWheel{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 65%;
+    z-index: 2;
     width: 100px;
 	height: 100px;
 	margin: 110px auto 0;
-	border:solid 10px #ff0000;
+	border:solid 10px aliceblue;
 	border-radius: 50%;
 	border-right-color: transparent;
 	border-bottom-color: transparent;
