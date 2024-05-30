@@ -6,11 +6,11 @@ main{
     align-items: center;
     justify-content: center;
     max-width: 360px; /* Limit the content width */
-    background: rgb(30, 30, 69); /* Background color for the main content */
+    background: #202F45; /* Background color for the main content */
     border-radius: 10px;
 }
-div{
-    background-color: rgb(38, 92, 99);
+#Text{
+    background-color: #2D6470;;
     width: 200px;
     height: 75px;
     border-radius: 30px;
@@ -22,4 +22,45 @@ p{
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
     color: aliceblue;
+}
+.loadingWheel{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 65%;
+    z-index: 2;
+    width: 100px;
+	height: 100px;
+	margin: 110px auto 0;
+	border:solid 10px aliceblue;
+	border-radius: 50%;
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+	 -webkit-transition: all 0.5s ease-in;
+    -webkit-animation-name:             rotate; 
+    -webkit-animation-duration:         1.0s; 
+    -webkit-animation-iteration-count:  infinite;
+    -webkit-animation-timing-function: linear;
+    	
+    	 transition: all 0.5s ease-in;
+    animation-name:             rotate; 
+    animation-duration:         1.0s; 
+    animation-iteration-count:  infinite;
+    animation-timing-function: linear;
+}
+@keyframes rotate{
+    from {
+        transform: rotate(0deg);
+    }
+    to { 
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to { 
+        -webkit-transform: rotate(360deg);
+    }
 }
