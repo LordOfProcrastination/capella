@@ -13,18 +13,42 @@ body, html {
 .phone {
     width: 360px; /* Width of the phone screen */
     height: 800px; /* Height of the phone screen */
-    background-image: url('images/Jon.webp'); /* Placeholder background image */
-    background-size: cover; /* Cover the entire div */
-    background-position: center; /* Center the background image */
     border: 5px solid #000; /* Border to mimic phone bezel */
     border-radius: 20px; /* Rounded corners to mimic phone shape */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow for 3D effect */
     position: relative; /* Positioning context for the button */
 }
 
+.phone img.jon-img {
+    position: absolute;
+    top: 20%; 
+    left: 50%;
+    height: 430px;
+    width: 100%; 
+    transform: translateX(-50%);
+}
+
+.phone img.circle-img {
+    position: absolute;
+    top: 1%; 
+    left: 50%;
+    height: auto;
+    width: 40%; 
+    transform: translateX(-50%);
+}
+
+.phone img.line-img {
+    position: absolute;
+    top: 7.5%; 
+    left: 50%;
+    height: 50px;
+    width: 100%; 
+    transform: translateX(-50%);
+}
+
 .phone p {
     position: absolute;
-    top: 600px; /* Adjust this value to position the paragraph from the top */
+    top: 620px; /* Adjust this value to position the paragraph from the top */
     left: 50%;
     transform: translateX(-50%);
     margin: 0;
@@ -37,7 +61,7 @@ body, html {
 
 #PinInput {
     position: absolute;
-    top: 680px; /* Adjust this value to position the input from the top */
+    top: 690px; /* Adjust this value to position the input from the top */
     left: 50%; /* Adjust this value to position the input from the left */
     transform: translateX(-50%);
     margin: 0;
