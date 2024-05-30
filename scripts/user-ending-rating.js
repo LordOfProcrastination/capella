@@ -114,12 +114,3 @@ document.addEventListener("DOMContentLoaded", (event) => {
     commentsContainer.appendChild(comment);
   }
 });
-
-const endBtn = document.querySelector("#end-btn");
-
-const endGame = () => {
-  redirectToPage("index-page-pin.html");
-  localStorage.clear();
-};
-
-endBtn.addEventListener("click", endGame);
