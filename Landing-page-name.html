@@ -5,23 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAME REGISTER</title>
     <link rel="stylesheet" href="css/Landing-page-name.css">
-
 </head>
 <body>
     <div class="phone">
+        <!-- Bakgrunns- og dekorasjonsbilder -->
         <img src="/images/buttons/geometry/mountain.png" alt="mountain" class="mountain-img">
         <img src="/images/buttons/geometry/Eclipse.png" alt="Eclipse" class="Eclipse-img">
         <img src="/images/buttons/geometry/Rectangle.png" alt="Rectangle" class="Rectangle-img">
         <img src="/images/buttons/geometry/Blekksprut.png" alt="Blekksprut" class="Blekksprut-img">
         <img src="/images/buttons/geometry/Blekksprut.png" alt="Blekksprut" class="Blekkspruten-img">
-        <p>Velkommen eventyrer! Tast inn NAVN</p>
-        <input type="text" id="PinInput" placeholder="Skriv Navn Her">
-
-        <button class="start-button" onclick="location.href='http://127.0.0.1:5500/welcome-room.html'">Start</button>  
-
-        <div id="snow-container"></div>
-        <script src="Landing-page-name.js"></script>
         
+        <!-- Hovedinnhold -->
+        <h1>NAME REGISTER</h1>
+        <p>Velkommen eventyrer! Tast inn NAVN</p>
+        
+        <!-- Inndatafelt for navn -->
+        <input type="text" id="nameInput" placeholder="Skriv Navn Her">
+        
+        <!-- Feilmeldingsboble -->
+        <div id="errorBubble" class="error-bubble"></div>
+        
+        <!-- Startknapp -->
+        <button class="start-button" onclick="submitName()">Start</button>        
+
+        <!-- Container for snøeffekt -->
+        <div id="snow-container"></div>
+        
+        <!-- JavaScript-fil -->
+        <script src="Landing-page-name.js"></script>
     </div>
 </body>
 </html>
