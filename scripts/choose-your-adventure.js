@@ -6,7 +6,9 @@ import EriksAdventureTxtModule from "./modules/StoryModule.js";
 
 const eventMessage = document.querySelector("#event-message");
 let chapterIndex = parseInt(localStorage.getItem("chapterIndex"), 10) || 1;
-const timerDuration = 3000;
+const timerDuration = 30000;
+let selectedChoice = null;
+let timer = null;
 
 const getChapter = (index) => {
   let htmlTxt = "";
@@ -28,10 +30,19 @@ const getChapter = (index) => {
 
 const nextChapter = () => {
   getChapter(chapterIndex);
+  createEventButtons(chapterIndex);
   startTimer();
 };
+
 const startTimer = () => {
-  setTimeout(() => {
+  if (timer) {
+    clearTimeout(timer);
+  }
+  timer = setTimeout(() => {
+    if (selectedChoice) {
+      updateCharacterStats(selectedChoice.consequence);
+    }
+
     if (chapterIndex < 5) {
       chapterIndex++;
       localStorage.setItem("chapterIndex", chapterIndex);
@@ -44,7 +55,7 @@ const startTimer = () => {
     }
   }, timerDuration);
 };
-nextChapter(chapterIndex);
+
 /*
     Timer Bar
 */
@@ -57,7 +68,8 @@ if (timerBar) {
   console.error("Timer bar element not found");
 }
 const getTimerBar = () => {
-  timerBar.innerHTML = `<span>⌛</span>`;
+  timerBar.innerHTML = `
+  <span>⌛</span>`;
 };
 
 getTimerBar();
@@ -92,8 +104,8 @@ function createEventButtons(index) {
       button.classList.add("active");
       selectedButton = button;
 
-      // Update character stats based on the selected choice
-      updateCharacterStats(choice.consequence);
+      // Set the selected choice but do not update character stats yet
+      selectedChoice = choice;
     });
 
     container.appendChild(button);
@@ -131,6 +143,7 @@ function updateCharacterStats(consequence) {
   getCharacterRelationships();
   getCharacterStats();
 }
+
 const characterEquipmentContainer = document.querySelector(
   ".character-equipment"
 );
@@ -185,10 +198,8 @@ function getCharacterRelationships() {
   `;
 }
 
-// Initial call to set up event buttons
-createEventButtons(chapterIndex);
-
-// Initial call to display character sheet
+// Initial call to set up event buttons and display character sheet
+nextChapter();
 getCharacterEquipment();
 getCharacterRelationships();
 getCharacterStats();
