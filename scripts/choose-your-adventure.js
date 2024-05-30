@@ -65,21 +65,6 @@ getTimerBar();
 /*
     Choices
 */
-const choices = [
-  {
-    text: "Option 1 hanlde a long long text",
-  },
-  {
-    text: "Option 2",
-  },
-  {
-    text: "Option 3",
-  },
-
-  {
-    text: "Option 4",
-  },
-];
 
 let selectedButton = null;
 
@@ -132,7 +117,7 @@ const characterStats = {
   injury: 0,
 };
 const characterEquipment = {
-  image: "octoknife.jpg",
+  inventory: "octoknife.jpg",
   hasItem: false,
 };
 const characterRelationships = [];
@@ -148,14 +133,13 @@ const getCharacterStats = () => {
   <p>Kunnskap: ${characterStats.understanding}</p>
   <p>Tid: ${characterStats.time}</p>
   <p>Mat: ${characterStats.supply}</p>
+  <p>Hovmod: ${characterStats.recklessness}</p>
   <p>Skader: ${characterStats.injury}</p>
   `;
 };
 const getCharacterRelationships = () => {
   characterRelationshipsContainer.innerHTML = `
   <h4>Relationships</h4>
-  <p>??</p>
-  <p>??</p>
   `;
 };
 
