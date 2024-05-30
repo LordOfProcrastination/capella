@@ -78,7 +78,6 @@ body, html {
     height: auto;
 }
 
-
 .phone p {
     position: absolute;
     top: 600px; /* Adjust this value to position the paragraph from the top */
@@ -123,14 +122,6 @@ body, html {
     to {
         transform: translateY(85vh);
     }
-}
-
-.container {
-    background-color: #084166cc;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
 }
 
 button {
