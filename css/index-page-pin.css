@@ -46,6 +46,20 @@ body, html {
     transform: translateX(-50%);
 }
 
+.phone h1 {
+    font-family: 'inknut Antiqua';
+    font-size: 3.5em;
+    color: #ffffff;
+    margin-top: 0px;
+    position: absolute;
+    top: 6.5%;
+    left: 62.5%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: auto;
+}
+
+
 .phone p {
     position: absolute;
     top: 620px; /* Adjust this value to position the paragraph from the top */
