@@ -74,24 +74,25 @@ html {
 
 .event-btn {
   font-size: 0.8em;
-  font-family: "Press Start 2P", cursive;
+
   width: 100%;
   height: 100%;
   background: #06c1de;
   border: 0px;
   position: relative;
-  box-shadow:
-    inset -4px 2px 1px 1px grey,
-    inset -4px -2px 1px 1px lightgray,
-    inset 4px 0px 1px 1px lightgray;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: inset 0 -50px 5px rgba(0, 0, 0, 0.5),
+    inset 0 -10px 10px rgba(0, 0, 0, 0.3);
   color: #fff; /* Default text color */
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  border-radius: 5%;
+  padding: 0 1em;
 }
 .event-btn:hover {
   cursor: pointer;
-  background-color: #06b6d1;
 }
 
 .event-btn-text {
@@ -109,12 +110,13 @@ html {
   max-height: 2.4em;
 }
 
-.event-btn:active {
-  top: 5px;
-  box-shadow:
-    -4px 2px 1px 1px grey,
-    -4px -2px 1px 1px lightgray,
-    4px 0px 1px 1px lightgray;
+.event-btn.active {
+  transform: translateY(10px); /* Move button content down by 10px */
+  /* Reduced box shadow */
+  box-shadow: inset 0 -4px 0 #10123e; /* Only one inner shadow */
+}
+.event-btn:focus {
+  outline: none;
 }
 
 .event-btn::after {
@@ -138,22 +140,21 @@ html {
 }
 .btn-0 {
   background-color: #4d9be6;
-  box-shadow:
-    inset -4px 2px 1px 1px #3b82c4,
-    inset -4px -2px 1px 1px #63a8f2,
-    inset 4px 0px 1px 1px #63a8f2;
+  box-shadow: inset -4px 2px 1px 1px #3b82c4, inset -4px -2px 1px 1px #3b82c4,
+    inset 4px 0px 1px 1px #3b82c4;
 }
 
 .btn-0.active {
   background-color: #9bcbf2; /* Paler version of the original color */
+  box-shadow: inset 0 -4px 0 #10123e, inset 0 -8px 0 #484a77,
+    inset -4px 2px 1px 1px #3b82c4, inset -4px -2px 1px 1px #3b82c4,
+    inset 4px 0px 1px 1px #3b82c4;
 }
 
 /* Button 2 */
 .btn-1 {
   background-color: #1ebc73;
-  box-shadow:
-    inset -4px 2px 1px 1px #169a5d,
-    inset -4px -2px 1px 1px #24d48a,
+  box-shadow: inset -4px 2px 1px 1px #169a5d, inset -4px -2px 1px 1px #24d48a,
     inset 4px 0px 1px 1px #24d48a;
 }
 .btn-1.active {
@@ -163,9 +164,7 @@ html {
 /* Button 3 */
 .btn-2 {
   background-color: #e6904e;
-  box-shadow:
-    inset -4px 2px 1px 1px #c67540,
-    inset -4px -2px 1px 1px #f0a367,
+  box-shadow: inset -4px 2px 1px 1px #c67540, inset -4px -2px 1px 1px #f0a367,
     inset 4px 0px 1px 1px #f0a367;
 }
 
@@ -176,9 +175,7 @@ html {
 /* Button 4 */
 .btn-3 {
   background-color: #f68181;
-  box-shadow:
-    inset -4px 2px 1px 1px #d46a6a,
-    inset -4px -2px 1px 1px #ff9797,
+  box-shadow: inset -4px 2px 1px 1px #d46a6a, inset -4px -2px 1px 1px #ff9797,
     inset 4px 0px 1px 1px #ff9797;
 }
 
