@@ -6,7 +6,7 @@ import EriksAdventureTxtModule from "./modules/StoryModule.js";
 
 const eventMessage = document.querySelector("#event-message");
 let chapterIndex = parseInt(localStorage.getItem("chapterIndex"), 10) || 1;
-const timerDuration = 30000;
+const timerDuration = 3000;
 
 const getChapter = (index) => {
   let htmlTxt = "";
@@ -34,7 +34,7 @@ const startTimer = () => {
   setTimeout(() => {
     if (chapterIndex < 5) {
       chapterIndex++;
-      localStorage.clear;
+      localStorage.setItem("chapterIndex", chapterIndex);
       nextChapter();
     } else {
       localStorage.clear();
@@ -157,7 +157,11 @@ let characterRelationships =
 function getCharacterEquipment() {
   characterEquipmentContainer.innerHTML = `
     <h4>Equipment</h4>
-    ${characterEquipment.hasItem ? `<p>${characterEquipment.inventory}</p>` : "<p>No items</p>"}
+    ${
+      characterEquipment.hasItem
+        ? `<p>${characterEquipment.inventory}</p>`
+        : "<p>No items</p>"
+    }
   `;
 }
 
