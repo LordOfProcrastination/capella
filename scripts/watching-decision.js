@@ -19,7 +19,7 @@ function redirectToPage(url, delay) {
 
 // Example usage: Redirect to "target.html" after 5 seconds (5000 milliseconds)
 window.onload = function () {
-  if (chapterIndex < 6) {
+  if (chapterIndex < 5) {
     chapterIndex++;
     localStorage.setItem("chapterIndex", chapterIndex);
     redirectToPage("watching-the-scene-innaktiv.html", 10000);
