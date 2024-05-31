@@ -80,12 +80,11 @@ body, html {
 
 .phone p {
     position: absolute;
-    top: 600px; /* Adjust this value to position the paragraph from the top */
+    top: 610px; /* Adjust this value to position the paragraph from the top */
     left: 50%;
     text-align: center;
     transform: translateX(-50%);
     margin: 0;
-    padding: 10px;
     background: #084166cc; /* Optional background for better readability */
     border-radius: 10px; /* Optional rounded corners */
     font-size: 16px; /* Font size */
@@ -94,7 +93,7 @@ body, html {
 
 #pin-form {
     position: absolute;
-    top: 690px; /* Adjust this value to position the input from the top */
+    top: 710px; /* Adjust this value to position the input from the top */
     left: 50%; /* Adjust this value to position the input from the left */
     transform: translateX(-50%);
     margin: 0%;
@@ -145,6 +144,6 @@ button:hover {
 }
 
 #message {
-    margin-top: 10px;
+    margin-top: 50px;
     font-size: 1em;
 }

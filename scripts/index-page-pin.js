@@ -34,7 +34,7 @@ document.getElementById('pin-form').addEventListener('submit', function(event) {
     const messageElement = document.getElementById('message');
     
     if (enteredPin === correctPin) {
-        messageElement.textContent = 'PIN correct. Access granted.';
+        messageElement.textContent = 'Riktig PIN.';
         messageElement.style.color = 'green';
         
         // Redirect to another page after a short delay
@@ -42,7 +42,7 @@ document.getElementById('pin-form').addEventListener('submit', function(event) {
             window.location.href = 'http://127.0.0.1:5500/Landing-page-name.html'; // Change 'welcome.html' to your target page
         }, 1000); // 1 second delay for the user to see the success message
     } else {
-        messageElement.textContent = 'Incorrect PIN. Please try again.';
+        messageElement.textContent = 'Feil PIN. Vennligst prøv igjenn.';
         messageElement.style.color = 'red';
     }
     
