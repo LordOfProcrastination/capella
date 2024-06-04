@@ -79,3 +79,84 @@ body {
     position: absolute;
     background-color: #2d6470d5;
 }
+
+.container h3 {
+    font-family: 'inknut Antiqua';
+    font-size: 2em;
+    color: #ffffff;
+    position: absolute;
+    text-align: center;
+    top: 44%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.container h4 {
+    font-family: 'inknut Antiqua';
+    font-size: 2em;
+    color: #ffffff;
+    position: absolute;
+    text-align: center;
+    top: 57.5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.container h5 {
+    font-family: 'inknut Antiqua';
+    font-size: 3.5em;
+    color: #ffffff;
+    position: absolute;
+    text-align: center;
+    top: -5.5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+
+
+.container4 {
+    height: 4%;
+    top: 55%;
+    width: 250px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    background-color: #ffffffd5;
+}
+
+.container5 {
+    height: 4%;
+    top: 70%;
+    width: 250px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    background-color: #ffffffd5;
+}
+
+
+
+
+.button1 {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 30px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'inknut Antiqua';
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #202F45;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button1:hover {
+    background-color: #5e4120;
+}
