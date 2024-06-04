@@ -76,7 +76,7 @@ body {
     transform: translateX(-50%);
 }
 
-button {
+.button1 {
     position: absolute;
     top: 65%; /* Distance from the bottom of the phone */
     left: 50%;
@@ -85,6 +85,7 @@ button {
     font-size: 30px;
     font-weight: bold;
     font-family: 'inknut Antiqua';
+    text-decoration: none;
     color: #ffffff;
     background-color: #084166cc;
     border: none;
@@ -92,9 +93,27 @@ button {
     transition: background-color 0.3s;
 }
 
-button:hover {
+.button1:hover {
     background-color: #5e4120;
 }
+
+.button2 {
+    position: absolute;
+    top: 6%; /* Distance from the bottom of the phone */
+    left: 91.5%;
+    transform: translateX(-50%);
+    font-size: 1.5em;
+    font-family: 'inknut Antiqua';
+    text-decoration: none;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button2:hover {
+    background-color: #5e4120;
+}
+
 
 .squid1-img {
     position: absolute;
