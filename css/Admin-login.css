@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #084166cc;
+    background-color: #202F45;
 }
 
 .background-img {
@@ -61,11 +61,21 @@ body {
 }
 
 .container2 {
-    height: 65%;
-    top: 20%;
-    left: 50%;
+    height: 75%;
+    top: 13%;
     width: 600px;
+    left: 50%;
     transform: translateX(-50%);
     position: absolute;
-    background-color: #ffffffb7;
+    background-color: #202f45d5;
+}
+
+.container3 {
+    height: 92%;
+    top: 4%;
+    width: 550px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    background-color: #2d6470d5;
 }

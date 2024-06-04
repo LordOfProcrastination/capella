@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #084166cc;
+    background-color: #202F45;
 }
 
 .background-img {
@@ -15,7 +15,7 @@ body {
     font-family: 'inknut Antiqua';
     font-size: 3em;
     color: #ffffff;
-    background-color: #08406636;
+    background-color: #202f454f;
     position: absolute;
     text-align: center;
     top: 25%;
@@ -39,7 +39,7 @@ body {
     font-family: 'inknut Antiqua';
     font-size: 2em;
     color: #ffffff;
-    background-color: #0840665b;
+    background-color: #202f4569;
     position: absolute;
     text-align: center;
     top:65.5%;
@@ -96,7 +96,7 @@ body {
     font-family: 'inknut Antiqua';
     text-decoration: none;
     color: #ffffff;
-    background-color: #084166cc;
+    background-color: #202F45;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
