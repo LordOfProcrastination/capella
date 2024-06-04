@@ -22,40 +22,40 @@ body {
     grid-area: header;
     border: 2px solid red;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: #FFF;
 }
 
 .sidebar {
     grid-area: sidebar;
     border: 2px solid red;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: #FFF;
 }
 
 .status {
     grid-area: status;
     border: 2px solid red;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: #FFF;
 }
 
 .main-content {
     grid-area: main;
     border: 2px solid red;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: #FFF;
 }
 
 .question-display {
     grid-area: footer;
     border: 2px solid red;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: #FFF;
 }
 
 .footer {
     grid-area: footer;
     border: 2px solid red;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: #FFF;
 }
