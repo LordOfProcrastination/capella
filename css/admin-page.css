@@ -4,11 +4,11 @@ body {
   padding: 0;
 }
 
-/*--------------- BUTTON BASIC PROPS -------------  */
+/*---------------------------------------------------- BUTTON BASIC PROPS -------------  */
 .buttons {
   display: inline-block;
   padding: 10px 20px;
-  border: 2px solid #121c2c;
+
   margin: 10px;
   background-color: #121c2c;
   color: #fff;
@@ -18,7 +18,15 @@ body {
   font-size: 16px;
 }
 
-/*--------------- MAIN CONTAINER -------------  */
+.buttons:hover {
+  background-color: #0056b3;
+}
+
+.buttons:active {
+  background-color: #004085;
+}
+
+/*--------------------------------------------------------- MAIN CONTAINER -------------  */
 .container {
   display: grid;
   grid-template-areas:
@@ -35,14 +43,14 @@ body {
   box-sizing: border-box;
   width: 100vw;
 }
-/*--------------- HEADER-------------  */
+/*-------------------------------------------------------------------- HEADER-------------  */
 .header {
   grid-area: header;
-  border: 2px solid #121c2c;
+  border: 2px solid #b7c3d6;
   padding: 20px;
   background-color: #fff;
 }
-/*--------------- SIDE BAR-------------  */
+/*------------------------------------------------------------------ SIDE BAR-------------  */
 
 .sidebar {
   grid-area: sidebar;
@@ -64,7 +72,7 @@ body {
   background-color: rgb(127, 200, 255);
 }
 
-/*--------------- STATUS-------------  */
+/*--------------------------------------------------------------------- STATUS-------------  */
 
 .status-container {
   grid-area: status;
@@ -73,7 +81,7 @@ body {
   background-color: #fff;
 }
 
-/*______ PLAYER COUNTER ______ */
+/*___________ PLAYER COUNTER _______________ */
 
 .player-count-title {
   display: inline-block;
@@ -89,7 +97,7 @@ body {
   font-weight: bold;
 }
 
-/*______ QUESTION COUNTER ______ */
+/*_________ QUESTION COUNTER ______________ */
 .question-count-title {
   display: inline-block;
   padding: 5px;
@@ -98,13 +106,13 @@ body {
 .question-counter {
   display: inline-block;
   margin-left: 5px;
-  background-color: rgba(110, 143, 158, 0.302);
+  background-color: rgba(185, 207, 218, 0.302);
   padding: 5px;
   border-radius: 5px;
   font-weight: bold;
 }
 
-/*---------------PIN CODE-------------  */
+/*______________-PIN CODE___________  */
 .pin-container {
   grid-area: pin;
   border: 2px solid #121c2c;
@@ -121,14 +129,8 @@ body {
   width: inherit;
   margin: 0 auto;
 }
-#generate-pin-btn:hover {
-  background-color: #0056b3;
-}
 
-#generate-pin-btn:active {
-  background-color: #004085;
-}
-/*--------------- SHOW ON SCREEN BUTTON  -------------  */
+/*--------------------------------------------------- SHOW ON SCREEN BUTTON  -------------  */
 
 #show-on-big-screen-btn {
   display: block;
@@ -136,15 +138,7 @@ body {
   margin: 10px auto;
 }
 
-#show-on-big-screen-btn:hover {
-  background-color: #0056b3;
-}
-
-#show-on-big-screen-btn:active {
-  background-color: #004085;
-}
-
-/*--------------- MAIN CONTENT CONTAINER-------------  */
+/*-------------------------------------------------- MAIN CONTENT CONTAINER-------------  */
 .main-content {
   grid-area: main;
 
@@ -191,10 +185,68 @@ body {
   grid-area: edit-a-btn;
 }
 
-/*--------------- FOOTER -------------  */
+/*------------------------------------------------------------------- LAST ACTIVE QUESTION  -------------  */
 .footer {
   grid-area: footer;
+
   border: 2px solid #121c2c;
   padding: 20px;
   background-color: #fff;
+
+  display: grid;
+  grid-template-areas:
+    "q-txt q-txt q-text answers"
+    "q-txt q-txt q-text time"
+    "q-txt q-txt q-text voted";
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 10px;
+}
+.footer p {
+  padding: 1em;
+  font-size: 16px;
+}
+
+/*_________________________DISPLAY RESULTS ________________*/
+
+/*---Last questions txt box--- */
+#last-question-txtbox {
+  grid-area: q-txt;
+  border: 2px solid #121c2c;
+  margin: 10px 10px;
+  font-size: 32px;
+  padding: 1em;
+}
+
+/*---Answered counter--- */
+#answered-counter-title {
+  grid-area: answers;
+  border: 2px solid #121c2c;
+}
+#answered-counter {
+  background-color: rgba(110, 143, 158, 0.302);
+  padding: 0.5em;
+}
+
+/*-----Time left----- */
+
+#time-left-title {
+  grid-area: time;
+  border: 2px solid #121c2c;
+}
+#time-left-counter {
+  background-color: rgba(110, 143, 158, 0.302);
+  padding: 0.5em;
+}
+
+/*---Voted result---- */
+#voted-result-title {
+  grid-area: voted;
+  border: 2px solid #121c2c;
+}
+
+#voted-result {
+  font-weight: bold;
+  background-color: rgba(110, 143, 158, 0.302);
+  padding: 0.5em;
 }
