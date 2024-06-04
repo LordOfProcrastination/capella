@@ -4,60 +4,249 @@ body {
   padding: 0;
 }
 
+/*---------------------------------------------------- BUTTON BASIC PROPS -------------  */
+.buttons {
+  display: inline-block;
+  padding: 10px 20px;
+
+  margin: 10px;
+  background-color: #121c2c;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+.buttons:hover {
+  background-color: #0056b3;
+}
+
+.buttons:active {
+  background-color: #004085;
+}
+
+/*--------------------------------------------------------- MAIN CONTAINER -------------  */
 .container {
   display: grid;
   grid-template-areas:
     "header header header header header"
     "sidebar status main main main "
+    "sidebar pin main main main "
     "sidebar footer footer footer footer";
 
   grid-template-columns: 0.5fr 0.5fr 2fr;
-  grid-template-rows: auto 1fr 1fr;
+  grid-template-rows: 0.2fr 0.5fr 0.5fr 1fr;
   gap: 10px;
   padding: 10px;
   height: 100vh;
   box-sizing: border-box;
   width: 100vw;
 }
-
+/*-------------------------------------------------------------------- HEADER-------------  */
 .header {
   grid-area: header;
-  border: 2px solid red;
+  border: 2px solid #b7c3d6;
   padding: 20px;
   background-color: #fff;
 }
+/*------------------------------------------------------------------ SIDE BAR-------------  */
 
 .sidebar {
   grid-area: sidebar;
-  border: 2px solid red;
-  padding: 20px;
+  border: 2px solid #121c2c;
+  padding: 10px;
   background-color: #fff;
+  justify-content: center;
+}
+.sidebar p {
+  padding: 1em;
+  background-color: rgba(239, 244, 245, 0.741);
+}
+.sidebar p:hover {
+  background-color: aquamarine;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+.sidebar p:active {
+  background-color: rgb(127, 200, 255);
 }
 
-.status {
+/*--------------------------------------------------------------------- STATUS-------------  */
+
+.status-container {
   grid-area: status;
-  border: 2px solid red;
-  padding: 20px;
+  border: 2px solid #121c2c;
+  padding: 1em;
   background-color: #fff;
 }
 
+/*___________ PLAYER COUNTER _______________ */
+
+.player-count-title {
+  display: inline-block;
+  padding: 5px;
+  width: fit-content;
+}
+.player-counter {
+  display: inline-block;
+  margin-left: 5px;
+  background-color: rgba(110, 143, 158, 0.302);
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/*_________ QUESTION COUNTER ______________ */
+.question-count-title {
+  display: inline-block;
+  padding: 5px;
+  width: fit-content;
+}
+.question-counter {
+  display: inline-block;
+  margin-left: 5px;
+  background-color: rgba(185, 207, 218, 0.302);
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/*______________-PIN CODE___________  */
+.pin-container {
+  grid-area: pin;
+  border: 2px solid #121c2c;
+  padding: 0.5em 1em 0.5em 1em;
+}
+.pin-title {
+  background-color: rgba(110, 143, 158, 0.302);
+  padding: 1em;
+  font-weight: bold;
+  border-radius: 10px;
+}
+#generate-pin-btn {
+  display: block;
+  width: inherit;
+  margin: 0 auto;
+}
+
+/*--------------------------------------------------- SHOW ON SCREEN BUTTON  -------------  */
+
+#show-on-big-screen-btn {
+  display: block;
+  width: inherit;
+  margin: 10px auto;
+}
+
+/*-------------------------------------------------- MAIN CONTENT CONTAINER-------------  */
 .main-content {
   grid-area: main;
-  border: 2px solid red;
+
+  grid-template-areas:
+    "event event event event"
+    "start-btn start-btn start-btn start-btn"
+    "back-btn back-btn skip-btn skip-btn "
+    "edit-q-btn edit-q-btn edit-a-btn edit-a-btn";
+
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 2fr 1fr 0.5fr 0.5fr;
+
+  display: grid;
+  border: 2px solid #121c2c;
   padding: 20px;
   background-color: #fff;
 }
+/*______ contents ______ */
+#event-message {
+  grid-area: event;
 
-.question-display {
-  grid-area: footer;
-  border: 2px solid red;
-  padding: 20px;
-  background-color: #fff;
+  display: flexbox;
+  border: 2px solid #121c2c;
+  padding: 10px 20px;
+  margin: 10px auto;
+  align-items: center;
+  font-size: 24px;
+}
+#start-btn {
+  grid-area: start-btn;
+  padding: auto;
+  font-size: 45px;
+}
+#back-btn {
+  grid-area: back-btn;
+}
+#skip-btn {
+  grid-area: skip-btn;
+}
+#edit-question-btn {
+  grid-area: edit-q-btn;
+}
+#edit-answers-btn {
+  grid-area: edit-a-btn;
 }
 
+/*------------------------------------------------------------------- LAST ACTIVE QUESTION  -------------  */
 .footer {
   grid-area: footer;
-  border: 2px solid red;
+
+  border: 2px solid #121c2c;
   padding: 20px;
   background-color: #fff;
+
+  display: grid;
+  grid-template-areas:
+    "q-txt q-txt q-text answers"
+    "q-txt q-txt q-text time"
+    "q-txt q-txt q-text voted";
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 10px;
+}
+.footer p {
+  padding: 1em;
+  font-size: 16px;
+}
+
+/*_________________________DISPLAY RESULTS ________________*/
+
+/*---Last questions txt box--- */
+#last-question-txtbox {
+  grid-area: q-txt;
+  border: 2px solid #121c2c;
+  margin: 10px 10px;
+  font-size: 32px;
+  padding: 1em;
+}
+
+/*---Answered counter--- */
+#answered-counter-title {
+  grid-area: answers;
+  border: 2px solid #121c2c;
+}
+#answered-counter {
+  background-color: rgba(110, 143, 158, 0.302);
+  padding: 0.5em;
+}
+
+/*-----Time left----- */
+
+#time-left-title {
+  grid-area: time;
+  border: 2px solid #121c2c;
+}
+#time-left-counter {
+  background-color: rgba(110, 143, 158, 0.302);
+  padding: 0.5em;
+}
+
+/*---Voted result---- */
+#voted-result-title {
+  grid-area: voted;
+  border: 2px solid #121c2c;
+}
+
+#voted-result {
+  font-weight: bold;
+  background-color: rgba(110, 143, 158, 0.302);
+  padding: 0.5em;
 }
