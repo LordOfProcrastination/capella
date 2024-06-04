@@ -1,61 +1,62 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-    display: grid;
-    grid-template-areas:
-        "header header header"
-        "sidebar status main"
-        "sidebar footer footer";
-    grid-template-columns: 1fr 1fr 2fr;
-    grid-template-rows: auto 1fr auto;
-    gap: 10px;
-    padding: 10px;
-    height: 100vh;
-    box-sizing: border-box;
+  display: grid;
+  grid-template-areas:
+    "header header header header header"
+    "sidebar status main main main "
+    "sidebar footer footer footer footer";
+
+  grid-template-columns: 0.5fr 0.5fr 2fr;
+  grid-template-rows: auto 1fr 1fr;
+  gap: 10px;
+  padding: 10px;
+  height: 100vh;
+  box-sizing: border-box;
 }
 
 .header {
-    grid-area: header;
-    border: 2px solid red;
-    padding: 20px;
-    background-color: #FFF;
+  grid-area: header;
+  border: 2px solid red;
+  padding: 20px;
+  background-color: #fff;
 }
 
 .sidebar {
-    grid-area: sidebar;
-    border: 2px solid red;
-    padding: 20px;
-    background-color: #FFF;
+  grid-area: sidebar;
+  border: 2px solid red;
+  padding: 20px;
+  background-color: #fff;
 }
 
 .status {
-    grid-area: status;
-    border: 2px solid red;
-    padding: 20px;
-    background-color: #FFF;
+  grid-area: status;
+  border: 2px solid red;
+  padding: 20px;
+  background-color: #fff;
 }
 
 .main-content {
-    grid-area: main;
-    border: 2px solid red;
-    padding: 20px;
-    background-color: #FFF;
+  grid-area: main;
+  border: 2px solid red;
+  padding: 20px;
+  background-color: #fff;
 }
 
 .question-display {
-    grid-area: footer;
-    border: 2px solid red;
-    padding: 20px;
-    background-color: #FFF;
+  grid-area: footer;
+  border: 2px solid red;
+  padding: 20px;
+  background-color: #fff;
 }
 
 .footer {
-    grid-area: footer;
-    border: 2px solid red;
-    padding: 20px;
-    background-color: #FFF;
+  grid-area: footer;
+  border: 2px solid red;
+  padding: 20px;
+  background-color: #fff;
 }
