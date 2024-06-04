@@ -71,8 +71,8 @@ body {
 }
 
 .container3 {
-    height: 92%;
-    top: 4%;
+    height: 70%;
+    top: 15%;
     width: 550px;
     left: 50%;
     transform: translateX(-50%);
@@ -108,41 +108,14 @@ body {
     color: #ffffff;
     position: absolute;
     text-align: center;
-    top: -5.5%;
+    top: 5.5%;
     left: 50%;
     transform: translateX(-50%);
 }
-
-
-
-
-
-.container4 {
-    height: 4%;
-    top: 55%;
-    width: 250px;
-    left: 50%;
-    transform: translateX(-50%);
-    position: absolute;
-    background-color: #ffffffd5;
-}
-
-.container5 {
-    height: 4%;
-    top: 70%;
-    width: 250px;
-    left: 50%;
-    transform: translateX(-50%);
-    position: absolute;
-    background-color: #ffffffd5;
-}
-
-
-
 
 .button1 {
     position: absolute;
-    top: 80%;
+    top: 75%;
     left: 50%;
     transform: translateX(-50%);
     padding: 10px 30px;
@@ -159,4 +132,20 @@ body {
 
 .button1:hover {
     background-color: #5e4120;
+}
+
+.container3 .input-box1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+}
+
+.container3 .input-box2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
 }
