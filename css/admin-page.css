@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -43,13 +49,52 @@ body {
   box-sizing: border-box;
   width: 100vw;
 }
-/*-------------------------------------------------------------------- HEADER-------------  */
-.header {
-  grid-area: header;
-  border: 2px solid #b7c3d6;
-  padding: 20px;
-  background-color: #fff;
+/*-------------------------------------------------------------------- NAV BAR-------------  */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgb(51, 51, 51, 0.37);
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
+
+.navbar-left {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.profile-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+.profile-link:hover .username {
+  text-decoration: underline;
+}
+
+.username {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
 /*------------------------------------------------------------------ SIDE BAR-------------  */
 
 .sidebar {
@@ -61,6 +106,7 @@ body {
 }
 .sidebar p {
   padding: 1em;
+  margin: 1em;
   background-color: rgba(239, 244, 245, 0.741);
 }
 .sidebar p:hover {
@@ -121,6 +167,7 @@ body {
 .pin-title {
   background-color: rgba(110, 143, 158, 0.302);
   padding: 1em;
+  margin: 1em;
   font-weight: bold;
   border-radius: 10px;
 }
