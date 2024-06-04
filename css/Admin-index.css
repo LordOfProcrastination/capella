@@ -15,30 +15,37 @@ body {
     font-family: 'inknut Antiqua';
     font-size: 3em;
     color: #ffffff;
-    background-color: #084166cc;
+    background-color: #08406636;
     position: absolute;
+    text-align: center;
     top: 25%;
-    left: 40%;
-
+    left: 50%;
+    transform: translateX(-50%);
 }
+
 .container h2 {
     font-family: 'inknut Antiqua';
     font-size: 1.3em;
     color: #ffffff;
     position: absolute;
+    text-align: center;
     top: 40%;
-    left: 35%;
+    left: 50%;
     width: 35%;
+    transform: translateX(-50%);
 }
 
 .container h3 {
     font-family: 'inknut Antiqua';
     font-size: 2em;
     color: #ffffff;
-    background-color: #084166cc;
+    background-color: #0840665b;
     position: absolute;
-    top:55%;
-    left: 42%;
+    text-align: center;
+    top:65.5%;
+    left: 50%;
+    padding: 5px 10px;
+    transform: translateX(-50%);
 }
 
 .container h4 {
@@ -46,6 +53,7 @@ body {
     font-size: 1.2em;
     color: #ffffff;
     position: absolute;
+    text-align: center;
     top: 91%;
     left: 2.5%;
 }
@@ -55,6 +63,7 @@ body {
     font-size: 2em;
     color: #ffffff;
     position: absolute;
+    text-align: center;
     top: 0%;
     left: 50%;
     transform: translateX(-50%);
@@ -78,7 +87,7 @@ body {
 
 .button1 {
     position: absolute;
-    top: 65%; /* Distance from the bottom of the phone */
+    top: 75%; /* Distance from the bottom of the phone */
     left: 50%;
     transform: translateX(-50%);
     padding: 10px 30px;
