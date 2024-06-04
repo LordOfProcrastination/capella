@@ -99,9 +99,10 @@ body {
 
 .button2 {
     position: absolute;
-    top: 6%; /* Distance from the bottom of the phone */
-    left: 91.5%;
+    top: 5%; /* Distance from the bottom of the phone */
+    left: 91%;
     transform: translateX(-50%);
+    padding: 10px 20px;
     font-size: 1.5em;
     font-family: 'inknut Antiqua';
     text-decoration: none;
