@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #084166cc;
+}
+
+.background-img {
+    margin: 0;
+    padding: 0;
+    height: 850px;
+    width: 1920px;
+}
+
+.container h1 {
+    font-family: 'inknut Antiqua';
+    font-size: 3em;
+    color: #ffffff;
+    background-color: #084166cc;
+    position: absolute;
+    top: 25%;
+    left: 40%;
+
+}
+.container h2 {
+    font-family: 'inknut Antiqua';
+    font-size: 1.3em;
+    color: #ffffff;
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    width: 35%;
+}
+
+.container h3 {
+    font-family: 'inknut Antiqua';
+    font-size: 2em;
+    color: #ffffff;
+    background-color: #084166cc;
+    position: absolute;
+    top:55%;
+    left: 42%;
+}
+
+.container h4 {
+    font-family: 'inknut Antiqua';
+    font-size: 1.2em;
+    color: #ffffff;
+    position: absolute;
+    top: 91%;
+    left: 2.5%;
+}
+
+.container h5 {
+    font-family: 'inknut Antiqua';
+    font-size: 2em;
+    color: #ffffff;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.line-img {
+    position: absolute;
+    top: 5%;
+    left: 0%;
+    width: 100%;
+    height: 5%;
+}
+
+.circle-img {
+    position: absolute;
+    top: 2%; 
+    left: 50%;
+    width: 5%;
+    transform: translateX(-50%);
+}
+
+button {
+    position: absolute;
+    top: 65%; /* Distance from the bottom of the phone */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 30px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'inknut Antiqua';
+    color: #ffffff;
+    background-color: #084166cc;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #5e4120;
+}
+
+.squid1-img {
+    position: absolute;
+    top: 5.8%;
+    left: 95%;
+    transform: translateX(-50%);
+}
+
+.squid2-img {
+    position: absolute;
+    top: 5.8%;
+    left: 5%;
+    transform: translateX(-50%);
+}
