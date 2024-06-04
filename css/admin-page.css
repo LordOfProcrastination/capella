@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #abc;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "sidebar status main"
+        "sidebar footer footer";
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 10px;
+    padding: 10px;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.header {
+    grid-area: header;
+    border: 2px solid red;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    border: 2px solid red;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.status {
+    grid-area: status;
+    border: 2px solid red;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.main-content {
+    grid-area: main;
+    border: 2px solid red;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.question-display {
+    grid-area: footer;
+    border: 2px solid red;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.footer {
+    grid-area: footer;
+    border: 2px solid red;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
