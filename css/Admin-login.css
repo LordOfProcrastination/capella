@@ -1,151 +1,148 @@
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #202F45;
+  margin: 0;
+  padding: 0;
+  background-color: #202f45;
 }
 
 .background-img {
-    margin: 0;
-    padding: 0;
-    height: 850px;
-    width: 1920px;
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+}
+
+.container {
+  position: relative;
+  max-width: 100vw;
+  max-height: 100vh;
 }
 
 .container h1 {
-    font-family: 'inknut Antiqua';
-    font-size: 2em;
-    color: #ffffff;
-    position: absolute;
-    top: 3.4%;
-    left: 50%;
-    transform: translateX(-50%);
+  font-family: "inknut Antiqua";
+  font-size: 2em;
+  color: #ffffff;
+  position: absolute;
+  top: 3.4%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .container h2 {
-    font-family: 'inknut Antiqua';
-    font-size: 1.2em;
-    color: #ffffff;
-    position: absolute;
-    top: 92%;
-    left: 2.5%;
+  font-family: "inknut Antiqua";
+  font-size: 1.2em;
+  color: #ffffff;
+  position: absolute;
+  top: 92%;
+  left: 2.5%;
 }
 
 .line-img {
-    position: absolute;
-    top: 5%;
-    left: 0%;
-    width: 100%;
-    height: 5%;
+  position: absolute;
+  top: 5%;
+  left: 0%;
+  width: 100%;
+  height: 5%;
 }
 
 .circle-img {
-    position: absolute;
-    top: 2%; 
-    left: 50%;
-    width: 5%;
-    transform: translateX(-50%);
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  width: 5%;
+  transform: translateX(-50%);
 }
 
 .squid1-img {
-    position: absolute;
-    top: 5.8%;
-    left: 95%;
-    transform: translateX(-50%);
+  position: absolute;
+  top: 5.8%;
+  left: 95%;
+  transform: translateX(-50%);
 }
 
 .squid2-img {
-    position: absolute;
-    top: 5.8%;
-    left: 5%;
-    transform: translateX(-50%);
+  position: absolute;
+  top: 5.8%;
+  left: 5%;
+  transform: translateX(-50%);
 }
 
 .container2 {
-    height: 75%;
-    top: 13%;
-    width: 600px;
-    left: 50%;
-    transform: translateX(-50%);
-    position: absolute;
-    background-color: #202f45d5;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #202f45d5;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40vw;
+  height: 50vh;
+  justify-content: center;
 }
 
 .container3 {
-    height: 70%;
-    top: 15%;
-    width: 550px;
-    left: 50%;
-    transform: translateX(-50%);
-    position: absolute;
-    background-color: #2d6470d5;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  background-color: #2d6470d5;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .container h3 {
-    font-family: 'inknut Antiqua';
-    font-size: 2em;
-    color: #ffffff;
-    position: absolute;
-    text-align: center;
-    top: 44%;
-    left: 50%;
-    transform: translateX(-50%);
+  font-family: "inknut Antiqua";
+  font-size: 2em;
+  color: #ffffff;
+  text-align: center;
 }
 
 .container h4 {
-    font-family: 'inknut Antiqua';
-    font-size: 2em;
-    color: #ffffff;
-    position: absolute;
-    text-align: center;
-    top: 57.5%;
-    left: 50%;
-    transform: translateX(-50%);
+  font-family: "inknut Antiqua";
+  font-size: 2em;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .container h5 {
-    font-family: 'inknut Antiqua';
-    font-size: 3.5em;
-    color: #ffffff;
-    position: absolute;
-    text-align: center;
-    top: 5.5%;
-    left: 50%;
-    transform: translateX(-50%);
+  font-family: "inknut Antiqua";
+  font-size: 3.5em;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .button1 {
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 30px;
-    font-size: 30px;
-    font-weight: bold;
-    font-family: 'inknut Antiqua';
-    text-decoration: none;
-    color: #ffffff;
-    background-color: #202F45;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 30px;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "inknut Antiqua";
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #202f45;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .button1:hover {
-    background-color: #5e4120;
+  background-color: #5e4120;
 }
 
-.container3 .input-box1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50%;
+.input-box1,
+.input-box2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
-.container3 .input-box2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50%;
+input[type="text"] {
+  width: 80%;
+  padding: 10px;
+  font-size: 1em;
 }
