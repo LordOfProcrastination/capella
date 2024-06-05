@@ -191,7 +191,7 @@ body {
 
   grid-template-areas:
     "event event event event"
-    "start-btn start-btn start-btn start-btn"
+    "start-btn start-btn ask-btn ask-btn"
     "back-btn back-btn skip-btn skip-btn "
     "edit-q-btn edit-q-btn edit-a-btn edit-a-btn";
 
@@ -217,7 +217,12 @@ body {
 #start-btn {
   grid-area: start-btn;
   padding: auto;
-  font-size: 45px;
+  font-size: 20px;
+}
+
+#ask-btn {
+  grid-area: ask-btn;
+  padding: auto;
 }
 #back-btn {
   grid-area: back-btn;

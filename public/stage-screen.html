@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stage screen</title>
+  </head>
+  <body>
+    <div id="display-panel">
+      <p id="display-question"></p>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+
+      socket.emit("joinSession", "session123");
+
+      socket.on("adminAction", (action) => {
+        if (action === "showPin") {
+          console.log("Show PIN CODE BIG SCREEN");
+          document.getElementById("display-question").innerText =
+            "Show PIN CODE BIG SCREEN";
+        } else if (action === "startGame") {
+          console.log("START GAME");
+          document.getElementById("display-question").innerText = "START GAME";
+        }
+      });
+    </script>
+  </body>
+</html>
