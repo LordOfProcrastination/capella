@@ -24,7 +24,7 @@ body {
   .container1 h2 {
     position: absolute;
     right: 10%;
-    top: 20px;
+    top: 25px;
     font-family: "inknut Antiqua";
     font-size: 2em;
     color: #ffffff;
@@ -33,7 +33,9 @@ body {
   .profile-img {
     position: absolute;
     left: 92%;
-    top: 1%;
+    top: 2.5%;
+    width: 70px;
+    border-radius: 50px;
   }
 
   .container2 {
