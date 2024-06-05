@@ -9,21 +9,32 @@ let chapterIndex = parseInt(localStorage.getItem("chapterIndex"), 10) || 1;
 const timerDuration = 30000;
 let selectedChoice = null;
 let timer = null;
+const API_URL = "http://localhost:3000/api/storyapi";
 
-const getChapter = (index) => {
+const getChapter = async (index) => {
   let htmlTxt = "";
 
-  const chapter = EriksAdventureTxtModule.getById(index);
+  try {
+    const response = await fetch(`${API_URL}/${index}`);
+    if (!response.ok) {
+      throw new Error(`Error fetching chapter: ${response.statusText}`);
+    }
+    const chapter = await response.json();
 
-  if (chapter) {
-    htmlTxt = `
-    <img class ="erik" src="/images/characters/erik.png" />
-    <h4>Chapter ${chapter.id}:</h4>
-    <p>${chapter.question}</p>
-    `;
-  } else {
-    htmlTxt = "Chapter not found.";
+    if (chapter) {
+      htmlTxt = `
+      <img class ="erik" src="/images/characters/erik.png" />
+      <h4>Chapter ${chapter.id}:</h4>
+      <p>${chapter.question}</p>
+      `;
+    } else {
+      htmlTxt = "Chapter not found.";
+    }
+  } catch (error) {
+    console.error(error);
+    htmlTxt = "Error fetching chapter data.";
   }
+
   console.log("Chapter: " + chapterIndex);
   eventMessage.innerHTML = htmlTxt;
 };
@@ -75,38 +86,47 @@ getTimerBar();
 
 let selectedButton = null;
 
-function createEventButtons(index) {
+const createEventButtons = async (index) => {
   const container = document.getElementById("event-option-container");
   container.innerHTML = "";
 
-  const chapters = EriksAdventureTxtModule.getById(index);
-  const choicesFromModule = chapters.choices;
+  try {
+    const response = await fetch(`${API_URL}/${index}`);
+    if (!response.ok) {
+      throw new Error(`Error fetching chapter: ${response.statusText}`);
+    }
+    const chapter = await response.json();
+    const choicesFromModule = chapter.choices;
 
-  console.log(chapters.choices);
-  choicesFromModule.forEach((choice, choiceIndex) => {
-    const button = document.createElement("div");
-    button.className = `event-btn btn-${choiceIndex}`;
-    button.innerText = choice.text;
+    console.log(chapter.choices);
+    choicesFromModule.forEach((choice, choiceIndex) => {
+      const button = document.createElement("div");
+      button.className = `event-btn btn-${choiceIndex}`;
+      button.innerText = choice.text;
 
-    // Click event listener for button
-    button.addEventListener("click", () => {
-      if (selectedButton) {
-        // Revert the previous button to its default state
-        selectedButton.classList.remove("active");
-        alert("Waiting for other players");
-      }
+      // Click event listener for button
+      button.addEventListener("click", () => {
+        if (selectedButton) {
+          // Revert the previous button to its default state
+          selectedButton.classList.remove("active");
+          alert("Waiting for other players");
+        }
 
-      // Set the new selected button
-      button.classList.add("active");
-      selectedButton = button;
+        // Set the new selected button
+        button.classList.add("active");
+        selectedButton = button;
 
-      // Set the selected choice but do not update character stats yet
-      selectedChoice = choice;
+        // Set the selected choice but do not update character stats yet
+        selectedChoice = choice;
+      });
+
+      container.appendChild(button);
     });
-
-    container.appendChild(button);
-  });
-}
+  } catch (error) {
+    console.error(error);
+    container.innerHTML = "Error fetching choices.";
+  }
+};
 
 function updateCharacterStats(consequence) {
   if (consequence.skill) {
@@ -209,7 +229,9 @@ function redirectToPage(url, delay) {
   }, delay);
 }
 
+/*
 // Example usage: Redirect to "target.html" after 5 seconds (5000 milliseconds)
 window.onload = function () {
   redirectToPage("watching-decision.html", 30500);
 };
+*/

@@ -8,7 +8,12 @@ const server = http.createServer(app);
 const io = socketIo(server);
 const routes = require("./routes/routes");
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:3000", // Allow requests from this origin
+    credentials: true, // Include cookies in CORS requests if any
+  })
+);
 app.use(express.json());
 app.use(express.static("public"));
 app.use("/api/storyAPI", routes);
