@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #202f45;
+  }
+
+.container1 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 150px;
+    font-family: "inknut Antiqua";
+    font-size: 2em;
+    color: #ffffff;
+    background-color: #202f45;
+  }
+
+  .container1 h2 {
+    text-align: right;
+    
+  }
