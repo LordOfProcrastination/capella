@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="./css/admin-page.css" />
+    <script type="module" src="./scripts/admin-page.js"></script>
+  </head>
+  <body>
+    <div class="container">
+     <nav class="navbar">
+        <div class="navbar-left">
+            Admin Page
+        </div>
+        <div class="navbar-right">
+            <a href="http://127.0.0.1:5500/Admin-login.html" class="profile-link">
+                <span class="username">Jon Snow</span>
+                <img src="images/profile.png" alt="Profile Picture" class="profile-picture">
+            </a>
+        </div>
+    </nav>
+      <div class="sidebar">
+        <p>STYKKE OVERSIKT</p>
+        <p>STYKKE 1</p>
+        <p>STYKKE 2</p>
+        <p>STYKKE 3</p>
+        <p>STYKKE 4</p>
+      </div>
+
+      <div class="status-container">
+        STATUS
+
+        <p class="player-count-title">
+          Antall innloggende: <span class="player-counter">105</span>
+        </p>
+
+        <p class="question-count-title">
+          Spørsmål: <span class="question-counter"> 0 / 12</span>
+        </p>
+      </div>
+      <div class="pin-container">
+        <p>PIN kode for tilgang</p>
+        <p class="pin-title">PIN: <span class="pin-code">975 345</span></p>
+        <div class="buttons" id="generate-pin-btn">Generate pin</div>
+        <div class="buttons" id="show-on-big-screen-btn">
+          Vis på stor skjerm
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div id="event-message">
+          Trykk på "Start" når du og eventyrene er klare
+        </div>
+        <div class="buttons" id="start-btn">Start Spillet</div>
+        <div class="buttons" id="back-btn">Tilbake</div>
+        <div class="buttons" id="skip-btn">Skip</div>
+        <div class="buttons" id="edit-question-btn">Rediger spørsmål</div>
+        <div class="buttons" id="edit-answers-btn">Rediger svaralternativ</div>
+      </div>
+
+      <div class="footer">
+        <div id="last-question-txtbox">Her kommer siste aktiverte spørsmål </div>
+      <p id="answered-counter-title">
+        Antall svart: <span id="answered-counter"> 23</span>
+      </p>
+      <p id="time-left-title">
+        Gjenstående tid: <span id="time-left-counter"> 0:30</span>
+      </p>
+      <p id="voted-result-title">
+        Resultat: <span id="voted-result">B: Eric plukker opp øksen</span>
+      </p>
+     
+      
+    </div>
+  </body>
+</html>
