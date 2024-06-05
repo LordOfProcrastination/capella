@@ -11,21 +11,6 @@
     </div>
 
     <script src="/socket.io/socket.io.js"></script>
-    <script>
-      const socket = io();
-
-      socket.emit("joinSession", "session123");
-
-      socket.on("adminAction", (action) => {
-        if (action === "showPin") {
-          console.log("Show PIN CODE BIG SCREEN");
-          document.getElementById("display-question").innerText =
-            "Show PIN CODE BIG SCREEN";
-        } else if (action === "startGame") {
-          console.log("START GAME");
-          document.getElementById("display-question").innerText = "START GAME";
-        }
-      });
-    </script>
+    <script type="module" src="scripts/stage-screen.js"></script>
   </body>
 </html>
