@@ -2,13 +2,12 @@ const socket = io();
 
 socket.emit("joinSession", "session123");
 
-socket.on("adminAction", (action) => {
-  if (action === "showPin") {
-    console.log("Show PIN CODE BIG SCREEN");
-    document.getElementById("display-question").innerText =
-      "Show PIN CODE BIG SCREEN";
-  } else if (action === "startGame") {
+socket.on("adminAction", (data) => {
+  if (data.action === "showPin") {
+    console.log("Show PIN CODE BIG SCREEN", data.pin);
+    document.getElementById("main-message").innerText = `PIN KODE: ${data.pin}`;
+  } else if (data.action === "startGame") {
     console.log("START GAME");
-    document.getElementById("display-question").innerText = "START GAME";
+    document.getElementById("answer-container").innerText = "START GAME";
   }
 });

@@ -34,6 +34,11 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log("A user disconnected");
   });
+
+  socket.on("generatePin", (pin) => {
+    console.log(`Generated PIN: ${pin}`);
+    io.to("session123").emit("adminAction", { action: "showPin", pin: pin });
+  });
 });
 
 const PORT = process.env.PORT || 3000;

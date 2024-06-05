@@ -4,10 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stage screen</title>
+    <link rel="stylesheet" href="/css/stage-screen.css" />
   </head>
   <body>
-    <div id="display-panel">
-      <p id="display-question"></p>
+    <div class="container">
+      <div id="main-message">Main event-message</div>
+      <!-- Her vil svaralternativ fått plass til å generere -->
+      <div id="answer-container">answer container here</div>
     </div>
 
     <script src="/socket.io/socket.io.js"></script>
