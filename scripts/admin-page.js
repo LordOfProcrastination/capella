@@ -7,6 +7,14 @@ document
     alert("Button clicked!");
   });
 
+  document.addEventListener('DOMContentLoaded', (event) => {
+    document.getElementById('generate-pin-btn').addEventListener('click', generatePin);
+});
+
+function generatePin() {
+    let pin = Math.floor(100000 + Math.random() * 900000);
+    document.querySelector('.pin-code').innerText = pin;
+};
 //------------------------------API FUNCTIONS -------------------------------
 
 fetch("http://localhost:3000/api/storyAPI")
