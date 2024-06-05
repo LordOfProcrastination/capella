@@ -14,7 +14,7 @@ body {
 
   .container1 h1 {
     position: absolute;
-    left: 5%;
+    left: 2%;
     top: -10px;
     font-family: "inknut Antiqua";
     font-size: 4em;
@@ -28,4 +28,114 @@ body {
     font-family: "inknut Antiqua";
     font-size: 2em;
     color: #ffffff;
+  }
+
+  .profile-img {
+    position: absolute;
+    left: 92%;
+    top: 1%;
+  }
+
+  .container2 {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 750px;
+    height: 600px;
+    background-color: #202f45ab;
+    top: 225px;
+    left: 75px;
+    border-radius: 100px;
+  }
+
+  .container2 h1 {
+    position: absolute;
+    font-family: 'inknut Antiqua';
+    font-size: 3em;
+    color: #ffffff;
+    background-color: #202f45;
+    left: 30%;
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    align-items: center;
+  }
+
+  .button1 {
+    position: absolute;
+    left: 20%;
+    margin-top: 450px;
+    padding: 10px 30px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "inknut Antiqua";
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #202f45;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button1:hover {
+    background-color: #5e4120;
+  }
+
+  .button2 {
+    position: absolute;
+    left: 58%;
+    margin-top: 450px;
+    padding: 10px 30px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "inknut Antiqua";
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #202f45;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button2:hover {
+    background-color: #5e4120;
+  }
+
+  .container2 h2 {
+    position: absolute;
+    font-family: 'inknut Antiqua';
+    font-size: 2em;
+    color: #ffffff;
+    left: 32%;
+    top: 45%;
+  }
+
+  .input-box1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  input[type="text"] {
+    position: absolute;
+    width: 60%;
+    left: 18%;
+    top: 60%;
+    padding: 10px;
+    font-size: 1em;
+  }
+
+  .profile-pic {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 750px;
+    height: 600px;
+    top: 225px;
+    left: 55%;
+    border-radius: 100px;
   }
