@@ -17,7 +17,7 @@ const getChapter = (index) => {
 
   if (chapter) {
     htmlTxt = `
-    <img class ="erik" src="images/characters/erik.png" />
+    <img class ="erik" src="/images/characters/erik.png" />
     <h4>Chapter ${chapter.id}:</h4>
     <p>${chapter.question}</p>
     `;
