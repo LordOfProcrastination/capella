@@ -5,27 +5,32 @@ const pool = require("../db");
 // Get the story
 router.get("/", async (req, res) => {
   try {
-    const [rows] = await pool.query(`SELECT 
-                Chapters.id AS chapter_id,
-                Chapters.chapter,
-                Chapters.scene,
-                Questions.id AS question_id,
-                Questions.question,
-                Choices.id AS choice_id,
-                Choices.text AS choice_text,
-                Consequences.text AS consequence_text,
-                Consequences.inventory,
-                Skills.understanding,
-                Skills.supply,
-                Skills.time,
-                Skills.recklessness,
-                Skills.injury
-            FROM Chapters
-            JOIN Questions ON Chapters.id = Questions.chapter_id
-            JOIN Choices ON Questions.id = Choices.question_id
-            LEFT JOIN Consequences ON Choices.id = Consequences.choice_id AND Questions.id = Consequences.question_id
-            LEFT JOIN Skills ON Consequences.choice_id = Skills.choice_id AND Questions.id = Skills.question_id
-            ORDER BY Chapters.id, Questions.id, Choices.id`);
+    const [rows] = await pool.query(`
+      SELECT 
+        Chapters.id AS chapter_id,
+        Chapters.chapter,
+        Chapters.scene,
+        Questions.id AS question_id,
+        Questions.question,
+        Choices.id AS choice_id,
+        Choices.text AS choice_text,
+        Consequences.text AS consequence_text,
+        Skills.understanding,
+        Skills.supply,
+        Skills.time,
+        Skills.recklessness,
+        Skills.injury,
+        Allies.allies,
+        Items.item
+      FROM Chapters
+      JOIN Questions ON Chapters.id = Questions.chapter_id
+      JOIN Choices ON Questions.id = Choices.question_id
+      LEFT JOIN Consequences ON Choices.id = Consequences.choice_id AND Questions.id = Consequences.question_id
+      LEFT JOIN Skills ON Consequences.choice_id = Skills.choice_id AND Questions.id = Skills.question_id
+      LEFT JOIN Allies ON Consequences.choice_id = Allies.choice_id AND Questions.id = Allies.question_id
+      LEFT JOIN Items ON Consequences.choice_id = Items.choice_id AND Questions.id = Items.question_id
+      ORDER BY Chapters.id, Questions.id, Choices.id
+    `);
 
     const chaptersMap = new Map();
 
@@ -64,7 +69,8 @@ router.get("/", async (req, res) => {
           choice.consequence.skill.recklessness = row.recklessness;
         if (row.injury) choice.consequence.skill.injury = row.injury;
 
-        if (row.inventory) choice.consequence.inventory = row.inventory;
+        if (row.allies) choice.consequence.ally = row.allies;
+        if (row.item) choice.consequence.item = row.item;
 
         chapter.choices.push(choice);
       } else {
@@ -76,8 +82,6 @@ router.get("/", async (req, res) => {
         if (row.recklessness)
           existingChoice.consequence.skill.recklessness = row.recklessness;
         if (row.injury) existingChoice.consequence.skill.injury = row.injury;
-
-        if (row.inventory) existingChoice.consequence.inventory = row.inventory;
       }
     });
 

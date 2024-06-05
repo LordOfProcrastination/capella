@@ -80,8 +80,11 @@ html {
   background: #06c1de;
   border: 0px;
   position: relative;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: inset 0 -50px 5px rgba(0, 0, 0, 0.5),
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  box-shadow:
+    inset 0 -50px 5px rgba(0, 0, 0, 0.5),
     inset 0 -10px 10px rgba(0, 0, 0, 0.3);
   color: #fff; /* Default text color */
   display: flex;
@@ -140,21 +143,28 @@ html {
 }
 .btn-0 {
   background-color: #4d9be6;
-  box-shadow: inset -4px 2px 1px 1px #3b82c4, inset -4px -2px 1px 1px #3b82c4,
+  box-shadow:
+    inset -4px 2px 1px 1px #3b82c4,
+    inset -4px -2px 1px 1px #3b82c4,
     inset 4px 0px 1px 1px #3b82c4;
 }
 
 .btn-0.active {
   background-color: #9bcbf2; /* Paler version of the original color */
-  box-shadow: inset 0 -4px 0 #10123e, inset 0 -8px 0 #484a77,
-    inset -4px 2px 1px 1px #3b82c4, inset -4px -2px 1px 1px #3b82c4,
+  box-shadow:
+    inset 0 -4px 0 #10123e,
+    inset 0 -8px 0 #484a77,
+    inset -4px 2px 1px 1px #3b82c4,
+    inset -4px -2px 1px 1px #3b82c4,
     inset 4px 0px 1px 1px #3b82c4;
 }
 
 /* Button 2 */
 .btn-1 {
   background-color: #1ebc73;
-  box-shadow: inset -4px 2px 1px 1px #169a5d, inset -4px -2px 1px 1px #24d48a,
+  box-shadow:
+    inset -4px 2px 1px 1px #169a5d,
+    inset -4px -2px 1px 1px #24d48a,
     inset 4px 0px 1px 1px #24d48a;
 }
 .btn-1.active {
@@ -164,7 +174,9 @@ html {
 /* Button 3 */
 .btn-2 {
   background-color: #e6904e;
-  box-shadow: inset -4px 2px 1px 1px #c67540, inset -4px -2px 1px 1px #f0a367,
+  box-shadow:
+    inset -4px 2px 1px 1px #c67540,
+    inset -4px -2px 1px 1px #f0a367,
     inset 4px 0px 1px 1px #f0a367;
 }
 
@@ -175,7 +187,9 @@ html {
 /* Button 4 */
 .btn-3 {
   background-color: #f68181;
-  box-shadow: inset -4px 2px 1px 1px #d46a6a, inset -4px -2px 1px 1px #ff9797,
+  box-shadow:
+    inset -4px 2px 1px 1px #d46a6a,
+    inset -4px -2px 1px 1px #ff9797,
     inset 4px 0px 1px 1px #ff9797;
 }
 
