@@ -22,7 +22,7 @@ body {
   font-size: 2em;
   color: #ffffff;
   position: absolute;
-  top: 3.4%;
+  top: 3.7%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -38,15 +38,15 @@ body {
 
 .line-img {
   position: absolute;
-  top: 5%;
+  top: 5.4%;
   left: 0%;
   width: 100%;
-  height: 5%;
+  height: 5.5%;
 }
 
 .circle-img {
   position: absolute;
-  top: 2%;
+  top: 2.2%;
   left: 50%;
   width: 5%;
   transform: translateX(-50%);
@@ -54,14 +54,14 @@ body {
 
 .squid1-img {
   position: absolute;
-  top: 5.8%;
+  top: 6.3%;
   left: 95%;
   transform: translateX(-50%);
 }
 
 .squid2-img {
   position: absolute;
-  top: 5.8%;
+  top: 6.3%;
   left: 5%;
   transform: translateX(-50%);
 }
