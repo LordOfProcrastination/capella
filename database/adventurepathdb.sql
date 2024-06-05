@@ -1,6 +1,3 @@
-CREATE DATABASE IF NOT EXISTS `adventurepathdb` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `adventurepathdb`;
-
 -- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
 --
 -- Host: localhost    Database: adventurepathdb
@@ -17,6 +14,30 @@ USE `adventurepathdb`;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `allies`
+--
+
+DROP TABLE IF EXISTS `allies`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `allies` (
+  `choice_id` char(1) DEFAULT NULL,
+  `question_id` int DEFAULT NULL,
+  `allies` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `allies`
+--
+
+LOCK TABLES `allies` WRITE;
+/*!40000 ALTER TABLE `allies` DISABLE KEYS */;
+INSERT INTO `allies` VALUES ('d',2,'Woodland Creature'),('c',3,'troll');
+/*!40000 ALTER TABLE `allies` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `chapters`
@@ -80,7 +101,6 @@ DROP TABLE IF EXISTS `consequences`;
 CREATE TABLE `consequences` (
   `choice_id` varchar(255) DEFAULT NULL,
   `text` text,
-  `inventory` varchar(255) DEFAULT NULL,
   `question_id` int DEFAULT NULL,
   KEY `idx_choice_question` (`choice_id`,`question_id`),
   CONSTRAINT `consequences_ibfk_1` FOREIGN KEY (`choice_id`) REFERENCES `choices` (`id`)
@@ -93,8 +113,32 @@ CREATE TABLE `consequences` (
 
 LOCK TABLES `consequences` WRITE;
 /*!40000 ALTER TABLE `consequences` DISABLE KEYS */;
-INSERT INTO `consequences` VALUES ('a','Erik gains a deeper understanding of the terrain, helping him navigate better later.',NULL,1),('b','Erik has more resources for the journey but spends more time preparing.',NULL,1),('c','Erik receives a magical charm that may aid him.',NULL,1),('d','Erik starts quickly but lacks preparation.',NULL,1),('a','Erik stays on course but encounters traps.',NULL,2),('b','Erik avoids traps but may be led into danger.',NULL,2),('c','Eriks path is unpredictable, leading to both opportunities and risks.',NULL,2),('d','Erik gains an ally in the creature but must share his provisions.',NULL,2),('a','Erik secures safe passage but reduces his supplies.',NULL,3),('b','Erik defeats the trolls, gaining their respect but sustaining injuries.',NULL,3),('c','Erik outsmarts the trolls, gaining safe passage and their help.',NULL,3),('d','Erik finds a longer but safer route, delaying his journey.',NULL,3),('a','Erik conserves energy but takes longer to reach the top.',NULL,4),('b','Erik reaches the summit faster but he stubbed his toes.',NULL,4),('c','Erik meets a dwarf on the way that gives him valuable guidance.',NULL,4),('d','Erik reaches the top quickly but is exhausted.',NULL,4),('a','Erik uses his skills and remaining strength to fight the dragon.',NULL,5),('b','Erik uses his allies to distract the dragon while taking the horn.',NULL,5),('c','Erik uses his magical charm to get the dragon under your control.',NULL,5),('d','Erik uses his allies and the knowledge gathered on the trip to reason with the dragon.',NULL,5);
+INSERT INTO `consequences` VALUES ('a','Erik gains a deeper understanding of the terrain, helping him navigate better later.',1),('b','Erik has more resources for the journey but spends more time preparing.',1),('c','Erik receives a magical charm that may aid him.',1),('d','Erik starts quickly but lacks preparation.',1),('a','Erik stays on course but encounters traps.',2),('b','Erik avoids traps but may be led into danger.',2),('c','Eriks path is unpredictable, leading to both opportunities and risks.',2),('d','Erik gains an ally in the creature but must share his provisions.',2),('a','Erik secures safe passage but reduces his supplies.',3),('b','Erik defeats the trolls, gaining their respect but sustaining injuries.',3),('c','Erik outsmarts the trolls, gaining safe passage and their help.',3),('d','Erik finds a longer but safer route, delaying his journey.',3),('a','Erik conserves energy but takes longer to reach the top.',4),('b','Erik reaches the summit faster but he stubbed his toes.',4),('c','Erik meets a dwarf on the way that gives him valuable guidance.',4),('d','Erik reaches the top quickly but is exhausted.',4),('a','Erik uses his skills and remaining strength to fight the dragon.',5),('b','Erik uses his allies to distract the dragon while taking the horn.',5),('c','Erik uses his magical charm to get the dragon under your control.',5),('d','Erik uses his allies and the knowledge gathered on the trip to reason with the dragon.',5);
 /*!40000 ALTER TABLE `consequences` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `items`
+--
+
+DROP TABLE IF EXISTS `items`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `items` (
+  `choice_id` char(1) DEFAULT NULL,
+  `question_id` int DEFAULT NULL,
+  `item` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `items`
+--
+
+LOCK TABLES `items` WRITE;
+/*!40000 ALTER TABLE `items` DISABLE KEYS */;
+INSERT INTO `items` VALUES ('c',1,'Magical Charm');
+/*!40000 ALTER TABLE `items` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -166,7 +210,7 @@ CREATE TABLE `users` (
   `name` varchar(100) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `password` varchar(100) DEFAULT NULL,
-  `isactive` tinyint DEFAULT NULL,
+  `isactive` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -191,4 +235,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-06-04 23:50:14
+-- Dump completed on 2024-06-05 19:07:43
