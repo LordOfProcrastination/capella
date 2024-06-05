@@ -2,20 +2,18 @@
     Event Message
 */
 
-import EriksAdventureTxtModule from "./modules/StoryModule.js";
-
 const eventMessage = document.querySelector("#event-message");
 let chapterIndex = parseInt(localStorage.getItem("chapterIndex"), 10) || 1;
 const timerDuration = 30000;
 let selectedChoice = null;
 let timer = null;
-const API_URL = "http://localhost:3000/api/storyapi";
+const storyAPI = "http://localhost:3000/api/storyapi";
 
 const getChapter = async (index) => {
   let htmlTxt = "";
 
   try {
-    const response = await fetch(`${API_URL}/${index}`);
+    const response = await fetch(`${storyAPI}/${index}`);
     if (!response.ok) {
       throw new Error(`Error fetching chapter: ${response.statusText}`);
     }
@@ -91,7 +89,7 @@ const createEventButtons = async (index) => {
   container.innerHTML = "";
 
   try {
-    const response = await fetch(`${API_URL}/${index}`);
+    const response = await fetch(`${storyAPI}/${index}`);
     if (!response.ok) {
       throw new Error(`Error fetching chapter: ${response.statusText}`);
     }
