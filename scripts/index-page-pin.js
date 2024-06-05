@@ -39,7 +39,7 @@ document.getElementById('pin-form').addEventListener('submit', function(event) {
         
         // Redirect to another page after a short delay
         setTimeout(() => {
-            window.location.href = 'http://127.0.0.1:5500/Landing-page-name.html'; // Change 'welcome.html' to your target page
+            window.location.href = 'http://127.0.0.1:5500/public/Landing-page-name.html'; // Change 'welcome.html' to your target page
         }, 1000); // 1 second delay for the user to see the success message
     } else {
         messageElement.textContent = 'Feil PIN. Vennligst prøv igjenn.';

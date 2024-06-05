@@ -53,7 +53,7 @@ function submitName() {
         if (isNameValid(nameInput)) {
             showError('Navn registrert: ' + nameInput, true);
             setTimeout(() => {
-                window.location.href = `http://127.0.0.1:5500/welcome-room.html?name=${encodeURIComponent(nameInput)}`;
+                window.location.href = `http://127.0.0.1:5500/public/welcome-room.html?name=${encodeURIComponent(nameInput)}`;
             }, 2000); // Vent 2 sekunder før omdirigering
         } else {
             showError('Navnet inneholder upassende ord. Vennligst skriv inn et annet navn.', false);
