@@ -1,20 +1,19 @@
 //.............SIDE BAR FUNCTIONS ...................
 
 //.............PIN FUNCTIONS ...................
-document
-  .getElementById("generate-pin-btn")
-  .addEventListener("click", function () {
-    alert("Button clicked!");
-  });
 
-  document.addEventListener('DOMContentLoaded', (event) => {
-    document.getElementById('generate-pin-btn').addEventListener('click', generatePin);
+document.addEventListener("DOMContentLoaded", (event) => {
+  document
+    .getElementById("generate-pin-btn")
+    .addEventListener("click", generatePin);
 });
 
 function generatePin() {
-    let pin = Math.floor(100000 + Math.random() * 900000);
-    document.querySelector('.pin-code').innerText = pin;
-};
+  let pin = Math.floor(100000 + Math.random() * 900000);
+  let pinString = pin.toString();
+  let formattedPin = pinString.slice(0, 3) + " " + pinString.slice(3);
+  document.querySelector("#pin-code").innerText = formattedPin;
+}
 //------------------------------API FUNCTIONS -------------------------------
 
 fetch("http://localhost:3000/api/storyAPI")
