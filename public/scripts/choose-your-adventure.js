@@ -1,10 +1,6 @@
-/*
-    Event Message
-*/
-
 const eventMessage = document.querySelector("#event-message");
 let chapterIndex = 1;
-const timerDuration = 30000;
+const timerDuration = 5000;
 let selectedChoice = null;
 let timer = null;
 const storyAPI = "http://localhost:3000/api/storyapi";
@@ -56,6 +52,7 @@ const startTimer = () => {
     }
 
     if (chapterIndex < 5) {
+      chapterIndex++;
       nextChapter();
     } else {
       eventMessage.innerHTML = "You've reached the end of the adventure.";
@@ -129,7 +126,15 @@ const createEventButtons = async (index) => {
   }
 };
 
+let isUpdating = false;
+
 function updateCharacterStats(consequence) {
+  if (!consequence || isUpdating) return;
+
+  isUpdating = true;
+
+  console.log("Consequence:", consequence);
+
   // Fetch current stats first
   fetch(characterSkills)
     .then((response) => {
@@ -148,6 +153,8 @@ function updateCharacterStats(consequence) {
         injuries: currentStats.injuries || 0,
       };
 
+      console.log("Current Stats Before Update:", characterStats);
+
       if (consequence.skill) {
         characterStats.understanding += consequence.skill.understanding || 0;
         characterStats.time += consequence.skill.time || 0;
@@ -156,74 +163,76 @@ function updateCharacterStats(consequence) {
         characterStats.injuries += consequence.skill.injuries || 0;
       }
 
-      fetch(characterSkills, {
+      console.log("Updated Stats:", characterStats);
+
+      // Updating character stats
+      return fetch(characterSkills, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(characterStats),
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Failed to update character stats");
-          }
-          getCharacterStats();
-        })
-        .catch((error) => {
-          console.error("Error updating character stats:", error);
-        });
-
+      });
+    })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Failed to update character stats");
+      }
+      return getCharacterStats();
+    })
+    .then(() => {
       if (consequence.item) {
         const item = {
           item: consequence.item,
           isActive: true,
         };
 
-        fetch(characterItems, {
+        return fetch(characterItems, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(item),
-        })
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("Failed to update character equipment");
-            }
-            getCharacterEquipment();
-          })
-          .catch((error) => {
-            console.error("Error updating character equipment:", error);
-          });
+        });
       }
-
+    })
+    .then((response) => {
+      if (response && !response.ok) {
+        throw new Error("Failed to update character equipment");
+      }
+      return getCharacterEquipment();
+    })
+    .then(() => {
       if (consequence.ally) {
         const ally = {
           ally: consequence.ally,
           id: 1, // Ensure id is correctly set if needed
         };
 
-        fetch(characterAllies, {
+        return fetch(characterAllies, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(ally),
-        })
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("Failed to update character allies");
-            }
-            getCharacterRelationships();
-          })
-          .catch((error) => {
-            console.error("Error updating character allies:", error);
-          });
+        });
       }
     })
+    .then((response) => {
+      if (response && !response.ok) {
+        throw new Error("Failed to update character allies");
+      }
+      return getCharacterRelationships();
+    })
     .catch((error) => {
-      console.error("Error fetching character stats:", error);
+      console.error("Error updating character:", error);
+    })
+    .finally(() => {
+      isUpdating = false;
     });
+
+  // Reset selectedChoice to prevent multiple updates
+  selectedChoice = null;
 
   if (consequence.text && typeof consequence.text === "string") {
     localStorage.setItem("consequenceTxt", consequence.text);
@@ -272,6 +281,8 @@ function getCharacterStats() {
     .then((data) => {
       const characterStats = data[0];
 
+      console.log("Fetched Character Stats:", characterStats);
+
       characterStatsContainer.innerHTML = `
         <h4>Stats</h4>
         <p>Understanding: ${characterStats.understanding}</p>
@@ -318,10 +329,3 @@ function redirectToPage(url, delay) {
     window.location.href = url;
   }, delay);
 }
-
-/*
-// Example usage: Redirect to "target.html" after 5 seconds (5000 milliseconds)
-window.onload = function () {
-  redirectToPage("watching-decision.html", 30500);
-};
-*/

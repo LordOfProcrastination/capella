@@ -6,8 +6,9 @@ const pool = require("../db");
 router.get("/skills", async (req, res) => {
   try {
     const [results] = await pool.query(
-      "SELECT understanding, time, supplies, recklessness, injuries FROM characterstats"
+      "SELECT understanding, time, supplies, recklessness, injuries FROM characterstats WHERE id = 1"
     );
+    console.log("Fetched character stats:", results[0]);
     res.json(results);
   } catch (error) {
     console.error("Error fetching skills:", error);
@@ -52,27 +53,35 @@ router.post("/skills", async (req, res) => {
       return res.status(404).json({ message: "Character stats not found." });
     }
 
-    const updatedStats = {
-      understanding: currentStats[0].understanding + (understanding || 0),
-      time: currentStats[0].time + (time || 0),
-      supplies: currentStats[0].supplies + (supplies || 0),
-      recklessness: currentStats[0].recklessness + (recklessness || 0),
-      injuries: currentStats[0].injuries + (injuries || 0),
-    };
+    console.log("Current Stats from DB:", currentStats[0]);
+    console.log("Received Update Data:", req.body);
+
+    // Calculate the updated stats by adding incoming values to the current stats
+    console.log("Updated Stats to be Saved:", req.body);
 
     // Update the stats in the database
     await pool.query(
       "UPDATE characterstats SET understanding = ?, time = ?, supplies = ?, recklessness = ?, injuries = ? WHERE id = 1",
       [
-        updatedStats.understanding,
-        updatedStats.time,
-        updatedStats.supplies,
-        updatedStats.recklessness,
-        updatedStats.injuries,
+        req.body.understanding,
+        req.body.time,
+        req.body.supplies,
+        req.body.recklessness,
+        req.body.injuries,
       ]
     );
 
-    res.status(200).json({ message: "Character stats updated successfully." });
+    // Fetch updated stats to confirm the update
+    const [newStats] = await pool.query(
+      "SELECT understanding, time, supplies, recklessness, injuries FROM characterstats WHERE id = 1"
+    );
+
+    console.log("Newly Fetched Stats from DB:", newStats[0]);
+
+    res.status(200).json({
+      message: "Character stats updated successfully.",
+      newStats: newStats[0],
+    });
   } catch (error) {
     console.error("Error updating character stats:", error);
     res.status(500).json({ message: "Internal server error." });
