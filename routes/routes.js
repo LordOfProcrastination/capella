@@ -57,17 +57,15 @@ router.get("/", async (req, res) => {
           text: row.choice_text,
           consequence: {
             text: row.consequence_text,
-            skill: {},
+            skill: {
+              understanding: row.understanding,
+              supply: row.supply,
+              time: row.time,
+              recklessness: row.recklessness,
+              injury: row.injury,
+            },
           },
         };
-
-        if (row.understanding)
-          choice.consequence.skill.understanding = row.understanding;
-        if (row.supply) choice.consequence.skill.supply = row.supply;
-        if (row.time) choice.consequence.skill.time = row.time;
-        if (row.recklessness)
-          choice.consequence.skill.recklessness = row.recklessness;
-        if (row.injury) choice.consequence.skill.injury = row.injury;
 
         if (row.allies) choice.consequence.ally = row.allies;
         if (row.item) choice.consequence.item = row.item;
@@ -75,13 +73,15 @@ router.get("/", async (req, res) => {
         chapter.choices.push(choice);
       } else {
         // Aggregate skills if the choice already exists
-        if (row.understanding)
+        if (row.understanding !== null)
           existingChoice.consequence.skill.understanding = row.understanding;
-        if (row.supply) existingChoice.consequence.skill.supply = row.supply;
-        if (row.time) existingChoice.consequence.skill.time = row.time;
-        if (row.recklessness)
+        if (row.supply !== null)
+          existingChoice.consequence.skill.supply = row.supply;
+        if (row.time !== null) existingChoice.consequence.skill.time = row.time;
+        if (row.recklessness !== null)
           existingChoice.consequence.skill.recklessness = row.recklessness;
-        if (row.injury) existingChoice.consequence.skill.injury = row.injury;
+        if (row.injury !== null)
+          existingChoice.consequence.skill.injury = row.injury;
       }
     });
 
@@ -93,8 +93,6 @@ router.get("/", async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-
-// Get a specific chapter by ID
 router.get("/:id", async (req, res) => {
   const chapterId = req.params.id;
 
@@ -149,11 +147,11 @@ router.get("/:id", async (req, res) => {
         consequence: {
           text: row.consequence_text,
           skill: {
-            understanding: row.understanding || 0,
-            supply: row.supply || 0,
-            time: row.time || 0,
-            recklessness: row.recklessness || 0,
-            injury: row.injury || 0,
+            understanding: row.understanding,
+            supplies: row.supply,
+            time: row.time,
+            recklessness: row.recklessness,
+            injuries: row.injury,
           },
           ally: row.allies,
           item: row.item,

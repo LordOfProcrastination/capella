@@ -3,11 +3,14 @@
 */
 
 const eventMessage = document.querySelector("#event-message");
-let chapterIndex = parseInt(localStorage.getItem("chapterIndex"), 10) || 1;
+let chapterIndex = 1;
 const timerDuration = 30000;
 let selectedChoice = null;
 let timer = null;
 const storyAPI = "http://localhost:3000/api/storyapi";
+const characterSkills = "http://localhost:3000/api/characterstatus/skills";
+const characterAllies = "http://localhost:3000/api/characterstatus/allies";
+const characterItems = "http://localhost:3000/api/characterstatus/items";
 
 const getChapter = async (index) => {
   let htmlTxt = "";
@@ -94,10 +97,10 @@ const createEventButtons = async (index) => {
       throw new Error(`Error fetching chapter: ${response.statusText}`);
     }
     const chapter = await response.json();
-    const choicesFromModule = chapter.choices;
+    const choices = chapter.choices;
 
     console.log(chapter.choices);
-    choicesFromModule.forEach((choice, choiceIndex) => {
+    choices.forEach((choice, choiceIndex) => {
       const button = document.createElement("div");
       button.className = `event-btn btn-${choiceIndex}`;
       button.innerText = choice.text;
@@ -127,38 +130,104 @@ const createEventButtons = async (index) => {
 };
 
 function updateCharacterStats(consequence) {
-  if (consequence.skill) {
-    for (let skill in consequence.skill) {
-      if (characterStats.hasOwnProperty(skill)) {
-        characterStats[skill] += consequence.skill[skill];
+  // Fetch current stats first
+  fetch(characterSkills)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Failed to fetch character stats");
       }
-    }
-  }
-  localStorage.setItem("characterStats", JSON.stringify(characterStats));
+      return response.json();
+    })
+    .then((data) => {
+      const currentStats = data[0] || {};
+      const characterStats = {
+        understanding: currentStats.understanding || 0,
+        time: currentStats.time || 0,
+        supplies: currentStats.supplies || 0,
+        recklessness: currentStats.recklessness || 0,
+        injuries: currentStats.injuries || 0,
+      };
 
-  if (consequence.inventory) {
-    characterEquipment.inventory = consequence.inventory;
-    characterEquipment.hasItem = true;
-  }
-  localStorage.setItem(
-    "characterEquipment",
-    JSON.stringify(characterEquipment)
-  );
+      if (consequence.skill) {
+        characterStats.understanding += consequence.skill.understanding || 0;
+        characterStats.time += consequence.skill.time || 0;
+        characterStats.supplies += consequence.skill.supplies || 0;
+        characterStats.recklessness += consequence.skill.recklessness || 0;
+        characterStats.injuries += consequence.skill.injuries || 0;
+      }
 
-  if (consequence.ally) {
-    characterRelationships.push(consequence.ally);
-  }
-  localStorage.setItem(
-    "characterRelationships",
-    JSON.stringify(characterRelationships)
-  );
+      fetch(characterSkills, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(characterStats),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Failed to update character stats");
+          }
+          getCharacterStats();
+        })
+        .catch((error) => {
+          console.error("Error updating character stats:", error);
+        });
+
+      if (consequence.item) {
+        const item = {
+          item: consequence.item,
+          isActive: true,
+        };
+
+        fetch(characterItems, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(item),
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Failed to update character equipment");
+            }
+            getCharacterEquipment();
+          })
+          .catch((error) => {
+            console.error("Error updating character equipment:", error);
+          });
+      }
+
+      if (consequence.ally) {
+        const ally = {
+          ally: consequence.ally,
+          id: 1, // Ensure id is correctly set if needed
+        };
+
+        fetch(characterAllies, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(ally),
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Failed to update character allies");
+            }
+            getCharacterRelationships();
+          })
+          .catch((error) => {
+            console.error("Error updating character allies:", error);
+          });
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching character stats:", error);
+    });
 
   if (consequence.text && typeof consequence.text === "string") {
     localStorage.setItem("consequenceTxt", consequence.text);
   }
-  getCharacterEquipment();
-  getCharacterRelationships();
-  getCharacterStats();
 }
 
 const characterEquipmentContainer = document.querySelector(
@@ -168,51 +237,74 @@ const characterStatsContainer = document.querySelector(".character-stats");
 const characterRelationshipsContainer = document.querySelector(
   ".character-relationships"
 );
-let characterStats = JSON.parse(localStorage.getItem("characterStats")) || {
-  understanding: 0,
-  time: 2,
-  supply: 5,
-  recklessness: 0,
-  injury: 0,
-};
-let characterEquipment = JSON.parse(
-  localStorage.getItem("characterEquipment")
-) || {
-  inventory: "Magical Charm",
-  hasItem: false,
-};
-let characterRelationships =
-  JSON.parse(localStorage.getItem("characterRelationships")) || [];
 
 function getCharacterEquipment() {
-  characterEquipmentContainer.innerHTML = `
-    <h4>Equipment</h4>
-    ${
-      characterEquipment.hasItem
-        ? `<p>${characterEquipment.inventory}</p>`
-        : "<p>No items</p>"
-    }
-  `;
+  fetch(characterItems)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Failed to fetch character equipment");
+      }
+      return response.json();
+    })
+    .then((characterEquipment) => {
+      characterEquipmentContainer.innerHTML = `
+        <h4>Equipment</h4>
+        ${
+          characterEquipment.length
+            ? `<p>${characterEquipment.map((item) => item.item).join(", ")}</p>`
+            : "<p>No items</p>"
+        }
+      `;
+    })
+    .catch((error) => {
+      console.error("Error fetching character equipment:", error);
+    });
 }
 
 function getCharacterStats() {
-  characterStatsContainer.innerHTML = `
-    <h4>Stats</h4>
-    <p>Kunnskap: ${characterStats.understanding}</p>
-    <p>Tid: ${characterStats.time}</p>
-    <p>Mat: ${characterStats.supply}</p>
-    <p>Hovmod: ${characterStats.recklessness}</p>
-    <p>Skader: ${characterStats.injury}</p>
-  `;
+  fetch(characterSkills)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Failed to fetch character stats");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      const characterStats = data[0];
+
+      characterStatsContainer.innerHTML = `
+        <h4>Stats</h4>
+        <p>Understanding: ${characterStats.understanding}</p>
+        <p>Time: ${characterStats.time}</p>
+        <p>Supplies: ${characterStats.supplies}</p>
+        <p>Recklessness: ${characterStats.recklessness}</p>
+        <p>Injuries: ${characterStats.injuries}</p>
+      `;
+    })
+    .catch((error) => {
+      console.error("Error fetching character stats:", error);
+    });
 }
 
 function getCharacterRelationships() {
-  characterRelationshipsContainer.innerHTML = `
-    <h4>Relationships</h4>
-    <ul>
-      ${characterRelationships.map((ally) => `<li>${ally}</li>`).join("")}
-    </ul>
-  `;
+  fetch(characterAllies)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Failed to fetch character relationships");
+      }
+      return response.json();
+    })
+    .then((characterRelationships) => {
+      characterRelationshipsContainer.innerHTML = `
+        <h4>Relationships</h4>
+        <ul>
+          ${characterRelationships.map((ally) => `<li>${ally.ally}</li>`).join("")}
+        </ul>
+      `;
+    })
+    .catch((error) => {
+      console.error("Error fetching character relationships:", error);
+    });
 }
 
 // Initial call to set up event buttons and display character sheet
