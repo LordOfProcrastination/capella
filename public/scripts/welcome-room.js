@@ -99,9 +99,13 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => createBubble(bubblesContainer, fact), index * 2000);
   });
 
-  function redirectToPage(url, delay) {
-    setTimeout(function () {
-      window.location.href = url;
-    }, delay);
-  }
+  const socket = io();
+  socket.emit("joinSession", "session123");
+
+  // Listen for admin action to start the scene
+  socket.on("adminAction", (action) => {
+    if (action === "playScene") {
+      window.location.href = "watching-the-scene.html";
+    }
+  });
 });

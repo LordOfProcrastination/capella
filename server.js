@@ -39,6 +39,12 @@ io.on("connection", (socket) => {
     } else if (action === "endGame") {
       gameStarted = false;
       currentPin = null; // Reset the PIN when the game ends
+    } else if (action === "playScene") {
+      io.to(sessionId).emit("adminAction", "playScene");
+    } else if (action === "pauseScene") {
+      io.to(sessionId).emit("adminAction", "pauseScene");
+    } else if (action === "questionStart") {
+      io.to(sessionId).emit("adminAction", "questionStart");
     }
     io.to(sessionId).emit("adminAction", action);
   });

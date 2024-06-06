@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     snowflake.style.height = size;
 
     // Tilfeldig horisontal posisjon
-    snowflake.style.left = Math.random() * 18 + "vw";
+    snowflake.style.left = Math.random() * 360 + "px";
 
     // Tilfeldig animasjonsvarighet mellom 3s og 10s
     snowflake.style.animationDuration = Math.random() * 7 + 3 + "s";
@@ -60,7 +60,7 @@ function submitName() {
     if (isNameValid(nameInput)) {
       showError("Navn registrert: " + nameInput, true);
       setTimeout(() => {
-        window.location.href = `http://127.0.0.1:5500/public/welcome-room.html?name=${encodeURIComponent(
+        window.location.href = `welcome-room.html?name=${encodeURIComponent(
           nameInput
         )}`;
       }, 2000); // Vent 2 sekunder før omdirigering
