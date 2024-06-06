@@ -3,12 +3,18 @@ let formattedPin = "975 345";
 //.............SIDE BAR FUNCTIONS ...................
 
 //.............PIN FUNCTIONS ...................
-
 document.addEventListener("DOMContentLoaded", (event) => {
   document
     .getElementById("generate-pin-btn")
-    .addEventListener("click", generatePin);
+    .addEventListener("click", confirmPinGeneration);
 });
+
+function confirmPinGeneration() {
+  const userConfirmed = confirm("Are you sure you want to generate a new PIN?");
+  if (userConfirmed) {
+    generatePin();
+  }
+}
 
 function generatePin() {
   let pin = Math.floor(100000 + Math.random() * 900000);
@@ -16,7 +22,10 @@ function generatePin() {
   formattedPin = pinString.slice(0, 3) + " " + pinString.slice(3);
   document.querySelector("#pin-code").innerText = formattedPin;
 }
-
+//.............FUNCTIONS ...................
+function updateEventMessage(message) {
+  document.getElementById("event-message").textContent = message;
+}
 //=============================================================================================================
 //------------------------------API FUNCTIONS -------------------------------
 
@@ -39,17 +48,25 @@ fetch("http://localhost:3000/api/storyAPI")
 socket.emit("joinSession", "session123");
 
 document.addEventListener("DOMContentLoaded", (event) => {
-  // Set up the click event listener after the DOM is fully loaded
   document
     .querySelector("#show-on-big-screen-btn")
     .addEventListener("click", showPincode);
 
-  // Set up other event listeners if needed
+  //Start game
   document.getElementById("start-btn").onclick = () => {
     socket.emit("adminAction", {
       sessionId: "session123",
       action: "startGame",
     });
+    updateEventMessage("Spillet har startet");
+  };
+  //End game
+  document.getElementById("end-btn").onclick = () => {
+    socket.emit("adminAction", {
+      sessionId: "session123",
+      action: "endGame",
+    });
+    updateEventMessage("Spillet har sluttet");
   };
 });
 

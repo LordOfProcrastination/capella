@@ -8,6 +8,8 @@ const server = http.createServer(app);
 const io = socketIo(server);
 const routes = require("./routes/routes");
 const characterStatusRoutes = require("./routes/characterStatusRoutes");
+//Variables
+let gameStarted = false;
 
 app.use(
   cors({
@@ -31,6 +33,11 @@ io.on("connection", (socket) => {
 
   socket.on("adminAction", (data) => {
     const { sessionId, action } = data;
+    if (action === "startGame") {
+      gameStarted = true;
+    } else if (action === "endGame") {
+      gameStarted = false;
+    }
     io.to(sessionId).emit("adminAction", action);
   });
 
@@ -45,6 +52,9 @@ io.on("connection", (socket) => {
     io.to("session123").emit("adminAction", { action: "showPin", pin: pin });
   });
 
+  app.get("/api/gameStatus", (req, res) => {
+    res.json({ gameStarted });
+  });
   //:::::::::::::::::::::::::::Henrik:::::::::::::::::::::::::::::::::::::::::::::::
 });
 
