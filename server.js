@@ -10,6 +10,7 @@ const routes = require("./routes/routes");
 const characterStatusRoutes = require("./routes/characterStatusRoutes");
 //Variables
 let gameStarted = false;
+let currentPin = null;
 
 app.use(
   cors({
@@ -37,6 +38,7 @@ io.on("connection", (socket) => {
       gameStarted = true;
     } else if (action === "endGame") {
       gameStarted = false;
+      currentPin = null; // Reset the PIN when the game ends
     }
     io.to(sessionId).emit("adminAction", action);
   });
@@ -48,12 +50,27 @@ io.on("connection", (socket) => {
   //:::::::::::::::::::::::::Kip:::::::::::::::::::::::::::::::::::::::::::::::::
 
   socket.on("generatePin", (pin) => {
-    console.log(`Generated PIN: ${pin}`);
-    io.to("session123").emit("adminAction", { action: "showPin", pin: pin });
+    if (!gameStarted) {
+      currentPin = pin.replace(/\s+/g, ""); // Remove spaces before storing
+      console.log(`Generated PIN: ${pin}`);
+      io.to("session123").emit("adminAction", { action: "showPin", pin: pin });
+    }
   });
 
   app.get("/api/gameStatus", (req, res) => {
     res.json({ gameStarted });
+  });
+
+  app.get("/api/currentPin", (req, res) => {
+    res.json({ currentPin });
+  });
+  app.post("/api/validatePin", (req, res) => {
+    const { enteredPin } = req.body;
+    if (enteredPin === currentPin) {
+      res.json({ valid: true });
+    } else {
+      res.json({ valid: false });
+    }
   });
   //:::::::::::::::::::::::::::Henrik:::::::::::::::::::::::::::::::::::::::::::::::
 });

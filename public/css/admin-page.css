@@ -190,12 +190,12 @@ body {
   grid-area: main;
 
   grid-template-areas:
-    "event event event event"
-    "start-btn start-btn ask-btn ask-btn"
-    "back-btn back-btn skip-btn skip-btn "
-    "edit-q-btn edit-q-btn end-btn end-btn";
+    "play-btn event event event event pause-btn"
+    "start-btn start-btn start-btn ask-btn ask-btn ask-btn"
+    "back-btn  back-btn back-btn skip-btn skip-btn skip-btn"
+    "edit-q-btn edit-q-btn edit-q-btn end-btn end-btn end-btn";
 
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 2fr 1fr 0.5fr 0.5fr;
 
   display: grid;
@@ -214,12 +214,22 @@ body {
   align-items: center;
   font-size: 24px;
 }
+#play-scene-btn {
+  grid-area: play-btn;
+  text-align: center;
+  margin: 50px 10px;
+}
+
+#pause-scene-btn {
+  grid-area: pause-btn;
+  text-align: center;
+  margin: 50px 10px;
+}
 #start-btn {
   grid-area: start-btn;
   padding: auto;
   font-size: 20px;
 }
-
 #ask-btn {
   grid-area: ask-btn;
   padding: auto;

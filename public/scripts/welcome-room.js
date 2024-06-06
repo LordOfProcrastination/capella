@@ -26,6 +26,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   fillSeats();
 
+  // Hent navn fra url-parameter
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const name = urlParams.get("name");
+
+  // Display the name
+  if (name) {
+    document.getElementById("username").textContent = name;
+  }
+
   // Animate bubbles
   const bubblesContainer = document.querySelector(".bubbles");
 
@@ -35,22 +45,40 @@ document.addEventListener("DOMContentLoaded", () => {
     bubble.textContent = text;
     container.appendChild(bubble);
 
-    animateBubble(bubble);
+    animateBubble(bubble, container);
   }
 
-  function animateBubble(bubble) {
+  function animateBubble(bubble, container) {
     const bubbleSpeed = 1;
-    let x = Math.random() * (window.innerWidth - 100);
-    let y = Math.random() * (window.innerHeight - 100);
+    const containerRect = container.getBoundingClientRect();
+    const bubbleDiameter = 80;
+
+    let x = Math.random() * (containerRect.width - bubbleDiameter);
+    let y = Math.random() * (containerRect.height - bubbleDiameter);
+
+    // Determine initial vertical direction and position
+    const startsFromBottom = Math.random() > 0.5;
+    if (startsFromBottom) {
+      y = containerRect.height - bubbleDiameter; // Start from bottom
+    } else {
+      y = Math.random() * (containerRect.height - bubbleDiameter + 400);
+    }
+
     let directionX = (Math.random() - 0.5) * bubbleSpeed;
     let directionY = (Math.random() - 0.5) * bubbleSpeed;
+    if (startsFromBottom) {
+      directionY = -Math.abs(directionY); // Move upwards initially
+    }
+
+    bubble.style.left = x + "px";
+    bubble.style.top = y + "px";
 
     setInterval(() => {
       x += directionX;
       y += directionY;
 
-      if (x < 0 || x > window.innerWidth - 100) directionX *= -1;
-      if (y < 0 || y > window.innerHeight - 100) directionY *= -1;
+      if (x < 0 || x > containerRect.width - bubbleDiameter) directionX *= -1;
+      if (y < 0 || y > containerRect.height - bubbleDiameter) directionY *= -1;
 
       bubble.style.left = x + "px";
       bubble.style.top = y + "px";
@@ -66,17 +94,14 @@ document.addEventListener("DOMContentLoaded", () => {
     "Strawberries are not berries.",
   ];
 
-  // Create bubbles with facts
-  facts.forEach((fact) => createBubble(bubblesContainer, fact));
+  // Create bubbles with a slight delay to ensure better distribution
+  facts.forEach((fact, index) => {
+    setTimeout(() => createBubble(bubblesContainer, fact), index * 2000);
+  });
 
   function redirectToPage(url, delay) {
     setTimeout(function () {
       window.location.href = url;
     }, delay);
   }
-
-  // Example usage: Redirect to "target.html" after 5 seconds (5000 milliseconds)
-  window.onload = function () {
-    redirectToPage("watching-the-scene.html", 10000);
-  };
 });
