@@ -1,6 +1,6 @@
 const eventMessage = document.querySelector("#event-message");
 let chapterIndex = 1;
-const timerDuration = 5000;
+const timerDuration = 30000;
 let selectedChoice = null;
 let timer = null;
 const storyAPI = "http://localhost:3000/api/storyapi";
@@ -331,3 +331,6 @@ function redirectToPage(url, delay) {
     window.location.href = url;
   }, delay);
 }
+setTimeout(() => {
+  window.location.href = "watching-decision.html";
+}, 30050);
