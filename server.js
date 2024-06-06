@@ -20,6 +20,7 @@ app.use(express.static("public"));
 app.use("/api/storyAPI", routes);
 app.use("/api/characterStatus", characterStatusRoutes);
 
+//=======================START IO  CONNNECTION ====================================
 io.on("connection", (socket) => {
   console.log("A user connected");
 
@@ -37,12 +38,17 @@ io.on("connection", (socket) => {
     console.log("A user disconnected");
   });
 
+  //:::::::::::::::::::::::::Kip:::::::::::::::::::::::::::::::::::::::::::::::::
+
   socket.on("generatePin", (pin) => {
     console.log(`Generated PIN: ${pin}`);
     io.to("session123").emit("adminAction", { action: "showPin", pin: pin });
   });
+
+  //:::::::::::::::::::::::::::Henrik:::::::::::::::::::::::::::::::::::::::::::::::
 });
 
+//=======================END IO  CONNNECTION ====================================
 const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, () => {
