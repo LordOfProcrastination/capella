@@ -32,6 +32,8 @@ const forbiddenWords = [
   "Blackface", // Legg til de forbudte ordene her
   "Fag",
   "Transe",
+  "Lesbe",
+  "Homo",
 ];
 
 // Funksjon for å sjekke om navnet er gyldig
