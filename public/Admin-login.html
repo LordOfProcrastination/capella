@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="/public/css/Admin-login.css" />
+    <link rel="stylesheet" href="css/Admin-login.css" />
+    <script src="/socket.io/socket.io.js"></script>
   </head>
   <body>
     <div class="container">
       <img
-        src="images/background.jpg" 
-        alt="background-img" 
+        src="images/background.jpg"
+        alt="background-img"
         class="background-img"
       />
       <img src="images/circle.png" alt="circle" class="circle-img" />
@@ -33,7 +34,11 @@
           <div class="input-box2"></div>
           <input type="text" placeholder="Password" required />
         </div>
-        <a href="http://127.0.0.1:5500/public/admin-page.html" class="button1">LOGIN</a>
+        <a
+          href="http://127.0.0.1:5500/public/Admin-Profile.html"
+          class="button1"
+          >LOGIN</a
+        >
       </div>
     </div>
   </body>

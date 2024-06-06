@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   document
     .getElementById("pause-scene-btn")
     .addEventListener("click", pauseScene);
+  document.getElementById("ask-btn").addEventListener("click", questionStart);
 });
 //.............PIN FUNCTIONS ...................
 function confirmPinGeneration() {
@@ -31,7 +32,7 @@ function generatePin() {
 }
 
 // Function to handle button click and emit adminAction event
-const showPincode = () => {
+const showPin = () => {
   socket.emit("generatePin", formattedPin);
 };
 //.............FUNCTIONS ...................
@@ -40,14 +41,28 @@ function updateEventMessage(message) {
 }
 
 function playScene() {
-  updateEventMessage("Scene starter om 5 sekunder...");
-  setTimeout(() => {
-    window.location.href = "watching-the-scene";
-  }, 5000);
+  socket.emit("adminAction", {
+    sessionId: "session123",
+    action: "playScene",
+  });
 }
 
 function pauseScene() {
-  window.location.href = "watching-the-scene-innaktiv.html";
+  console.log("Pause scene button clicked");
+  socket.emit("adminAction", {
+    sessionId: "session123",
+    action: "pauseScene",
+  });
+}
+
+//questionAction;
+
+function questionStart() {
+  console.log("questionStart button clicked");
+  socket.emit("adminAction", {
+    sessionId: "session123",
+    action: "questionStart",
+  });
 }
 //=============================================================================================================
 //------------------------------API FUNCTIONS -------------------------------
@@ -73,7 +88,7 @@ socket.emit("joinSession", "session123");
 document.addEventListener("DOMContentLoaded", (event) => {
   document
     .querySelector("#show-on-big-screen-btn")
-    .addEventListener("click", showPincode);
+    .addEventListener("click", showPin);
 
   //Start game
   document.getElementById("start-btn").onclick = () => {
@@ -99,12 +114,8 @@ socket.on("adminAction", (action) => {
     console.log("Show Pin Code here");
   } else if (action === "startGame") {
     console.log("Game has started");
-    updateEventMessage("The game has started!");
-    gameStarted = true;
   } else if (action === "endGame") {
     console.log("Game has ended");
-    updateEventMessage("The game has ended.");
-    gameStarted = false;
   }
 });
 

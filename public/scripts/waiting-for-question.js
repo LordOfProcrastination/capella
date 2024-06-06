@@ -12,14 +12,16 @@ const storyTime = () => {
     `;
 };
 storyTime();
+document.addEventListener("DOMContentLoaded", () => {
+  const socket = io();
+  console.log("in waiting for question");
 
-function redirectToPage(url, delay) {
-  setTimeout(function () {
-    window.location.href = url;
-  }, delay);
-}
+  socket.emit("joinSession", "session123"); // Ensure the user joins the session
 
-// Example usage: Redirect to "target.html" after 5 seconds (5000 milliseconds)
-window.onload = function () {
-  redirectToPage("choose-your-adventure.html", 10000);
-};
+  socket.on("adminAction", (action) => {
+    if (action === "questionStart") {
+      console.log("Received questionStart"); // Log
+      window.location.href = "choose-your-adventure.html";
+    }
+  });
+});

@@ -24,6 +24,7 @@ html {
   max-width: 360px; /* Limit the content width */
   background: #fff; /* Background color for the main content */
   border-radius: 10px;
+  background-color: #cbb688;
 }
 
 #event-message-container {
@@ -31,7 +32,7 @@ html {
   width: 92vw;
   max-width: 340px;
   height: 23vh;
-  background: rgba(186, 205, 186, 0.3);
+  background: rgba(186, 205, 186, 0.4);
   border-radius: 10px;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -242,11 +243,11 @@ html {
 
 .character-equipment {
   grid-area: C;
-  background-color: #9dff47;
+  background-color: #a49995;
 }
 .character-relationships {
   grid-area: B;
-  background-color: #9dff47;
+  background-color: #a49995;
 }
 .erik {
   width: 4em;
@@ -254,7 +255,7 @@ html {
 }
 .character-stats {
   grid-area: A;
-  background-color: #9dff47;
+  background-color: #a49995;
 }
 
 .charactersheet-container {
@@ -263,8 +264,6 @@ html {
   width: 100%;
   max-width: 360px;
   padding: 5px;
-  border: solid;
-  border-color: black;
   margin-top: 1em;
   gap: 5px 5px;
   grid-template-areas:
