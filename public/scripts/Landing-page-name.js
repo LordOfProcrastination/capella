@@ -34,6 +34,8 @@ const forbiddenWords = [
   "Transe",
   "Lesbe",
   "Homo",
+  "Homse",
+  "Lesbian",
 ];
 
 // Funksjon for å sjekke om navnet er gyldig

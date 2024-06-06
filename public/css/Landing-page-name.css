@@ -7,7 +7,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #2D6470; /* Bakgrunnsfarge for området rundt */
+    background-color: #535151; 
     font-family: Arial, sans-serif;
 }
 
@@ -39,22 +39,20 @@ body, html {
 
 /* Stil for telefonen */
 .phone {
-    width: 360px; /* Bredde på telefonskjermen */
-    height: 800px; /* Høyde på telefonskjermen */
-    background-image: url('images/buttons/geometry/mountain.png'); /* Bakgrunnsbilde */
-    background-size: cover; /* Dekk hele div */
-    background-position: center; /* Sentrer bakgrunnsbildet */
-    border: 5px solid #000; /* Kantlinje for å etterligne telefonramme */
-    border-radius: 20px; /* Runde hjørner for å etterligne telefonform */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Skygge for 3D-effekt */
-    position: relative; /* Posisjoneringskontekst for knappen */
+    width: 360px; 
+    height: 800px;
+    border: 5px solid #000; 
+    border-radius: 20px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    position: relative; 
+    background-color: #2D6470;
 }
 
 /* Stil for feilmeldingsboblen */
 .error-bubble {
-    display: none; /* Skjult som standard */
+    display: none;
     position: absolute;
-    top: 65%; /* Juster etter behov */
+    top: 65%; 
     left: 50%;
     transform: translateX(-50%);
     background-color: #f8d7da;
@@ -62,7 +60,7 @@ body, html {
     padding: 10px;
     border: 1px solid #f5c6cb;
     border-radius: 5px;
-    width: 80%; /* Juster etter behov */
+    width: 80%; 
     text-align: center;
     z-index: 1000;
 }
@@ -77,51 +75,51 @@ body, html {
 /* Posisjonering av fjellbildet */
 .phone img.mountain-img {
     position: absolute;
-    top: 17%; /* Juster denne verdien for å posisjonere bildet fra toppen */
-    left: 50%; /* Sentrer bildet horisontalt */
-    transform: translateX(-50%); /* Sentrer bildet horisontalt */
-    width: 100%; /* Juster bredden etter behov */
-    height: 450px; /* Oppretthold størrelsesforholdet */
+    top: 17%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 100%; 
+    height: 450px; 
 }
 
 /* Posisjonering av solformørkelsesbildet */
 .phone img.Eclipse-img {
     position: absolute;
-    top: 1%; /* Juster denne verdien for å posisjonere bildet fra toppen */
-    left: 50%; /* Sentrer bildet horisontalt */
-    transform: translateX(-50%); /* Sentrer bildet horisontalt */
-    width: 34%; /* Juster bredden etter behov */
-    height: auto; /* Oppretthold størrelsesforholdet */
+    top: 1%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 34%; 
+    height: auto; 
 }
 
 /* Posisjonering av rektangelbildet */
 .phone img.Rectangle-img {
     position: absolute;
-    top: 7%; /* Juster denne verdien for å posisjonere bildet fra toppen */
-    left: 50%; /* Sentrer bildet horisontalt */
-    transform: translateX(-50%); /* Sentrer bildet horisontalt */
-    width: 100%; /* Juster bredden etter behov */
-    height: auto; /* Oppretthold størrelsesforholdet */
+    top: 7%; 
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 100%; 
+    height: auto; 
 }
 
 /* Posisjonering av blekksprutbildet (venstre) */
 .phone img.Blekksprut-img {
     position: absolute;
-    top: 7.5%; /* Juster denne verdien for å posisjonere bildet fra toppen */
-    left: 5%; /* Juster venstre marg */
-    transform: translateX(-50%); /* Sentrer bildet horisontalt */
-    width: 6%; /* Juster bredden etter behov */
-    height: auto; /* Oppretthold størrelsesforholdet */
+    top: 7.5%; 
+    left: 5%; 
+    transform: translateX(-50%); 
+    width: 6%;
+    height: auto;
 }
 
 /* Posisjonering av blekksprutbildet (høyre) */
 .phone img.Blekkspruten-img {
     position: absolute;
-    top: 7.5%; /* Juster denne verdien for å posisjonere bildet fra toppen */
-    left: 95%; /* Juster høyre marg */
-    transform: translateX(-50%); /* Sentrer bildet horisontalt */
-    width: 6%; /* Juster bredden etter behov */
-    height: auto; /* Oppretthold størrelsesforholdet */
+    top: 7.5%; 
+    left: 95%; 
+    transform: translateX(-50%); 
+    width: 6%; 
+    height: auto; 
 }
 
 /* Stil for overskriften */
@@ -141,33 +139,33 @@ body, html {
 /* Stil for velkomstteksten */
 .phone p {
     position: absolute;
-    top: 620px; /* Juster denne verdien for å posisjonere avsnittet fra toppen */
+    top: 620px; 
     left: 50%;
     transform: translateX(-50%);
     margin: 0;
     padding: 10px;
-    background: #084166cc; /* Valgfri bakgrunn for bedre lesbarhet */
-    border-radius: 10px; /* Valgfrie avrundede hjørner */
-    font-size: 16px; /* Skriftstørrelse */
-    color: white; /* Skriftfarge */
+    background: #084166cc;
+    border-radius: 10px; 
+    font-size: 16px; 
+    color: white; 
 }
 
 /* Stil for inndatafeltet */
 #nameInput {
     position: absolute;
-    top: 690px; /* Juster denne verdien for å posisjonere inndatafeltet fra toppen */
-    left: 50%; /* Juster denne verdien for å posisjonere inndatafeltet fra venstre */
+    top: 690px; 
+    left: 50%; 
     transform: translateX(-50%);
     margin: 0;
     padding: 10px;
-    border-radius: 10px; /* Valgfrie avrundede hjørner */
-    border: 1px solid #050505; /* Valgfri kantlinjestil */
+    border-radius: 10px; 
+    border: 1px solid #050505; 
 }
 
 /* Stil for startknappen */
 .start-button {
     position: absolute;
-    bottom: 20px; /* Avstand fra bunnen av telefonen */
+    bottom: 20px; 
     left: 50%;
     transform: translateX(-50%);
     padding: 10px 30px;
