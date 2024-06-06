@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const pool = require("../db");
+const pool = require("../db"); // Ensure this points to your MySQL pool configuration
 
 // Get the story
 router.get("/", async (req, res) => {
@@ -89,15 +89,16 @@ router.get("/", async (req, res) => {
 
     res.json(chapters);
   } catch (err) {
+    console.error("Error fetching story:", err); // Log the error
     res.status(500).json({ error: err.message });
   }
 });
+
 // Get a specific chapter by ID
 router.get("/:id", async (req, res) => {
   const chapterId = req.params.id;
 
   try {
-    // Fetch the chapter with the specified ID from the database
     const [rows] = await pool.query(
       `
       SELECT 
@@ -129,14 +130,10 @@ router.get("/:id", async (req, res) => {
       [chapterId]
     );
 
-    // Process the fetched chapter data
-
-    // Check if the chapter with the specified ID exists
     if (rows.length === 0) {
       return res.status(404).json({ error: "Chapter not found" });
     }
 
-    // Extract the chapter details from the fetched rows
     const chapter = {
       id: rows[0].chapter_id,
       chapter: rows[0].chapter,
@@ -145,7 +142,6 @@ router.get("/:id", async (req, res) => {
       choices: [],
     };
 
-    // Iterate through the fetched rows to populate the choices array
     rows.forEach((row) => {
       const choice = {
         id: row.choice_id,
@@ -164,15 +160,12 @@ router.get("/:id", async (req, res) => {
         },
       };
 
-      // Add the choice to the chapter's choices array
       chapter.choices.push(choice);
     });
 
-    // Send the chapter as a JSON response
     res.json(chapter);
   } catch (err) {
-    // Handle any errors that occur during database query
-    console.error(err);
+    console.error("Error fetching specific chapter:", err); // Log the error
     res.status(500).json({ error: "Internal server error" });
   }
 });

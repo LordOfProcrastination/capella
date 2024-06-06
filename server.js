@@ -7,6 +7,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
 const routes = require("./routes/routes");
+const characterStatusRoutes = require("./routes/characterStatusRoutes");
 
 app.use(
   cors({
@@ -17,6 +18,7 @@ app.use(
 app.use(express.json());
 app.use(express.static("public"));
 app.use("/api/storyAPI", routes);
+app.use("/api/characterStatus", characterStatusRoutes);
 
 io.on("connection", (socket) => {
   console.log("A user connected");
