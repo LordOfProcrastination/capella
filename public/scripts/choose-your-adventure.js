@@ -1,5 +1,5 @@
 const eventMessage = document.querySelector("#event-message");
-let chapterIndex = 1;
+let chapterIndex = localStorage.getItem("chapterIndex") || 1;
 const timerDuration = 30000;
 let selectedChoice = null;
 let timer = null;
@@ -52,6 +52,7 @@ const startTimer = () => {
     }
 
     if (chapterIndex < 5) {
+      localStorage.setItem("chapterIndex", chapterIndex);
       chapterIndex++;
       nextChapter();
     } else {
