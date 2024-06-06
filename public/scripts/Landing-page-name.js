@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     snowflake.style.height = size;
 
     // Tilfeldig horisontal posisjon
-    snowflake.style.left = Math.random() * 18 + "vw";
+    snowflake.style.left = Math.random() * 360 + "px";
 
     // Tilfeldig animasjonsvarighet mellom 3s og 10s
     snowflake.style.animationDuration = Math.random() * 7 + 3 + "s";
