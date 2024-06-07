@@ -7,7 +7,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: #e0f7fa; /* Background color for the sides */
+  background: #e0f7fa; /* Light cyan background for the sides */
 }
 
 html {
@@ -22,9 +22,8 @@ html {
   align-items: center;
   justify-content: flex-start;
   max-width: 360px; /* Limit the content width */
-  background: #fff; /* Background color for the main content */
+  background: #ffffff; /* White background for the main content */
   border-radius: 10px;
-  background-color: #cbb688;
 }
 
 #event-message-container {
@@ -32,7 +31,7 @@ html {
   width: 92vw;
   max-width: 340px;
   height: 23vh;
-  background: rgba(186, 205, 186, 0.4);
+  background: rgba(173, 216, 230, 0.4); /* Light blue with transparency */
   border-radius: 10px;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -44,7 +43,7 @@ html {
   height: 20px;
   width: 92vw;
   max-width: 340px;
-  border: 3px solid rgba(186, 205, 186, 0.3);
+  border: 3px solid rgba(173, 216, 230, 0.3); /* Light blue border */
   border-radius: 20px;
   overflow: hidden;
   margin-bottom: 20px;
@@ -53,7 +52,7 @@ html {
 .timer-bar {
   width: 100%;
   height: 100%;
-  background-color: #9dff47;
+  background-color: #4682b4; /* Steel blue for timer bar */
   animation: countdown linear infinite;
 }
 
@@ -75,19 +74,15 @@ html {
 
 .event-btn {
   font-size: 0.8em;
-
   width: 100%;
   height: 100%;
-  background: #06c1de;
+  background: #1e90ff; /* Dodger blue for buttons */
   border: 0px;
   position: relative;
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-  box-shadow:
-    inset 0 -50px 5px rgba(0, 0, 0, 0.5),
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: inset 0 -50px 5px rgba(0, 0, 0, 0.5),
     inset 0 -10px 10px rgba(0, 0, 0, 0.3);
-  color: #fff; /* Default text color */
+  color: #fff; /* White text color */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,8 +111,7 @@ html {
 
 .event-btn.active {
   transform: translateY(10px); /* Move button content down by 10px */
-  /* Reduced box shadow */
-  box-shadow: inset 0 -4px 0 #10123e; /* Only one inner shadow */
+  box-shadow: inset 0 -4px 0 #10123e; /* Darker blue inner shadow */
 }
 .event-btn:focus {
   outline: none;
@@ -142,60 +136,50 @@ html {
   height: 113%;
   z-index: -1;
 }
+
 .btn-0 {
-  background-color: #4d9be6;
-  box-shadow:
-    inset -4px 2px 1px 1px #3b82c4,
-    inset -4px -2px 1px 1px #3b82c4,
+  background-color: #4d9be6; /* Light blue */
+  box-shadow: inset -4px 2px 1px 1px #3b82c4, inset -4px -2px 1px 1px #3b82c4,
     inset 4px 0px 1px 1px #3b82c4;
 }
 
 .btn-0.active {
-  background-color: #9bcbf2; /* Paler version of the original color */
-  box-shadow:
-    inset 0 -4px 0 #10123e,
-    inset 0 -8px 0 #484a77,
-    inset -4px 2px 1px 1px #3b82c4,
-    inset -4px -2px 1px 1px #3b82c4,
+  background-color: #9bcbf2; /* Paler light blue */
+  box-shadow: inset 0 -4px 0 #10123e, inset 0 -8px 0 #484a77,
+    inset -4px 2px 1px 1px #3b82c4, inset -4px -2px 1px 1px #3b82c4,
     inset 4px 0px 1px 1px #3b82c4;
 }
 
 /* Button 2 */
 .btn-1 {
-  background-color: #1ebc73;
-  box-shadow:
-    inset -4px 2px 1px 1px #169a5d,
-    inset -4px -2px 1px 1px #24d48a,
+  background-color: #1ebc73; /* Medium sea green */
+  box-shadow: inset -4px 2px 1px 1px #169a5d, inset -4px -2px 1px 1px #24d48a,
     inset 4px 0px 1px 1px #24d48a;
 }
 .btn-1.active {
-  background-color: #79e0ac; /* Paler version of the original color */
+  background-color: #79e0ac; /* Paler medium sea green */
 }
 
 /* Button 3 */
 .btn-2 {
-  background-color: #e6904e;
-  box-shadow:
-    inset -4px 2px 1px 1px #c67540,
-    inset -4px -2px 1px 1px #f0a367,
+  background-color: #e6904e; /* Sandy brown */
+  box-shadow: inset -4px 2px 1px 1px #c67540, inset -4px -2px 1px 1px #f0a367,
     inset 4px 0px 1px 1px #f0a367;
 }
 
 .btn-2.active {
-  background-color: #f0b685; /* Paler version of the original color */
+  background-color: #f0b685; /* Paler sandy brown */
 }
 
 /* Button 4 */
 .btn-3 {
-  background-color: #f68181;
-  box-shadow:
-    inset -4px 2px 1px 1px #d46a6a,
-    inset -4px -2px 1px 1px #ff9797,
+  background-color: #f68181; /* Light coral */
+  box-shadow: inset -4px 2px 1px 1px #d46a6a, inset -4px -2px 1px 1px #ff9797,
     inset 4px 0px 1px 1px #ff9797;
 }
 
 .btn-3.active {
-  background-color: #f9a9a9; /* Paler version of the original color */
+  background-color: #f9a9a9; /* Paler light coral */
 }
 
 /* New active state styles */
@@ -206,13 +190,7 @@ html {
 /* Media query for larger screens */
 @media (min-width: 1024px) {
   body {
-    background: linear-gradient(
-      to right,
-      #e0f7fa 25%,
-      #ffffff 25%,
-      #ffffff 75%,
-      #e0f7fa 75%
-    );
+    background: linear-gradient(90deg, #154060 2%, #526f89 51%, #154060 99%);
   }
 
   #container {
@@ -243,11 +221,11 @@ html {
 
 .character-equipment {
   grid-area: C;
-  background-color: #a49995;
+  border: 2px solid #a7cddc;
 }
 .character-relationships {
   grid-area: B;
-  background-color: #a49995;
+  border: 2px solid #a7cddc;
 }
 .erik {
   width: 4em;
@@ -255,7 +233,7 @@ html {
 }
 .character-stats {
   grid-area: A;
-  background-color: #a49995;
+  border: 2px solid #a7cddc;
 }
 
 .charactersheet-container {
