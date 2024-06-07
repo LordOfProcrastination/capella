@@ -1,0 +1,56 @@
+body {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #202f45;
+  background-image: url("/images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.header-line {
+  height: 5vh;
+  margin-top: 5%;
+  background-color: #202f45;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.squid-left-img-container,
+.squid-right-img-container {
+  display: flex;
+  justify-content: center;
+}
+
+.squid-left-img {
+  align-self: flex-start;
+  margin-left: 4rem;
+}
+
+.squid-right-img {
+  align-self: flex-end;
+  margin-right: 4rem;
+}
+
+.header-txt {
+  text-align: center;
+}
+/**/
+.main-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 5%;
+}
+.main-container h2 {
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+.login-button {
+}
