@@ -117,6 +117,7 @@ const createEventButtons = async (index) => {
 
         // Set the selected choice but do not update character stats yet
         selectedChoice = choice;
+        localStorage.setItem("selectedChoice", JSON.stringify(selectedChoice));
       });
 
       container.appendChild(button);
