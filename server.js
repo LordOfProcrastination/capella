@@ -45,6 +45,11 @@ io.on("connection", (socket) => {
       io.to(sessionId).emit("adminAction", "pauseScene");
     } else if (action === "questionStart") {
       io.to(sessionId).emit("adminAction", "questionStart");
+    } else if (action === "showQuestion") {
+      io.to(sessionId).emit("adminAction", {
+        action: "showQuestion",
+        data: data.data,
+      });
     }
     io.to(sessionId).emit("adminAction", action);
   });
