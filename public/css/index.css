@@ -46,11 +46,35 @@ body {
   flex-direction: column;
   text-align: center;
   margin-top: 5%;
+  background-color: #736f6f3d;
 }
 .main-container h2 {
   margin-left: 10rem;
   margin-right: 10rem;
 }
 
-.login-button {
+#button {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  padding: 20px 60px;
+  background-color: #202f45;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 5px 14px 41px 7px rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  font-size: 1.5em;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+#button:hover {
+  background-color: #1a2538; /* Slightly darker on hover */
+  box-shadow: 5px 14px 41px 7px rgba(0, 0, 0, 0.9); /* Darker shadow on hover */
+}
+
+#join-btn {
+  text-decoration: none; /* Ensure the link itself has no underline */
 }

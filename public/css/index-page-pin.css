@@ -6,189 +6,144 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #535151;
+    background-color: #535151; 
     font-family: Arial, sans-serif;
 }
 
-.container {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.phone {
+    width: 360px; 
+    height: 800px;
+    border: 5px solid #000; 
+    border-radius: 20px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    position: relative; 
+    background-color: #2D6470;
 }
 
-.background-img, .circle-img, .line-img, .squid1-img, .squid2-img {
+.phone img.jon-img {
     position: absolute;
-    width: 100%;
+    top: 20%; 
+    left: 50%;
+    height: 430px;
+    width: 100%; 
+    transform: translateX(-50%);
+}
+
+.phone img.circle-img {
+    position: absolute;
+    top: 1%; 
+    left: 50%;
     height: auto;
-}
-
-.circle-img {
-    top: 1%;
-    width: 40%;
-    left: 50%;
+    width: 40%; 
     transform: translateX(-50%);
 }
 
-.line-img {
-    top: 7.5%;
-    width: 100%;
+.phone img.line-img {
+    position: absolute;
+    top: 7.5%; 
     left: 50%;
+    height: 50px;
+    width: 100%; 
     transform: translateX(-50%);
 }
 
-.squid1-img {
+.phone img.squid1-img {
+    position: absolute;
     top: 9.3%;
     left: 95%;
+    transform: translateX(-50%);
     width: 6%;
     height: auto;
-    transform: translateX(-50%);
 }
 
-.squid2-img {
+.phone img.squid2-img {
+    position: absolute;
     top: 9.3%;
     left: 5%;
+    transform: translateX(-50%);
     width: 6%;
     height: auto;
-    transform: translateX(-50%);
 }
 
-h1 {
+.phone h1 {
     font-family: 'inknut Antiqua';
     font-size: 3.5em;
     color: #ffffff;
+    margin-top: 0px;
     position: absolute;
     top: 6.5%;
     left: 62.5%;
     transform: translateX(-50%);
     width: 100%;
-    text-align: center;
+    height: auto;
 }
 
-h2 {
-    font-family: 'inknut Antiqua';
-    font-size: 1.5em;
-    color: #ffffff;
+.phone p {
     position: absolute;
-    top: 50%;
+    top: 610px;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    width: 80%;
     text-align: center;
+    transform: translateX(-50%);
+    margin: 0;
+    background: #084166cc;
+    border-radius: 10px;
+    font-size: 16px; 
+    color: white; 
 }
 
-h3 {
-    font-family: 'inknut Antiqua';
-    font-size: 1.5em;
-    color: #ffffff;
+#pin-form {
     position: absolute;
-    top: 70%;
+    top: 710px; 
     left: 50%;
     transform: translateX(-50%);
-    width: 100%;
-    text-align: center;
+    margin: 0%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #084166cc;
 }
 
-h4, h5 {
-    font-family: 'inknut Antiqua';
-    font-size: 1em;
-    color: #ffffff;
+#snow-container {
     position: absolute;
-    bottom: 5%;
+    top: 0%; 
+    left: 0%;
+}
+
+.snowflake {
+    position: absolute;
+    top: 0px;
+    background: white;
+    border-radius: -10%;
+    opacity: 5;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(85vh);
+    }
+}
+
+button {
+    position: absolute;
+    bottom: -50px;
     left: 50%;
     transform: translateX(-50%);
-    text-align: center;
-}
-
-.button1, .button2 {
     padding: 10px 30px;
-    font-size: 1.5em;
+    font-size: 20px;
     font-weight: bold;
-    font-family: "inknut Antiqua";
-    text-decoration: none;
-    color: #ffffff;
+    color: white;
     background-color: #084166cc;
     border: none;
     border-radius: 15px;
     cursor: pointer;
     transition: background-color 0.3s;
-    position: absolute;
-    width: auto;
 }
 
-.button1 {
-    top: 80%;
-    left: 40%;
-    transform: translateX(-50%);
-}
-
-.button2 {
-    top: 80%;
-    left: 60%;
-    transform: translateX(-50%);
-}
-
-.button1:hover, .button2:hover {
+button:hover {
     background-color: #5e4120;
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 1200px) {
-    h1 {
-        font-size: 2.5em;
-    }
-    h2 {
-        font-size: 1.2em;
-    }
-    h3 {
-        font-size: 1.2em;
-    }
-    .button1, .button2 {
-        font-size: 1.2em;
-        padding: 8px 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2em;
-        top: 5%;
-    }
-    h2 {
-        font-size: 1em;
-        top: 40%;
-    }
-    h3 {
-        font-size: 1em;
-        top: 65%;
-    }
-    h4, h5 {
-        font-size: 0.8em;
-    }
-    .button1, .button2 {
-        font-size: 1em;
-        top: 75%;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.5em;
-    }
-    h2 {
-        font-size: 0.8em;
-    }
-    h3 {
-        font-size: 0.8em;
-    }
-    h4, h5 {
-        font-size: 0.7em;
-    }
-    .button1, .button2 {
-        font-size: 0.8em;
-        padding: 6px 15px;
-    }
+#message {
+    margin-top: 50px;
+    font-size: 1em;
 }

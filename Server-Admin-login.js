@@ -1,47 +1,51 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt');
-const cors = require('cors');
+const express = require("express");
+const bodyParser = require("body-parser");
+const bcrypt = require("bcrypt");
+const cors = require("cors");
+
 const app = express();
 const port = 3000;
 
 app.use(bodyParser.json());
 app.use(cors());
 
-let users = {};
+let users = {}; // Dette lagrer brukernavn og hashed passord i minnet
 
-app.post('/register', async (req, res) => {
-    const { username, password } = req.body;
-    console.log(`Received registration request for username: ${username}`);
+// Endpoint for registrering av nye brukere
+app.post("/register", async (req, res) => {
+  const { username, password } = req.body;
+  console.log(`Received registration request for username: ${username}`);
 
-    if (users[username]) {
-        console.log('Username already exists');
-        return res.status(400).json({ message: 'Username already exists' });
-    }
+  if (users[username]) {
+    console.log("Username already exists");
+    return res.status(400).json({ message: "Username already exists" });
+  }
 
-    const hashedPassword = await bcrypt.hash(password, 10);
-    users[username] = hashedPassword;
+  const hashedPassword = await bcrypt.hash(password, 10);
+  users[username] = hashedPassword;
 
-    console.log('Registered users:', users);  // Log registered users to the console
+  console.log("Registered users:", users); // Log registered users to the console
 
-    res.status(200).json({ message: 'User registered successfully' });
+  res.status(200).json({ message: "User registered successfully" });
 });
 
-app.post('/login', async (req, res) => {
-    const { username, password } = req.body;
-    console.log(`Received login request for username: ${username}`);
+// Endpoint for innlogging
+app.post("/login", async (req, res) => {
+  const { username, password } = req.body;
+  console.log(`Received login request for username: ${username}`);
 
-    const hashedPassword = users[username];
+  const hashedPassword = users[username];
 
-    if (!hashedPassword || !await bcrypt.compare(password, hashedPassword)) {
-        console.log('Invalid username or password');
-        return res.status(401).json({ message: 'Invalid username or password' });
-    }
+  if (!hashedPassword || !(await bcrypt.compare(password, hashedPassword))) {
+    console.log("Invalid username or password");
+    return res.status(401).json({ message: "Invalid username or password" });
+  }
 
-    console.log('Login successful');
-    res.status(200).json({ message: 'Login successful' });
+  console.log("Login successful");
+  res.status(200).json({ message: "Login successful" });
 });
 
+// Start serveren
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}/`);
+  console.log(`Server running at http://localhost:${port}/`);
 });

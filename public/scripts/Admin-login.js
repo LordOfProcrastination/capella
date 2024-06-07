@@ -1,65 +1,75 @@
-document.getElementById('registrationForm').addEventListener('submit', async function(event) {
+document
+  .getElementById("registrationForm")
+  .addEventListener("submit", async function (event) {
     event.preventDefault();
-    const newUsername = document.getElementById('newUsername').value;
-    const newPassword = document.getElementById('newPassword').value;
+    const newUsername = document.getElementById("newUsername").value;
+    const newPassword = document.getElementById("newPassword").value;
+    const registerError = document.getElementById("registerError");
+    const registerSuccess = document.getElementById("registerSuccess");
 
     if (!newUsername || !newPassword) {
-        alert('Both fields are required.');
-        return;
+      registerError.textContent = "Both fields are required.";
+      return;
     }
 
     // Send the registration data to the server
     try {
-        const response = await fetch('http://localhost:3000/admin-login.html', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ username: newUsername, password: newPassword })
-        });
+      const response = await fetch("http://localhost:3000/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username: newUsername, password: newPassword }),
+      });
 
-        if (response.ok) {
-            alert('Registration successful!');
-            document.getElementById('registrationForm').reset();
-        } else {
-            const data = await response.json();
-            alert(`Registration failed: ${data.message}`);
-        }
+      if (response.ok) {
+        registerSuccess.textContent = "Registration successful!";
+        registerError.textContent = "";
+        document.getElementById("registrationForm").reset();
+      } else {
+        const data = await response.json();
+        registerError.textContent = `Registration failed: ${data.message}`;
+        registerSuccess.textContent = "";
+      }
     } catch (error) {
-        console.error('Error during registration:', error);
-        alert('An error occurred during registration.');
+      console.error("Error during registration:", error);
+      registerError.textContent = "An error occurred during registration.";
+      registerSuccess.textContent = "";
     }
-});
+  });
 
-document.getElementById('loginButton').addEventListener('click', async function(event) {
+document
+  .getElementById("loginButton")
+  .addEventListener("click", async function (event) {
     event.preventDefault();
-    const username = document.getElementById('loginUsername').value;
-    const password = document.getElementById('loginPassword').value;
+    const username = document.getElementById("loginUsername").value;
+    const password = document.getElementById("loginPassword").value;
+    const loginError = document.getElementById("loginError");
 
     if (!username || !password) {
-        alert('Both fields are required.');
-        return;
+      loginError.textContent = "Both fields are required.";
+      return;
     }
 
     // Send the login data to the server
     try {
-        const response = await fetch('http://localhost:3000/admin-login.html', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ username, password })
-        });
+      const response = await fetch("http://localhost:3000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      });
 
-        if (response.ok) {
-            alert('Login successful!');
-            window.location.href = "http://127.0.0.1:5500/public/admin-page.html";
-        } else {
-            const data = await response.json();
-            alert(`Login failed: ${data.message}`);
-        }
+      if (response.ok) {
+        loginError.textContent = "";
+        window.location.href = "http://127.0.0.1:5500/public/Admin-Page.html"; // Redirect to admin page
+      } else {
+        const data = await response.json();
+        loginError.textContent = `Login failed: ${data.message}`;
+      }
     } catch (error) {
-        console.error('Error during login:', error);
-        alert('An error occurred during login.');
+      console.error("Error during login:", error);
+      loginError.textContent = "An error occurred during login.";
     }
-});
+  });
