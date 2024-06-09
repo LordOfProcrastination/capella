@@ -4,66 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login and Register</title>
-    <link rel="stylesheet" href="css/Admin-login.css" />
+    <link rel="stylesheet" href="css/admin-login.css" />
   </head>
   <body>
-    <div class="container">
-      <img
-        src="images/background.jpg"
-        alt="background-img"
-        class="background-img"
-      />
-      <img src="images/circle.png" alt="circle" class="circle-img" />
-      <img src="images/line.png" alt="line" class="line-img" />
-      <img src="images/squid.png" alt="squid1" class="squid1-img" />
-      <img src="images/squid.png" alt="squid2" class="squid2-img" />
 
-      <h1>CAPELLA</h1>
-      <h2>Personvern</h2>
+    <div class="navbar">
+      <div class="menu-left">
+        <a href="index.html">Hjem</a>
+        <a href="#">Om oss</a>
+      </div>
+ <a href="index.html" class="logo-link">
+  <div class="logo-container">
+    <div data-value="CAPELLA" id="logo-text" class="logo-text">CAPELLA</div>
+  </div>
+</a>
+      <div class="menu-right">
+        <a href="admin-page.html">Debug: bypass admin login</a>
+        <a href="#">Kontakt</a>
+      </div>
+    </div>
+    <main>
 
-      <div class="container2">
-        <div class="container3">
-          <h5>Login Page</h5>
-          <h3>Username</h3>
+      <div id="login-container" class="login-container">
+
+        <h1>Logg inn</h1>
+          <h3>Brukernavn</h3>
           <div class="input-box1">
             <input
               type="text"
               id="loginUsername"
-              placeholder="Username"
+              placeholder="eksemple@live.no"
               required
             />
           </div>
-          <h4>Password</h4>
+          <h3>Passord</h3>
           <div class="input-box2">
             <input
               type="password"
               id="loginPassword"
-              placeholder="Password"
+              placeholder="Passord"
               required
             />
-          </div>
-          <button id="loginButton" class="button1">LOGIN</button>
-          <p id="loginError" style="color: red"></p>
-        </div>
-
-        <div class="container4">
-          <form id="registrationForm">
-            <label for="newUsername">Username:</label>
-            <input type="text" id="newUsername" name="newUsername" required />
-            <label for="newPassword">Password:</label>
-            <input
-              type="password"
-              id="newPassword"
-              name="newPassword"
-              required
-            />
-            <button type="submit">Register</button>
-            <p id="registerError" style="color: red"></p>
-            <p id="registerSuccess" style="color: green"></p>
-          </form>
-        </div>
+          
+          <div id="login-btn">Logg inn</div>
+          <div id="login-error"></div>
+        </a>
       </div>
-    </div>
+  
+    </main>
 
     <script src="scripts/admin-login.js"></script>
   </body>

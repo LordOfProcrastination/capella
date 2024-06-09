@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capella - Register ny admin-bruker</title>
+    <link rel="stylesheet" href="css/admin-register.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="menu-left">
+        <a href="index.html">Hjem</a>
+        <a href="#">Om oss</a>
+      </div>
+      <a href="index.html" class="logo-link">
+        <div class="logo-container">
+          <div data-value="CAPELLA" id="logo-text" class="logo-text">
+            CAPELLA
+          </div>
+        </div>
+      </a>
+      <div class="menu-right">
+        <a href="admin-page.html">Debug: bypass admin login</a>
+        <a href="#">Kontakt</a>
+      </div>
+    </div>
+    <div id="container">
+      <div id="register-container" class="register-container">
+        <h2>Registre ny bruker</h2>
+        <form id="registrationForm">
+          <label for="newUsername">Nytt Brukernavn:</label>
+          <input type="text" id="newUsername" name="newUsername" required />
+
+          <label for="newPassword">Passord:</label>
+          <input type="password" id="newPassword" name="newPassword" required />
+
+          <button type="submit" class="register-btn">Register</button>
+          <p id="registerError" style="color: red"></p>
+          <p id="registerSuccess" style="color: green"></p>
+        </form>
+      </div>
+    </div>
+    <script src="scripts/admin-register.js"></script>
+  </body>
+</html>

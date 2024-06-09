@@ -3,39 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>index</title>
+    <title>Loading - Capella</title>
     <link rel="stylesheet" href="css/index.css" />
   </head>
   <body>
-    <header>
-      <div class="header-line">
-        <div class="squid-left-img-container">
-          <img src="images/squid.png" alt="squid1" class="squid-left-img" />
-        </div>
-        <div class="header-circle">
-          <h2 class="header-txt">CAPELLA</h2>
-        </div>
-
-        <div class="squid-right-img-container">
-          <a href="admin-page.html" class="login-button"
-            ><button>LOGIN</button></a
-          >
-          <img src="images/squid.png" alt="squid1" class="squid-right-img" />
-        </div>
+    <canvas id="canvas"></canvas>
+    <div class="navbar">
+      <div class="menu-left">
+        <a href="index.html">Hjem</a>
+        <a href="#">Om oss</a>
       </div>
-    </header>
+      <a href="index.html" class="logo-link">
+        <div class="logo-container">
+          <div data-value="CAPELLA" id="logo-text" class="logo-text">
+            CAPELLA
+          </div>
+        </div>
+      </a>
+      <div class="menu-right">
+        <a href="admin-login.html">Logg inn</a>
+        <a href="#">Kontakt</a>
+      </div>
+    </div>
     <main>
       <div class="main-container">
         <h1>An Epic Tale Awaits</h1>
-        <h2>
+        <h2
+          data-value="Once upon a time, a man and a white wolf set forth to the Promised
+          Land, a place of ancient legends and untold secrets. Their fate,
+          however, lies in your hands. You will decide what befalls them on
+          their epic journey."
+          id="description"
+        >
           Once upon a time, a man and a white wolf set forth to the Promised
           Land, a place of ancient legends and untold secrets. Their fate,
           however, lies in your hands. You will decide what befalls them on
           their epic journey.
         </h2>
-        <h3>Let the adventure begin!</h3>
+        <h3 data-value="Let the adventure begin!" id="start-text">
+          Let the adventure begin!
+        </h3>
         <a href="#" class="join-btn" id="join-btn">
-          <div id="button">START</div>
+          <div data-value="START" id="button">START</div>
         </a>
       </div>
     </main>
