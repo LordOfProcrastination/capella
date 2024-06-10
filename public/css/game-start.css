@@ -152,7 +152,7 @@ button {
   border: none;
   border-radius: 15px;
   cursor: pointer;
-  max-width: 10vw;
+  max-width: 40vw;
   transition: background-color 0.3s;
 }
 

@@ -17,7 +17,9 @@ function redirectToPage(url, delay) {
   }, delay);
 }
 
-// Example usage: Redirect to "target.html" after 5 seconds (5000 milliseconds)
+// Example usage: Redirect to "target.html" after 5 seconds (5000 milliseconds)'
+
+/* Temp
 window.onload = function () {
   if (chapterIndex < 5) {
     chapterIndex++;
@@ -27,17 +29,4 @@ window.onload = function () {
     redirectToPage("game-ending-result.html", 10000);
   }
 };
-
-/*
-    if (chapterIndex < 5) {
-      chapterIndex++;
-      localStorage.setItem("chapterIndex", chapterIndex);
-      nextChapter();
-    } else {
-      localStorage.clear();
-      chapterIndex = 1;
-      console.log("Reached the last chapter. LocalStorage cleared.");
-      eventMessage.innerHTML = "You've reached the end of the adventure.";
-    }
-  }, timerDuration);
 */

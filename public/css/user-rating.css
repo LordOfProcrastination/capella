@@ -16,7 +16,7 @@ html {
   align-items: center;
   max-width: 360px;
   background: #2d6470;
-  border-radius: 10px;
+
   color: #fff;
   font-family: "Inknut Antiqua";
 }
@@ -148,6 +148,7 @@ button {
   border-radius: 15px;
   cursor: pointer;
   max-width: 10vw;
+  padding: 10px 20px;
   transition: background-color 0.3s;
 }
 

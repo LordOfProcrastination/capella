@@ -1,22 +1,39 @@
-main {
-  height: 100vh;
-  margin: 1em auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 360px; /* Limit the content width */
-  background: #202f45; /* Background color for the main content */
-  border-radius: 10px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
 }
+
 body {
-  background: #e0f7fa; /* Background color for the sides */
+  font-family: monospace;
+  background: #e0f7fa; /* Light cyan background for the sides */
 }
+
+html {
+  overflow: hidden;
+}
+
+.main {
+  width: 360px;
+  height: 100vh;
+
+  position: relative;
+  background-color: #2d6470;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 auto;
+  align-items: center;
+}
+
 #Text {
   background-color: #2d6470;
   width: 200px;
   height: 75px;
   border-radius: 30px;
+  text-align: center;
 }
 p {
   text-align: center;
@@ -77,10 +94,12 @@ p {
   margin: 1em;
   padding: 1em;
   color: white;
+  border-radius: 10px;
 }
 #consequence-output span,
 h4 {
   background: #202f45;
   margin: 1em;
   padding: 1em;
+  border-radius: 10px;
 }

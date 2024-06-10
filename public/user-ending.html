@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -13,61 +13,26 @@
   </head>
   <body>
     <main id="container">
-      <section class="logo-container">
-        <div class="rectangle">
-          <i class="material-symbols-outlined raven">raven</i>
-          <div class="page-name">THE END</div>
-          <i class="material-symbols-outlined raven">raven</i>
-        </div>
-        <div class="circle"></div>
+      <div class="navbar">
+        <img src="images/squid.png" alt="squid1" class="squid1-img" />
+        <a href="index.html" class="logo-link">
+          <div class="logo-container">
+            <div data-value="CAPELLA" id="logo-text" class="logo-text">
+              CAPELLA
+            </div>
+          </div>
+        </a>
+        <img src="images/squid.png" alt="squid1" class="squid2-img" />
+      </div>
+
+      <section class="show-ending-text-container">
+        <p class="ending-greeting">Du har kommet til avslutningen!</p>
+        <p id="ending-summary"></p>
       </section>
-      <section class="show-ending-text">
-        <span class="ending-greeting"> Du har kommet til avslutningen! </span>
-        <p class="ending-summary"></p>
-      </section>
-      <section class="show-ending-result-container">
-        <p class="end-result-message">Du var en av 30% som valgte noe</p>
-        <div class="bars-container">
-          <div class="bar bar-a-1"></div>
-          <div class="bar bar-a-2"></div>
-          <div class="bar bar-a-3"></div>
-          <div class="bar bar-a-4"></div>
-        </div>
-      </section>
-      <section class="show-ending-result-container">
-        <p class="end-result-message">Du var en av 10% som valgte noe</p>
-        <div class="bars-container">
-          <div class="bar bar-b-1"></div>
-          <div class="bar bar-b-2"></div>
-          <div class="bar bar-b-3"></div>
-          <div class="bar bar-b-4"></div>
-        </div>
-      </section>
-      <section class="show-ending-result-container">
-        <p class="end-result-message">Du var en av 50% som valgte noe</p>
-        <div class="bars-container">
-          <div class="bar bar-c-1"></div>
-          <div class="bar bar-c-2"></div>
-          <div class="bar bar-c-3"></div>
-          <div class="bar bar-c-4"></div>
-        </div>
-      </section>
-      <section class="show-ending-result-container">
-        <p class="end-result-message">Du var en av 5% som valgte noe</p>
-        <div class="bars-container">
-          <div class="bar bar-d-1"></div>
-          <div class="bar bar-d-2"></div>
-          <div class="bar bar-d-3"></div>
-          <div class="bar bar-d-4"></div>
-        </div>
-      </section>
+
+      <section class="choice-result-container"></section>
       <section class="end-btn-container">
-        <input
-          type="button"
-          value="Avslutt Eriks Reise"
-          class="end-btn"
-          id="end-btn"
-        />
+        <input type="button" value="Avslutt" class="end-btn" id="end-btn" />
       </section>
     </main>
     <script src="scripts/user-ending.js"></script>

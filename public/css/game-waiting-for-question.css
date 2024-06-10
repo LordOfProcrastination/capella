@@ -75,16 +75,6 @@ html {
   color: inherit;
 }
 
-#text {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 11.5%;
-  display: table;
-  margin: 3vh auto 0px auto;
-  z-index: 2;
-}
-
 p {
   text-align: center;
 
@@ -107,6 +97,7 @@ h4 {
   background: #202f45;
   margin: 1em;
   padding: 1em;
+  border-radius: 20px;
 }
 
 .loadingWheel {
