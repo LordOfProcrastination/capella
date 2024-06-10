@@ -58,5 +58,5 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const chapterTitle = document.querySelector("h4");
-  if (chapterTitle) applyEffect(chapterTitle, 2);
+  if (chapterTitle) applyEffect(chapterTitle, 1);
 });
