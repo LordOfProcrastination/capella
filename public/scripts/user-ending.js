@@ -4,7 +4,7 @@ function redirectToPage(url) {
 }
 
 const endGame = () => {
-  redirectToPage("user-ending-rating.html");
+  redirectToPage("user-rating.html");
   localStorage.clear();
 };
 

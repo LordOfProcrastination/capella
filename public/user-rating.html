@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,15 +6,22 @@
     <title>Landing Page</title>
     <link rel="icon" href="images/icons/octoknife.jpg" />
     <link rel="stylesheet" href="css/user-rating.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <script src="scripts/user-rating.js"></script>
   </head>
   <body>
     <main id="container">
-      <br />
-      <h1>THE END</h1>
-
-      <h1>Hjelp oss å bli bedre!</h1>
-      <br />
+      <section class="logo-container">
+        <div class="rectangle">
+          <i class="material-symbols-outlined raven">raven</i>
+          <div class="page-name">THE END</div>
+          <i class="material-symbols-outlined raven">raven</i>
+        </div>
+        <div class="circle"></div>
+      </section>
       <h3>Hva synes du om forestillingen?</h3>
       <div class="star-rating">
         <span class="star" data-value="5">&#9733;</span>
@@ -41,7 +48,11 @@
             placeholder="Legg til kommentar..."
             required
           ></textarea>
-          <button id="end-btn" type="submit">Avslutt</button>
+          <div class="end-btn-container">
+            <button id="end-btn" class="end-btn" type="submit">
+              <p>Avslutt Spill</p>
+            </button>
+          </div>
         </form>
         <div id="comments-container"></div>
       </div>
