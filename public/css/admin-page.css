@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: monospace;
 }
 
 body {
@@ -59,7 +60,7 @@ body {
   background-color: rgb(51, 51, 51, 0.37);
   color: white;
   position: fixed;
-  top: 0;
+
   width: 100%;
   z-index: 1000;
 }
@@ -104,6 +105,8 @@ body {
   padding: 10px;
   background-color: #fff;
   justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 .sidebar p {
   padding: 1em;
@@ -208,13 +211,14 @@ body {
 /*______ contents ______ */
 #event-message {
   grid-area: event;
+  background-color: #76767628;
 
   display: flexbox;
-  border: 2px solid #121c2c;
+
   padding: 10px 20px;
   margin: 10px auto;
   align-items: center;
-  font-size: 24px;
+  font-size: 12px;
 }
 #play-scene-btn {
   grid-area: play-btn;
@@ -238,12 +242,18 @@ body {
 }
 #back-btn {
   grid-area: back-btn;
+  background-color: rgb(183, 183, 183);
+  cursor: not-allowed;
 }
 #skip-btn {
   grid-area: skip-btn;
+  background-color: rgb(183, 183, 183);
+  cursor: not-allowed;
 }
 #edit-question-btn {
   grid-area: edit-q-btn;
+  background-color: rgb(183, 183, 183);
+  cursor: not-allowed;
 }
 #end-btn {
   grid-area: end-btn;
@@ -276,16 +286,23 @@ body {
 /*---Last questions txt box--- */
 #last-question-txtbox {
   grid-area: q-txt;
-  border: 2px solid #121c2c;
-  margin: 10px 10px;
-  font-size: 32px;
-  padding: 1em;
+
+  background-color: #76767628;
+
+  display: flexbox;
+  padding: 10px 20px;
+  margin: 10px auto;
+  align-items: center;
+}
+
+#last-question-txtbox > p {
+  margin: 0.5rem;
+  padding: 0;
 }
 
 /*---Answered counter--- */
 #answered-counter-title {
   grid-area: answers;
-  border: 2px solid #121c2c;
 }
 #answered-counter {
   background-color: rgba(110, 143, 158, 0.302);
@@ -296,7 +313,6 @@ body {
 
 #time-left-title {
   grid-area: time;
-  border: 2px solid #121c2c;
 }
 #time-left-counter {
   background-color: rgba(110, 143, 158, 0.302);
@@ -306,7 +322,6 @@ body {
 /*---Voted result---- */
 #voted-result-title {
   grid-area: voted;
-  border: 2px solid #121c2c;
 }
 
 #voted-result {

@@ -1,36 +1,51 @@
+/* Generelle stiler for body og html */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+body {
+  font-family: monospace;
+  background: #e0f7fa; /* Light cyan background for the sides */
+}
+
+html {
+  overflow: hidden;
+}
+
 main {
   height: 100vh;
-  margin: 1em auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   max-width: 360px; /* Limit the content width */
   background: #202f45; /* Background color for the main content */
-  border-radius: 10px;
 }
-body {
-  background: #e0f7fa; /* Background color for the sides */
-}
-div {
+
+.txt-container {
   background-color: #2d6470;
-  width: 200px;
+  width: 300px;
   height: 75px;
-  border-radius: 30px;
+  max-width: 80vw;
+  border-radius: 5px 20px 5px;
 }
 #overlay {
   position: absolute;
   height: 100vh;
   width: 360px;
-  border-radius: 10px;
+
   background-color: rgb(5, 5, 54);
   opacity: 60%;
 }
-p {
+.action-txt {
   text-align: center;
-  margin: 0;
-  padding: 14%;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: medium;
+  max-width: 90vw;
+  margin: 0 auto;
+  padding: 30px 20px;
+  font-size: 1rem;
   color: aliceblue;
 }

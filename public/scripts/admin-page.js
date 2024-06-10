@@ -122,15 +122,15 @@ async function questionStart() {
 
 function displayLastQuestion(data) {
   if (data) {
-    const { chapter, choices } = data;
+    const { chapterId, chapter, choices } = data;
+
     let choicesHtml = choices
       .map((choice) => `<p>${choice.id}: ${choice.text}</p>`)
       .join("");
-    const formattedText = `
-      <h4>${chapter}</h4>
-      ${choicesHtml}
-    `;
+    const formattedText = `<h3>${chapter}</h3>${choicesHtml}`;
     document.getElementById("last-question-txtbox").innerHTML = formattedText;
+    document.getElementById("question-counter").innerHTML =
+      `<span>${chapterId} / 5</span>`;
   } else {
     document.getElementById("last-question-txtbox").innerHTML =
       "No data available.";
@@ -151,8 +151,7 @@ function displayNextQuestion(data) {
         "Data structure is incorrect.";
     }
   } else {
-    document.getElementById("event-message").innerHTML =
-      "Ending - I will edit this later.";
+    document.getElementById("event-message").innerHTML = "Ending - ";
   }
 }
 
@@ -191,7 +190,7 @@ async function fetchChapterData(chapterId) {
     if (!data.chapter || !data.choices) {
       throw new Error("Data structure is incorrect");
     }
-    return data;
+    return { ...data, chapterId };
   } catch (error) {
     console.error("There was a problem with the fetch operation:", error);
     return null; // Return null in case of error to handle it gracefully

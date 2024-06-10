@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="no">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Se stykket spille</title>
+    <title>Se stykket spiller</title>
     <link
       rel="Stylesheet"
       href="css/game-watching-the-scene.css"
@@ -12,11 +12,12 @@
   </head>
   <body>
     <main>
-      <div id="text">
-        <p>Se på scenen 😄 skjermen blir aktiv når du kan bli med !</p>
+      <div id="txt-container">
+        <p class="waiting-txt">
+          Se på scenen 😄 skjermen blir aktiv når du kan bli med !
+        </p>
       </div>
       <div id="overlay"></div>
-      <div class="loadingWheel"></div>
     </main>
     <script src="socket.io/socket.io.js"></script>
     <script src="scripts/game-watching-the-scene.js"></script>

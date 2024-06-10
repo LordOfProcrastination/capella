@@ -1,43 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NAME REGISTER</title>
+    <title>Welcome to Loading by Capella</title>
     <link rel="stylesheet" href="css/game-start-name.css" />
   </head>
   <body>
     <div class="phone">
-      <!-- Bakgrunns- og dekorasjonsbilder -->
+      <!-- Container for snøeffekt -->
+      <div id="snow-container"></div>
+      <div class="navbar">
+        <img src="images/squid.png" alt="squid1" class="squid1-img" />
+
+        <a href="index.html" class="logo-link">
+          <div class="logo-container">
+            <div data-value="CAPELLA" id="logo-text" class="logo-text">
+              CAPELLA
+            </div>
+          </div>
+        </a>
+        <img src="images/squid.png" alt="squid1" class="squid2-img" />
+      </div>
       <img
         src="images/geometry/mountain.png"
         alt="mountain"
         class="mountain-img"
       />
-      <img
-        src="images/geometry/Eclipse.png"
-        alt="Eclipse"
-        class="Eclipse-img"
-      />
-      <img
-        src="images/geometry/Rectangle.png"
-        alt="Rectangle"
-        class="Rectangle-img"
-      />
-      <img
-        src="images/geometry/Blekksprut.png"
-        alt="Blekksprut"
-        class="Blekksprut-img"
-      />
-      <img
-        src="images/geometry/Blekksprut.png"
-        alt="Blekksprut"
-        class="Blekkspruten-img"
-      />
 
       <!-- Hovedinnhold -->
-      <h1>NAME REGISTER</h1>
-      <p>Velkommen eventyrer! Tast inn NAVN</p>
+
+      <p class="welcome-txt">Velkommen eventyrer! Tast inn NAVN</p>
 
       <!-- Inndatafelt for navn -->
       <input type="text" id="nameInput" placeholder="Skriv Navn Her" />
@@ -46,14 +39,13 @@
       <div id="errorBubble" class="error-bubble"></div>
 
       <!-- Startknapp -->
-      <button class="start-button" onclick="submitName()">Start</button>
-
-      <!-- Container for snøeffekt -->
-      <div id="snow-container"></div>
-
-      <!-- JavaScript-fil -->
-      <script src="scripts/game-start-name.js"></script>
-      <script src="socket.io/socket.io.js"></script>
+      <button id="submitNameButton" class="start-button">LOGG PÅ</button>
+      <!-- Feilmeldingsboble -->
+      <div id="errorBubble" class="error-bubble"></div>
     </div>
+
+    <!-- JavaScript-fil -->
+    <script src="scripts/game-start-name.js"></script>
+    <script src="socket.io/socket.io.js"></script>
   </body>
 </html>

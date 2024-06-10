@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       iteration += iterationIncrement / 3;
-    }, 25);
+    }, 30);
   };
   const logoText = document.getElementById("logo-text");
   const startText = document.getElementById("start-text");

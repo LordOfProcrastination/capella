@@ -1,29 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WELCOME TO CAPELLA PIN PAGE</title>
+    <title>Welcome to Loading by Capella</title>
     <link rel="stylesheet" href="css/game-start.css" />
   </head>
   <body>
     <div class="phone">
+      <div id="snow-container"></div>
+      <div class="navbar">
+        <img src="images/squid.png" alt="squid1" class="squid1-img" />
+
+        <a href="index.html" class="logo-link">
+          <div class="logo-container">
+            <div data-value="CAPELLA" id="logo-text" class="logo-text">
+              CAPELLA
+            </div>
+          </div>
+        </a>
+
+        <img src="images/squid.png" alt="squid1" class="squid2-img" />
+      </div>
+
       <img src="images/Jon.webp" alt="jon" class="jon-img" />
-      <img src="images/circle.png" alt="circle" class="circle-img" />
-      <img src="images/line.png" alt="line" class="line-img" />
-      <img src="images/squid.png" alt="squid1" class="squid1-img" />
-      <img src="images/squid.png" alt="squid1" class="squid2-img" />
-      <h1>CAPELLA</h1>
-      <p>Velkommen eventyrer! Tast inn PIN</p>
+
+      <p class="welcome-txt">Velkommen eventyrer! Tast inn PIN</p>
 
       <form id="pin-form">
         <input type="text" id="pin" maxlength="7" required />
-        <button type="submit">START</button>
+        <button type="submit">BEKREFT</button>
       </form>
       <p id="message"></p>
-
-      <div id="snow-container"></div>
     </div>
+
     <script src="/socket.io/socket.io.js"></script>
     <script src="scripts/game-start.js"></script>
   </body>

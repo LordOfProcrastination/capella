@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let size = Math.random() * 4 + 2 + "px";
     snowflake.style.width = size;
     snowflake.style.height = size;
+    snowflake.style.borderRadius = 50 + "%";
 
     // Tilfeldig horisontal posisjon
     snowflake.style.left = Math.random() * 360 + "px";

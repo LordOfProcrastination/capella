@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Random horizontal position
     snowflake.style.left = Math.random() * 360 + "px";
+    snowflake.style.borderRadius = 50 + "%";
 
     // Random animation duration between 3s and 10s
     snowflake.style.animationDuration = Math.random() * 7 + 3 + "s";
