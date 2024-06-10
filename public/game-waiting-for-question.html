@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="no">
   <head>
     <meta charset="UTF-8" />
@@ -12,23 +12,23 @@
   </head>
   <body>
     <main>
-      <div id="Loading">
-        <p id="text">LOADING</p>
+      <div id="container">
+        <div class="navbar">
+          <img src="images/squid.png" alt="squid1" class="squid1-img" />
+
+          <a href="index.html" class="logo-link">
+            <div class="logo-container">
+              <div data-value="CAPELLA" id="logo-text" class="logo-text">
+                CAPELLA
+              </div>
+            </div>
+          </a>
+          <img src="images/squid.png" alt="squid1" class="squid2-img" />
+        </div>
+
+        <div id="scene-output"></div>
+        <div class="loadingWheel"></div>
       </div>
-      <div id="Logo">
-        <img src="/images/geometry/Eclipse.png" id="Eclipse" />
-        <img src="/images/geometry/Rectangle.png" id="Rectangle" />
-        <img src="/images/geometry/Blekksprut.png" id="Blekksprut1" />
-        <img src="/images/geometry/Blekksprut.png" id="Blekksprut2" />
-      </div>
-      <div id="Q">
-        <p>Spørsmål kommer</p>
-      </div>
-      <div id="scene-output"></div>
-      <div class="loadingWheel"></div>
-      <!-- <div class="load">
-            <hr/><hr/><hr/><hr/>
-        </div> -->
     </main>
     <script src="socket.io/socket.io.js"></script>
     <script type="module" src="scripts/game-waiting-for-question.js"></script>
