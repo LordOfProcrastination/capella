@@ -22,9 +22,9 @@ window.onload = function () {
   if (chapterIndex < 5) {
     chapterIndex++;
     localStorage.setItem("chapterIndex", chapterIndex);
-    redirectToPage("watching-the-scene-innaktiv.html", 10000);
+    redirectToPage("game-watching-the-scene.html", 10000);
   } else {
-    redirectToPage("user-ending.html", 10000);
+    redirectToPage("game-ending-result.html", 10000);
   }
 };
 

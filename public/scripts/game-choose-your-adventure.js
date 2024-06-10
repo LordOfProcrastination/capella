@@ -334,5 +334,5 @@ function redirectToPage(url, delay) {
   }, delay);
 }
 setTimeout(() => {
-  window.location.href = "watching-decision.html";
+  window.location.href = "game-watching-decision.html";
 }, 30050);

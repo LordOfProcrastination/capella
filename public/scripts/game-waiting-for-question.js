@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   socket.on("adminAction", (action) => {
     if (action === "questionStart") {
       console.log("Received questionStart"); // Log
-      window.location.href = "choose-your-adventure.html";
+      window.location.href = "game-choose-your-adventure.html";
     }
   });
 });

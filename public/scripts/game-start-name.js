@@ -62,7 +62,7 @@ function submitName() {
     if (isNameValid(nameInput)) {
       showError("Navn registrert: " + nameInput, true);
       setTimeout(() => {
-        window.location.href = `welcome-room.html?name=${encodeURIComponent(
+        window.location.href = `game-welcome-room.html?name=${encodeURIComponent(
           nameInput
         )}`;
       }, 2000); // Vent 2 sekunder før omdirigering

@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Listen for admin action to start the scene
   socket.on("adminAction", (action) => {
     if (action === "playScene") {
-      window.location.href = "watching-the-scene.html";
+      window.location.href = "game-first-scene.html";
     }
   });
 });

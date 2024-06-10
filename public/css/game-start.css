@@ -1,0 +1,150 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #535151;
+  font-family: Arial, sans-serif;
+}
+
+.phone {
+  width: 360px;
+  height: 800px;
+  border: 5px solid #000;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  background-color: #2d6470;
+}
+
+.phone img.jon-img {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  height: 430px;
+  width: 100%;
+  transform: translateX(-50%);
+}
+
+.phone img.circle-img {
+  position: absolute;
+  top: 1%;
+  left: 50%;
+  height: auto;
+  width: 40%;
+  transform: translateX(-50%);
+}
+
+.phone img.line-img {
+  position: absolute;
+  top: 7.5%;
+  left: 50%;
+  height: 50px;
+  width: 100%;
+  transform: translateX(-50%);
+}
+
+.phone img.squid1-img {
+  position: absolute;
+  top: 9.3%;
+  left: 95%;
+  transform: translateX(-50%);
+  width: 6%;
+  height: auto;
+}
+
+.phone img.squid2-img {
+  position: absolute;
+  top: 9.3%;
+  left: 5%;
+  transform: translateX(-50%);
+  width: 6%;
+  height: auto;
+}
+
+.phone h1 {
+  font-family: "inknut Antiqua";
+  font-size: 3.5em;
+  color: #ffffff;
+  margin-top: 0px;
+  position: absolute;
+  top: 6.5%;
+  left: 62.5%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: auto;
+}
+
+.phone p {
+  position: absolute;
+  top: 610px;
+  left: 50%;
+  text-align: center;
+  transform: translateX(-50%);
+  margin: 0;
+  background: #084166cc;
+  border-radius: 10px;
+  font-size: 16px;
+  color: white;
+}
+
+#pin-form {
+  position: absolute;
+  top: 710px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #084166cc;
+}
+
+#snow-container {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
+.snowflake {
+  position: absolute;
+  top: 0px;
+  background: white;
+  border-radius: -10%;
+  opacity: 5;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(85vh);
+  }
+}
+
+button {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background-color: #084166cc;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #5e4120;
+}
+
+#message {
+  margin-top: 50px;
+  font-size: 1em;
+}

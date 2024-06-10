@@ -54,8 +54,7 @@ document
 
           // Redirect to another page after a short delay
           setTimeout(() => {
-            window.location.href =
-              "http://localhost:3000/Landing-page-name.html"; // Change 'welcome.html' to your target page
+            window.location.href = "http://localhost:3000/game-start-name.html";
           }, 1000); // 1 second delay for the user to see the success message
         } else {
           messageElement.textContent = "Feil PIN. Vennligst prøv igjenn.";

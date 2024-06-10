@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   socket.on("adminAction", (action) => {
     if (action === "pauseScene") {
       console.log("Received pauseScene action"); // Log
-      window.location.href = "waiting-for-question.html"; // Redirect to the waiting for question page
+      window.location.href = "game-waiting-for-question.html"; // Redirect to the waiting for question page
     } else {
       console.log("In else in inactive");
     }
