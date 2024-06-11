@@ -19,14 +19,12 @@ function redirectToPage(url, delay) {
 
 // Example usage: Redirect to "target.html" after 5 seconds (5000 milliseconds)'
 
-/* Temp
 window.onload = function () {
   if (chapterIndex < 5) {
     chapterIndex++;
     localStorage.setItem("chapterIndex", chapterIndex);
     redirectToPage("game-watching-the-scene.html", 10000);
   } else {
-    redirectToPage("game-ending-result.html", 10000);
+    redirectToPage("user-ending.html", 10000);
   }
 };
-*/

@@ -4,7 +4,7 @@ document.getElementById("join-btn").addEventListener("click", function (event) {
     .then((response) => response.json())
     .then((data) => {
       if (data.gameStarted) {
-        window.location.href = "http://localhost:3000/index-page-pin.html";
+        window.location.href = "http://localhost:3000/game-start.html";
       } else {
         alert("No game is active");
       }
