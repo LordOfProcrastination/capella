@@ -1,5 +1,5 @@
 const eventMessage = document.querySelector("#event-message");
-let chapterIndex = localStorage.getItem("chapterIndex") || 4;
+let chapterIndex = localStorage.getItem("chapterIndex") || 1;
 const timerDuration = 30000;
 let selectedChoice = null;
 let timer = null;
