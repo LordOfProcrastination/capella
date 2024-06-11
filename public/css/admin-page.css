@@ -48,6 +48,7 @@ body {
   gap: 10px;
   padding: 10px;
   height: 100vh;
+
   box-sizing: border-box;
   width: 100vw;
 }
@@ -107,6 +108,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-top: -20px;
 }
 .sidebar p {
   padding: 1em;
@@ -129,6 +131,7 @@ body {
   border: 2px solid #121c2c;
   padding: 1em;
   background-color: #fff;
+  margin-top: -20px;
 }
 
 /*___________ PLAYER COUNTER _______________ */
@@ -205,9 +208,11 @@ body {
 
   display: grid;
   border: 2px solid #121c2c;
-  padding: 20px;
+  padding: 20px 20px;
   background-color: #fff;
+  margin-top: -20px;
 }
+
 /*______ contents ______ */
 #event-message {
   grid-area: event;
