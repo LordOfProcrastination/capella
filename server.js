@@ -50,7 +50,13 @@ io.on("connection", (socket) => {
         action: "showQuestion",
         data: data.data,
       });
+    } else if (action === "showEnding") {
+      io.to(sessionId).emit("adminAction", {
+        action: "showEnding",
+        data: data.data,
+      });
     }
+
     io.to(sessionId).emit("adminAction", action);
   });
 

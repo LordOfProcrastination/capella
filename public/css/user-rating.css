@@ -1,5 +1,5 @@
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: monospace;
   background: #e0f7fa;
   margin: 0;
 }
@@ -18,7 +18,6 @@ html {
   background: #2d6470;
 
   color: #fff;
-  font-family: "Inknut Antiqua";
 }
 
 /*stars*/
@@ -147,7 +146,7 @@ button {
   border: none;
   border-radius: 15px;
   cursor: pointer;
-  max-width: 10vw;
+  max-width: 50%;
   padding: 10px 20px;
   transition: background-color 0.3s;
 }

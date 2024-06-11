@@ -224,8 +224,23 @@ document.addEventListener("DOMContentLoaded", (event) => {
   document.getElementById("end-btn").onclick = () => {
     socket.emit("adminAction", {
       sessionId: "session123",
-
       action: "endGame",
+    });
+
+    socket.emit("adminAction", {
+      sessionId: "session123",
+      action: "showEnding",
+      data: {
+        endingText: `<div style="text-align: center;">
+                    <b style="font-size: larger; margin-bottom: 2rem">The Hero's Return</b>
+                    <br>
+                    <div style="text-align: center; font-size: 16px;">
+                      Erik successfully retrieves the Horn of Jotunheim and returns to the village as a hero.<br>
+                      The village celebrates his bravery, and the horn brings prosperity and protection to the land.<br>
+                      Erik's name becomes legendary, inspiring future generations.
+                    </div>
+                  </div>`,
+      },
     });
 
     updateEventMessage("Spillet har sluttet");

@@ -102,6 +102,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     if (commentText !== "") {
       addComment(commentText);
       commentInput.value = "";
+    } else if (commentText == "") {
+      addComment("Takk for innspill!");
     }
   });
 

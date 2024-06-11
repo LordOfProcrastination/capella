@@ -1,5 +1,5 @@
 const eventMessage = document.querySelector("#event-message");
-let chapterIndex = localStorage.getItem("chapterIndex") || 1;
+let chapterIndex = localStorage.getItem("chapterIndex") || 4;
 const timerDuration = 30000;
 let selectedChoice = null;
 let timer = null;
@@ -65,19 +65,32 @@ const startTimer = () => {
     Timer Bar
 */
 const timerBar = document.querySelector("#timer-bar");
-let timeLimit = "30s";
+let timeLimit = 30;
+const remainingTimeSpan = document.querySelector("#remaining-time");
 
 if (timerBar) {
-  timerBar.style.animationDuration = timeLimit;
+  timerBar.style.animationDuration = `${timeLimit}s`;
+  const updateRemainingTime = (remainingTime) => {
+    remainingTimeSpan.textContent = `0:${remainingTime}`;
+  };
+  const startTimer = () => {
+    let remainingTime = timeLimit;
+    updateRemainingTime(remainingTime);
+
+    const interval = setInterval(() => {
+      remainingTime--;
+      updateRemainingTime(remainingTime);
+
+      if (remainingTime <= 0) {
+        clearInterval(interval);
+      }
+    }, 1000);
+  };
+
+  startTimer();
 } else {
   console.error("Timer bar element not found");
 }
-const getTimerBar = () => {
-  timerBar.innerHTML = `
-  <span>⌛</span>`;
-};
-
-getTimerBar();
 
 /*
     Choices
@@ -108,7 +121,7 @@ const createEventButtons = async (index) => {
         if (selectedButton) {
           // Revert the previous button to its default state
           selectedButton.classList.remove("active");
-          alert("Waiting for other players");
+          //alert("Waiting for other players");
         }
 
         // Set the new selected button

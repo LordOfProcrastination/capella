@@ -6,7 +6,7 @@
 
 body {
   background-color: #202f45;
-  font-family: Arial, sans-serif;
+  font-family: monospace;
   margin: 0;
   padding: 0;
 }
@@ -59,16 +59,16 @@ body {
 }
 
 .color-1 {
-  background-color: #ff9999;
+  background-color: #4d9be6;
 }
 .color-2 {
-  background-color: #99ff99;
+  background-color: #1ebc73;
 }
 .color-3 {
-  background-color: #9999ff;
+  background-color: #c87741;
 }
 .color-4 {
-  background-color: #ffcc99;
+  background-color: #f68181;
 }
 .color-5 {
   background-color: #cc99ff;

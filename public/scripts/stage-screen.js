@@ -25,5 +25,8 @@ socket.on("adminAction", (data) => {
       answerDiv.innerText = choice.text;
       answerContainer.appendChild(answerDiv);
     });
+  } else if (data.action === "showEnding") {
+    console.log("Show Ending", data.data);
+    document.getElementById("main-message").innerHTML = data.data.endingText;
   }
 });

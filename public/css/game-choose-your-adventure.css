@@ -52,8 +52,15 @@ html {
 .timer-bar {
   width: 100%;
   height: 100%;
-  background-color: #4682b4; /* Steel blue for timer bar */
+  background-color: #4682b4;
   animation: countdown linear infinite;
+}
+
+#remaining-time {
+  color: white;
+  font-size: 12px;
+
+  position: absolute;
 }
 
 @keyframes countdown {
@@ -67,8 +74,8 @@ html {
 
 .event-option-container {
   display: grid;
-  gap: 1em;
-  width: 100%;
+  gap: 0.5em;
+  width: 98%;
   max-width: 360px;
 }
 
@@ -79,8 +86,11 @@ html {
   background: #1e90ff; /* Dodger blue for buttons */
   border: 0px;
   position: relative;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: inset 0 -50px 5px rgba(0, 0, 0, 0.5),
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  box-shadow:
+    inset 0 -50px 5px rgba(0, 0, 0, 0.5),
     inset 0 -10px 10px rgba(0, 0, 0, 0.3);
   color: #fff; /* White text color */
   display: flex;
@@ -110,8 +120,7 @@ html {
 }
 
 .event-btn.active {
-  transform: translateY(10px); /* Move button content down by 10px */
-  box-shadow: inset 0 -4px 0 #10123e; /* Darker blue inner shadow */
+  transform: translateY(5px); /* Move button content down by 10px */
 }
 .event-btn:focus {
   outline: none;
@@ -139,52 +148,86 @@ html {
 
 .btn-0 {
   background-color: #4d9be6; /* Light blue */
-  box-shadow: inset -4px 2px 1px 1px #3b82c4, inset -4px -2px 1px 1px #3b82c4,
-    inset 4px 0px 1px 1px #3b82c4;
+  box-shadow:
+    inset -4px 2px 1px 1px #3b82c4,
+    inset -4px -2px 1px 1px #3b82c4,
+    inset 4px 0px 1px 1px #3b82c4,
+    0px 5px 3px 0px #504e4e;
 }
 
 .btn-0.active {
-  background-color: #9bcbf2; /* Paler light blue */
-  box-shadow: inset 0 -4px 0 #10123e, inset 0 -8px 0 #484a77,
-    inset -4px 2px 1px 1px #3b82c4, inset -4px -2px 1px 1px #3b82c4,
-    inset 4px 0px 1px 1px #3b82c4;
+  background-color: #8dc7f7; /* Paler light blue */
+  box-shadow:
+    inset 0px -5px 0px 4px #2f6496,
+    inset 1px -10px 0px 2px #4d9be6,
+    inset 0px -9px 1px 6px #87c3f4,
+    inset -1px 2px 6px 0px #4d9be6;
+
+  color: #3b82c4;
+  font-weight: bold;
 }
 
-/* Button 2 */
+/* Button 1 */
 .btn-1 {
   background-color: #1ebc73; /* Medium sea green */
-  box-shadow: inset -4px 2px 1px 1px #169a5d, inset -4px -2px 1px 1px #24d48a,
-    inset 4px 0px 1px 1px #24d48a;
+  box-shadow:
+    inset -4px 2px 1px 1px #169a5d,
+    inset -4px -2px 1px 1px #169a5d,
+    inset 4px 0px 1px 1px #169a5d,
+    0px 5px 3px 0px #504e4e;
 }
 .btn-1.active {
   background-color: #79e0ac; /* Paler medium sea green */
+  box-shadow:
+    inset 0px -5px 0px 4px #10784f,
+    inset 1px -10px 0px 2px #1ebc73,
+    inset 0px -9px 1px 6px #71d7a5,
+    inset -1px 2px 6px 0px #1ebc73;
+
+  color: #0f613b;
+  font-weight: bold;
+}
+
+/* Button 2 */
+.btn-2 {
+  background-color: #e6904e; /* Sandy brown */
+  box-shadow:
+    inset -4px 2px 1px 1px #c67540,
+    inset -4px -2px 1px 1px #c67540,
+    inset 4px 0px 1px 1px #c67540,
+    0px 5px 3px 0px #504e4e;
+}
+.btn-2.active {
+  background-color: #f0b685; /* Paler sandy brown */
+  box-shadow:
+    inset 0px -5px 0px 4px #b36337,
+    inset 1px -10px 0px 2px #e6904e,
+    inset 0px -9px 1px 6px #e9ad7c,
+    inset -1px 2px 6px 0px #e6904e;
+
+  color: #5b371f;
+  font-weight: bold;
 }
 
 /* Button 3 */
-.btn-2 {
-  background-color: #e6904e; /* Sandy brown */
-  box-shadow: inset -4px 2px 1px 1px #c67540, inset -4px -2px 1px 1px #f0a367,
-    inset 4px 0px 1px 1px #f0a367;
-}
-
-.btn-2.active {
-  background-color: #f0b685; /* Paler sandy brown */
-}
-
-/* Button 4 */
 .btn-3 {
   background-color: #f68181; /* Light coral */
-  box-shadow: inset -4px 2px 1px 1px #d46a6a, inset -4px -2px 1px 1px #ff9797,
-    inset 4px 0px 1px 1px #ff9797;
+  box-shadow:
+    inset -4px 2px 1px 1px #d46a6a,
+    inset -4px -2px 1px 1px #d46a6a,
+    inset 4px 0px 1px 1px #d46a6a,
+    0px 5px 3px 0px #504e4e;
 }
-
 .btn-3.active {
   background-color: #f9a9a9; /* Paler light coral */
-}
+  box-shadow:
+    inset 0px -5px 0px 4px #bd5959,
+    inset 1px -10px 0px 2px #f68181,
+    inset 0px -9px 1px 6px #f4a2a2,
+    inset -1px 2px 6px 0px #f68181;
 
-/* New active state styles */
-.event-btn.active {
-  color: inherit; /* Retain text color specific to each button */
+  color: #542222;
+  font-weight: bold;
 }
 
 /* Media query for larger screens */
@@ -228,6 +271,7 @@ html {
   border: 2px solid #a7cddc;
 }
 .erik {
+  margin: -10px auto;
   width: 4em;
   border-radius: 2em;
 }
