@@ -8,7 +8,7 @@
 
 body {
   font-family: monospace;
-  background: #e0f7fa; /* Light cyan background for the sides */
+  background: #1e1f20;
 }
 
 html {
@@ -38,7 +38,7 @@ main {
   height: 100vh;
   width: 360px;
 
-  background-color: rgb(5, 5, 54);
+  background-color: rgb(2, 24, 51);
   opacity: 60%;
 }
 .action-txt {

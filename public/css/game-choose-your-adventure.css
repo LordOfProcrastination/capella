@@ -7,7 +7,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: #e0f7fa; /* Light cyan background for the sides */
+  background: #1e1f20;
 }
 
 html {
@@ -22,8 +22,15 @@ html {
   align-items: center;
   justify-content: flex-start;
   max-width: 360px; /* Limit the content width */
-  background: #ffffff; /* White background for the main content */
+
   border-radius: 10px;
+
+  background: rgb(45, 100, 112);
+  background: linear-gradient(
+    0deg,
+    rgba(45, 100, 112, 1) 0%,
+    rgba(32, 47, 69, 1) 100%
+  );
 }
 
 #event-message-container {
@@ -232,10 +239,6 @@ html {
 
 /* Media query for larger screens */
 @media (min-width: 1024px) {
-  body {
-    background: linear-gradient(90deg, #154060 2%, #526f89 51%, #154060 99%);
-  }
-
   #container {
     max-width: none;
     width: 360px;
@@ -264,11 +267,11 @@ html {
 
 .character-equipment {
   grid-area: C;
-  border: 2px solid #a7cddc;
+  background-color: #b0c2af;
 }
 .character-relationships {
   grid-area: B;
-  border: 2px solid #a7cddc;
+  background-color: #cfd9d8;
 }
 .erik {
   margin: -10px auto;
@@ -277,7 +280,7 @@ html {
 }
 .character-stats {
   grid-area: A;
-  border: 2px solid #a7cddc;
+  background-color: #bbc8cd;
 }
 
 .charactersheet-container {

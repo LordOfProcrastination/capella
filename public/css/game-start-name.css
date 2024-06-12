@@ -8,7 +8,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: #e0f7fa; /* Light cyan background for the sides */
+  background: #1e1f20;
 }
 
 html {
@@ -20,7 +20,7 @@ html {
   height: 800px;
   border-radius: 20px;
   position: relative;
-  background-color: #2d6470;
+  background-color: #132338;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -35,7 +35,7 @@ html {
   position: absolute;
   justify-content: space-evenly;
   align-items: center;
-  background: linear-gradient(0deg, #ffffff00 0%, #111e34 100%);
+  background: linear-gradient(0deg, #2d6470 0%, #ffffff00 100%);
   padding: 10px 20px;
   flex-flow: row wrap;
   z-index: 100;
@@ -55,6 +55,7 @@ html {
   border: 10px solid #1a2538;
   margin: auto 0;
   box-shadow: 0px 0px 10px 2px #ffffff;
+
   z-index: 3;
 }
 
@@ -106,7 +107,7 @@ html {
   height: 350px;
   width: 100%;
   object-fit: cover;
-  box-shadow: 0px 0px 10px -2px #ffffff;
+  border-radius: 5%;
 }
 
 /* Stil for overskriften */
@@ -146,6 +147,8 @@ html {
   cursor: pointer;
   transition: background-color 0.3s;
   max-width: 100%;
+
+  box-shadow: 0px -8px 10px -5px rgba(0, 0, 0, 0.75) inset;
 }
 
 .start-button:hover {

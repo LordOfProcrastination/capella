@@ -114,6 +114,7 @@ body {
   padding: 1em;
   margin: 1em;
   background-color: rgba(239, 244, 245, 0.741);
+  color: gray;
 }
 .sidebar p:hover {
   background-color: aquamarine;
@@ -140,6 +141,7 @@ body {
   display: inline-block;
   padding: 5px;
   width: fit-content;
+  color: gray;
 }
 .player-counter {
   display: inline-block;
@@ -308,6 +310,7 @@ body {
 /*---Answered counter--- */
 #answered-counter-title {
   grid-area: answers;
+  color: gray;
 }
 #answered-counter {
   background-color: rgba(110, 143, 158, 0.302);
@@ -318,6 +321,7 @@ body {
 
 #time-left-title {
   grid-area: time;
+  color: gray;
 }
 #time-left-counter {
   background-color: rgba(110, 143, 158, 0.302);
