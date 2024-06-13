@@ -1,8 +1,0 @@
-Grønn ramme for bra stats
-Gul ramme for ok stats
-Rød ramme for lave stats
-
-Opprett en rekke med variabler som endres basert på spillerenes valg
-
-Forhold har variablene sus, nøytral og vennlig
-
