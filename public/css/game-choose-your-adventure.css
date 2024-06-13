@@ -38,7 +38,7 @@ html {
   width: 92vw;
   max-width: 340px;
   height: 23vh;
-  background: rgba(173, 216, 230, 0.4); /* Light blue with transparency */
+  background-color: rgb(207, 217, 216, 0.5);
   border-radius: 10px;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -59,7 +59,7 @@ html {
 .timer-bar {
   width: 100%;
   height: 100%;
-  background-color: #4682b4;
+  background-color: #3c9155;
   animation: countdown linear infinite;
 }
 
@@ -267,11 +267,11 @@ html {
 
 .character-equipment {
   grid-area: C;
-  background-color: #b0c2af;
+  background-color: rgb(207, 217, 216, 0.5);
 }
 .character-relationships {
   grid-area: B;
-  background-color: #cfd9d8;
+  background-color: rgb(207, 217, 216, 0.5);
 }
 .erik {
   margin: -10px auto;
@@ -280,7 +280,7 @@ html {
 }
 .character-stats {
   grid-area: A;
-  background-color: #bbc8cd;
+  background-color: rgb(207, 217, 216, 0.5);
 }
 
 .charactersheet-container {
